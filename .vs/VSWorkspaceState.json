@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Socialized\\development",
-    "\\Socialized\\UseCases",
-    "\\Socialized\\UseCases\\AutoPosts"
+    "\\WebAPI",
+    "\\WebAPI\\Controllers"
   ],
+  "SelectedNode": "\\WebAPI\\Controllers\\StatisticsController.cs",
   "PreviewInSolutionExplorer": false
 }

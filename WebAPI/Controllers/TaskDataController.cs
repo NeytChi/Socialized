@@ -1,4 +1,4 @@
-using Serilog;
+/*using Serilog;
 using Serilog.Core;
 using database.context;
 using InstagramService;
@@ -85,4 +85,4 @@ namespace WebAPI.Controllers
             return new { success = false, message };
         }
     }
-}
+}*/

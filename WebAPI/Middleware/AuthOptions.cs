@@ -1,12 +1,12 @@
 using System.Text;
-using Microsoft.IdentityModel.Tokens;
+// using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
 
 namespace WebAPI.Middleware
 {
     public class AuthOptions
     {
-        public AuthOptions()
+   /*     public AuthOptions()
         {
             ISSUER = config.GetValue<string>("issuer");
             AUDIENCE = config.GetValue<string>("audience");
@@ -21,6 +21,6 @@ namespace WebAPI.Middleware
         public static SymmetricSecurityKey GetSymmetricSecurityKey()
         {
             return new SymmetricSecurityKey(Encoding.ASCII.GetBytes(KEY));
-        }
+        }*/
     }
 }

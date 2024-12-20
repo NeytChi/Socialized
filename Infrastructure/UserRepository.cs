@@ -16,29 +16,27 @@ namespace Infrastructure
         }
         public User GetByEmail(string email)
         {
-            return _context.Users.Where(u => u.userEmail == email).FirstOrDefault();
+            return _context.Users.Where(u => u.Email == email).FirstOrDefault();
         }
         public User GetByEmail(string email, bool deleted)
         {
-            return _context.Users.Where(u => u.userEmail == email && u.deleted == deleted).FirstOrDefault();
+            return _context.Users.Where(u => u.Email == email && u.IsDeleted == deleted).FirstOrDefault();
         }
-        public User GetByEmail(string email, bool deleted, bool activate)
+        public User GetByEmail(string email, bool deleted = false, bool activate = true)
         {
-            return _context.Users.Where(u => u.userEmail == email
-                && u.deleted == false
-                && u.activate == true).FirstOrDefault();
+            return _context.Users.Where(u => u.Email == email && u.IsDeleted == deleted && u.Activate == activate).FirstOrDefault();
         }
         public User GetByUserTokenNotDeleted(string userToken)
         {
-            return _context.Users.Where(u => u.userToken == userToken && u.deleted == false).FirstOrDefault();
+            return _context.Users.Where(u => u.TokenForUse == userToken && u.IsDeleted == false).FirstOrDefault();
         }
         public User GetByRecoveryToken(string recoveryToken, bool deleted)
         {
-            return _context.Users.Where(u => u.recoveryToken == recoveryToken && u.deleted == deleted).FirstOrDefault();
+            return _context.Users.Where(u => u.RecoveryToken == recoveryToken && u.IsDeleted == deleted).FirstOrDefault();
         }
         public User GetByHash(string hash, bool deleted, bool activate)
         {
-            return _context.Users.Where(u => u.userHash == hash && u.activate == activate && u.deleted == deleted).FirstOrDefault();
+            return _context.Users.Where(u => u.HashForActivate == hash && u.Activate == activate && u.IsDeleted == deleted).FirstOrDefault();
         }
     }
 }

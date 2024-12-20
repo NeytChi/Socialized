@@ -44,23 +44,25 @@ namespace Infrastructure
         }
         public dynamic GetUsers(int since, int count, bool isDeleted = false, bool activate = true)
         {
-            return (from user in _context.Users
-             join profile in _context.UserProfile on user.Id equals profile.UserId
-             where user.IsDeleted == isDeleted
-               && user.Activate == activate
-             orderby user.Id descending
-             select new
-             {
-                 user_email = user.Email,
-                 registration = user.CreatedAt,
-                 activity = user.LastLoginAt,
-                 sessions_count = (from businessAccount in _context.BusinessAccounts
-                    where businessAccount.AccountId == user.Id && !businessAccount.IsDeleted
-                    select businessAccount).Count(),
-             })
-            .Skip(since * count)
-            .Take(count)
-            .ToArray();
+            var users = _context.Users
+                .Join(_context.UserProfile,
+                      user => user.Id,
+                      profile => profile.UserId,
+                      (user, profile) => new { user, profile })
+                .Where(up => up.user.IsDeleted == isDeleted && up.user.Activate == activate)
+                .OrderByDescending(up => up.user.Id)
+                .Select(up => new
+                {
+                    user_email = up.user.Email,
+                    registration = up.user.CreatedAt,
+                    activity = up.user.LastLoginAt,
+                    sessions_count = _context.BusinessAccounts
+                        .Count(ba => ba.AccountId == up.user.Id && !ba.IsDeleted)
+                })
+                .Skip(since * count)
+                .Take(count)
+                .ToArray();
+            return users;
         }
     }
 }

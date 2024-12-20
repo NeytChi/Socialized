@@ -21,36 +21,36 @@ namespace Infrastructure
                     join account in Context.IGAccounts on autoPost.AccountId equals account.Id
                     join user in Context.Users on account.UserId equals user.Id
                     where user.TokenForUse == userToken
-                        && autoPost.postId == postId
-                        && autoPost.postDeleted == postDeleted
+                        && autoPost.Id == postId
+                        && autoPost.IsDeleted == postDeleted
                     select autoPost).FirstOrDefault();
         }
         public AutoPost GetBy(string userToken, long postId, bool postDeleted, bool postAutoDeleted, bool postExecuted)
         {
             return (from p in Context.AutoPosts
-                    join s in Context.IGAccounts on p.sessionId equals s.accountId
-                    join u in Context.Users on s.userId equals u.userId
-                    where u.userToken == userToken
-                        && p.postId == postId
-                        && p.postDeleted == postDeleted
-                        && p.postAutoDeleted == postAutoDeleted
-                        && p.postExecuted == postExecuted
+                    join s in Context.IGAccounts on p.AccountId equals s.Id
+                    join u in Context.Users on s.UserId equals u.Id
+                    where u.TokenForUse == userToken
+                        && p.Id == postId
+                        && p.Deleted == postDeleted
+                        && p.AutoDeleted == postAutoDeleted
+                        && p.Executed == postExecuted
                     select p).FirstOrDefault();
         }
         public ICollection<AutoPost> GetBy(GetAutoPostsCommand command)
         {
             return (from p in Context.AutoPosts
-                    join s in Context.IGAccounts on p.sessionId equals s.accountId
-                    join u in Context.Users on s.userId equals u.userId
-                    join f in Context.AutoPostFiles on p.postId equals f.postId into files
-                    where u.userToken == command.UserToken
-                        && s.accountId == command.SessionId
-                        && p.postExecuted == command.PostExecuted
-                        && p.postDeleted == command.PostDeleted
-                        && p.postAutoDeleted == command.PostAutoDeleted
-                        && p.executeAt > command.From
-                        && p.executeAt < command.To
-                    orderby p.postId descending
+                    join s in Context.IGAccounts on p.AccountId equals s.Id
+                    join u in Context.Users on s.UserId equals u.Id
+                    join f in Context.AutoPostFiles on p.Id equals f.PostId into files
+                    where u.TokenForUse == command.UserToken
+                        && s.Id == command.AccountId
+                        && p.Executed == command.PostExecuted
+                        && p.IsDeleted == command.PostDeleted
+                        && p.AutoDeleted == command.PostAutoDeleted
+                        && p.ExecuteAt > command.From
+                        && p.ExecuteAt < command.To
+                    orderby p.Id descending
                     select p )
                     .Skip(command.Since * command.Count).Take(command.Count).ToList();
         }

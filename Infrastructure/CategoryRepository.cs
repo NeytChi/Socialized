@@ -9,12 +9,13 @@ namespace Infrastructure
         {
             Context = context;
         }
+        /*
         public Category GetBy(long accountId, long categoryId, bool categoryDeleted = false)
         {
             return Context.Categories.Where(c => 
                 c.accountId == accountId && 
                 c.categoryId == categoryId && 
                 c.categoryDeleted == categoryDeleted).FirstOrDefault();
-        }
+        }*/
     }
 }

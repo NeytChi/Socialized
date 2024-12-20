@@ -13,24 +13,30 @@ namespace Infrastructure
         {
             return _context.Appeals.Where(a => a.Id == appealId).FirstOrDefault();
         }
-        public Appeal GetBy(long appealId, string userToken, int appealStateIsNot = 4)
-        {
-            return (from a in _context.Appeals
-                    join u in _context.Users on a.UserId equals u.Id
-                    where a.Id == appealId
-                        && a.State != appealStateIsNot
-                        && u.TokenForUse == userToken
-                    select a).FirstOrDefault();
-        }
+        public Appeal GetBy(long appealId, string userToken, int appealStateIsNot = 4) => _context.Appeals
+                .Join(_context.Users,
+                    appeal => appeal.UserId,
+                    user => user.Id,
+                    (appeal, user) => new { appeal, user })
+                .Where(au => au.appeal.Id == appealId
+                    && au.appeal.State != appealStateIsNot
+                    && au.user.TokenForUse == userToken)
+                .Select(au => au.appeal)
+                .FirstOrDefault();
+
         public Appeal[] GetAppealsBy(string userToken, int since = 0, int count = 10, bool IsUserDeleted = false)
         {
-            return (from appeal in _context.Appeals
-                    join user in _context.Users on appeal.UserId equals user.Id
-                    where user.TokenForUse == userToken
-                    && user.IsDeleted == IsUserDeleted
-                    orderby appeal.State
-                    orderby appeal.CreatedAt descending
-                    select appeal).Skip(since * count).Take(count).ToArray();
+            return _context.Appeals
+                .Join(_context.Users,
+                    appeal => appeal.UserId,
+                    user => user.Id,
+                    (appeal, user) => new { appeal, user })
+                .Where(au => au.user.TokenForUse == userToken
+                    && au.user.IsDeleted == IsUserDeleted)
+                .OrderBy(au => au.appeal.State)
+                .OrderByDescending(au => au.appeal.CreatedAt)
+                .Select(au => au.appeal)
+                .Skip(since * count).Take(count).ToArray();
         }
         public Appeal[] GetAppealsBy(int since, int count)
         {

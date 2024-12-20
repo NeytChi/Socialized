@@ -9,24 +9,17 @@ namespace Infrastructure
         {
             Context = context;
         }
-        public PostFile GetBy(long postId)
+        public AutoPostFile GetBy(long postId)
         {
-            return Context.AutoPostFiles.Where(p => p.postId == postId).FirstOrDefault();
+            return Context.AutoPostFiles.Where(p => p.Id == postId).FirstOrDefault();
         }
-        public PostFile GetBy(long fileId, long postId, bool fileDeleted = false)
+        public AutoPostFile GetBy(long fileId, long postId, bool fileDeleted = false)
         {
-            return Context.AutoPostFiles.Where(f =>
-                f.fileId == fileId &&
-                f.postId == postId &&
-                f.fileDeleted == fileDeleted)
-                    .FirstOrDefault();
+            return Context.AutoPostFiles.Where(f => f.Id == fileId && f.PostId == postId && f.IsDeleted == fileDeleted).FirstOrDefault();
         }
-        public ICollection<PostFile> GetBy(long postId, bool fileDeleted = false)
+        public ICollection<AutoPostFile> GetBy(long postId, bool fileDeleted = false)
         {
-            return Context.AutoPostFiles.Where(f =>
-                f.postId == postId &&
-                f.fileDeleted == fileDeleted)
-                .OrderBy(f => f.fileOrder).ToList();
+            return Context.AutoPostFiles.Where(f => f.Id == postId && f.IsDeleted == fileDeleted).OrderBy(f => f.Order).ToList();
         }
         public List<AutoPost> GetBy(
             DateTime deleteAfter,
@@ -36,12 +29,12 @@ namespace Infrastructure
             bool postDeleted = false)
         {
             return Context.AutoPosts.Where(a
-                => a.autoDelete == autoDeleted
-                && a.postExecuted == postExecuted
-                && a.postAutoDeleted == postAutoDeleted
-                && a.deleteAfter < deleteAfter
-                && a.postDeleted == postDeleted
-            ).OrderBy(a => a.deleteAfter).ToList();
+                => a.AutoDelete == autoDeleted
+                && a.Executed == postExecuted
+                && a.AutoDeleted == postAutoDeleted
+                && a.DeleteAfter < deleteAfter
+                && a.Deleted == postDeleted
+            ).OrderBy(a => a.DeleteAfter).ToList();
         }
     }
 }

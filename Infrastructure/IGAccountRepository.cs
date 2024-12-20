@@ -1,4 +1,4 @@
-﻿using Domain.SessionComponents;
+﻿using Domain.InstagramAccounts;
 
 namespace Infrastructure
 {
@@ -9,9 +9,9 @@ namespace Infrastructure
         {
             Context = context;
         }
-        public IGAccount GetBy(long sessionId)
+        public IGAccount GetBy(long accountId)
         {
-            return Context.IGAccounts.Where(a => a.accountId == sessionId).FirstOrDefault();
+            return Context.IGAccounts.Where(a => a.Id == accountId).FirstOrDefault();
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Infrastructure
         {
             _context = context;
         }
+        /*
         public BlogPost[] GetPosts(int since, int count)
         {
             return (from post in _context.BlogPosts
@@ -32,5 +33,6 @@ namespace Infrastructure
         {
             return _context.BlogPosts.Where(b => b.postId == postId && b.deleted == deleted).FirstOrDefault();
         }
+        */
     }
 }

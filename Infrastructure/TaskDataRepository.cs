@@ -14,16 +14,15 @@ namespace Infrastructure
         public TaskData GetBy(string userToken, long dataId, bool deleted = false)
         {
             return (from d in _context.TaskData
-                 join t in _context.TaskGS on d.taskId equals t.taskId
-                 join s in _context.IGAccounts on t.sessionId equals s.accountId
-                 join u in _context.Users on s.userId equals u.userId
-                 where u.userToken == userToken && d.dataId == dataId && d.dataDeleted == deleted
-                 select d)
+                 join t in _context.TaskGS on d.TaskId equals t.Id
+                 join account in _context.IGAccounts on t.AccountId equals account.Id
+                 join u in _context.Users on account.UserId equals u.Id
+                 where u.TokenForUse == userToken && d.Id == dataId && d.IsDeleted == deleted select d)
                  .FirstOrDefault();
         }
         public List<TaskData> GetBy(long taskId, bool deleted = false)
         {
-            return _context.TaskData.Where(d => d.dataDeleted == deleted && d.taskId == taskId).ToList();
+            return _context.TaskData.Where(d => d.IsDeleted == deleted && d.TaskId == taskId).ToList();
         }
     }
 }

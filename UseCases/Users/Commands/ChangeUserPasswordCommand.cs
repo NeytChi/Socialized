@@ -1,6 +1,6 @@
 ﻿namespace UseCases.Users.Commands
 {
-    public class ChangePasswordCommand
+    public class ChangeUserPasswordCommand
     {
         public string RecoveryToken { get; set; }
         public string UserPassword { get; set; } 

@@ -10,8 +10,9 @@ namespace WebAPI.Controllers
     public class AdminsController : ControllerResponseBase
     {
         private IAdminManager AdminManager;
-        private JwtAdmins JwtAdmins = new JwtAdmins();
-        public AdminsController(IAdminManager adminManager)
+        private IJwtTokenManager JwtTokenManager;
+
+        public AdminsController(IAdminManager adminManager, IJwtTokenManager jwtTokenManager)
         {
             AdminManager = adminManager;
         }
@@ -29,7 +30,7 @@ namespace WebAPI.Controllers
         {
             var result = AdminManager.Authentication(command);
 
-            var token = JwtAdmins.Token(result);
+            var token = JwtTokenManager.Authenticate(result);
 
             return new DataResponse(true, new { AdminToken = token });
         }

@@ -75,7 +75,7 @@ namespace WebAPI.Controllers
         }
         [HttpPost]
         [ActionName("ChangePassword")]
-        public ActionResult<dynamic> ChangePassword(ChangePasswordCommand command)
+        public ActionResult<dynamic> ChangePassword(ChangeUserPasswordCommand command)
         {
             UserPasswordRecoveryManager.ChangePassword(command);
 

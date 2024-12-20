@@ -10,7 +10,7 @@ namespace UseCases.Users
     {
         void RecoveryPassword(string userEmail, string culture);
         string CheckRecoveryCode(CheckRecoveryCodeCommand command);
-        void ChangePassword(ChangePasswordCommand command);
+        void ChangePassword(ChangeUserPasswordCommand command);
         void ChangeOldPassword(ChangeOldPasswordCommand command);
     }
     public class UserPasswordRecoveryManager : BaseManager, IUserPasswordRecoveryManager
@@ -56,7 +56,7 @@ namespace UseCases.Users
             Logger.Information($"Перевірен був код востановлення паролю користувача, id={user.Id}.");
             return user.RecoveryToken;
         }
-        public void ChangePassword(ChangePasswordCommand command)
+        public void ChangePassword(ChangeUserPasswordCommand command)
         {            
             var user = UserRepository.GetByRecoveryToken(command.RecoveryToken, false);
             if (user == null)

@@ -1,7 +1,7 @@
 ﻿using Domain.AutoPosting;
 using Domain.InstagramAccounts;
 
-namespace UseCases.Packages
+namespace Domain.Packages
 {
     public interface IForServerAccessCountingRepository
     {

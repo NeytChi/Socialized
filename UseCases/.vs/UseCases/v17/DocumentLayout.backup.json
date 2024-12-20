@@ -34,8 +34,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -46,8 +50,7 @@
               "RelativeToolTip": "Users\\UserPasswordRecoveryManager.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T12:26:58.968Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T12:26:58.968Z"
             },
             {
               "$type": "Document",
@@ -59,8 +62,7 @@
               "RelativeToolTip": "Users\\UserRemoverManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T12:26:57.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T12:26:57.119Z"
             },
             {
               "$type": "Document",
@@ -76,10 +78,6 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "AppealManager.cs",
@@ -89,8 +87,7 @@
               "RelativeToolTip": "Appeals\\AppealManager.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T11:40:34.383Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T11:40:34.383Z"
             },
             {
               "$type": "Document",
@@ -102,8 +99,7 @@
               "RelativeToolTip": "Users\\UsersManager.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAADgvxQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T13:23:01.648Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T13:23:01.648Z"
             },
             {
               "$type": "Document",

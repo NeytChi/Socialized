@@ -1,6 +1,4 @@
-﻿using Domain.Packages;
-
-namespace UseCases.Packages
+﻿namespace Domain.Packages
 {
     public interface IDiscountRepository
     {

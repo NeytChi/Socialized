@@ -1,13 +1,8 @@
 ﻿using Domain.Users;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
         private Context _context;
         public UserRepository(Context context)
@@ -37,6 +32,24 @@ namespace Infrastructure
         public User GetByHash(string hash, bool deleted, bool activate)
         {
             return _context.Users.Where(u => u.HashForActivate == hash && u.Activate == activate && u.IsDeleted == deleted).FirstOrDefault();
+        }
+
+        public void Create(User user)
+        {
+            _context.Users.Add(user);
+            _context.SaveChanges();
+        }
+
+        public void Update(User user)
+        {
+            _context.Users.Update(user);
+            _context.SaveChanges();
+        }
+
+        public void Delete(User user)
+        {
+            _context.Users.Remove(user);
+            _context.SaveChanges();
         }
     }
 }

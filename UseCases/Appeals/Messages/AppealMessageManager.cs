@@ -7,12 +7,6 @@ using Domain.Appeals;
 
 namespace UseCases.Appeals.Messages
 {
-    public interface IAppealMessageManager
-    {
-        AppealMessage Create(CreateAppealMessageCommand command);
-        void Update(UpdateAppealMessageCommand command);
-        void Delete(DeleteAppealMessageCommand command);
-    }
     public class AppealMessageManager : BaseManager, IAppealMessageManager
     {
         private IAppealRepository AppealRepository;

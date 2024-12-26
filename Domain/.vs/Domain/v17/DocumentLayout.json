@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\Domain\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +14,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IAdminRepository.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAdminRepository.cs",
+              "RelativeDocumentMoniker": "Appeals\\IAdminRepository.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAdminRepository.cs",
+              "RelativeToolTip": "Appeals\\IAdminRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T21:25:37.836Z",
+              "EditorCaption": ""
             }
           ]
         }

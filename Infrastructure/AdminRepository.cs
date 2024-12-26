@@ -1,8 +1,10 @@
 ﻿using Domain;
+using Domain.Appeals;
+using Domain.Users;
 
 namespace Infrastructure
 {
-    public class AdminRepository
+    public class AdminRepository : IAdminRepository
     {
         private Context _context;
         public AdminRepository(Context context) 
@@ -14,10 +16,11 @@ namespace Infrastructure
             _context.Admins.Add(admin);
             _context.SaveChanges();
         }
-        public void Update(Admin admin)
+        public Admin Update(Admin admin)
         {
             _context.Admins.Update(admin);
             _context.SaveChanges();
+            return admin;
         }
         public Admin GetByAdminId(long adminId, bool deleted = false)
         {
@@ -31,9 +34,9 @@ namespace Infrastructure
         {
             return _context.Admins.Where(a => a.TokenForStart == passwordToken && a.IsDeleted == deleted).FirstOrDefault();
         }
-        public Admin GetByRecoveryCode(int recoveryCode)
+        public Admin GetByRecoveryCode(int recoveryCode, bool deleted = false)
         {
-            return _context.Admins.Where(a => a.RecoveryCode == recoveryCode).FirstOrDefault();
+            return _context.Admins.Where(a => a.RecoveryCode == recoveryCode && a.IsDeleted == deleted).FirstOrDefault();
         }
         public Admin[] GetActiveAdmins(int adminId, int since, int count, bool isDeleted = false)
         {
@@ -42,7 +45,7 @@ namespace Infrastructure
                 .Take(count)
                 .ToArray();
         }
-        public dynamic GetUsers(int since, int count, bool isDeleted = false, bool activate = true)
+        public ICollection<User> GetUsers(int since, int count, bool isDeleted = false, bool activate = true)
         {
             var users = _context.Users
                 .Join(_context.UserProfile,
@@ -51,14 +54,7 @@ namespace Infrastructure
                       (user, profile) => new { user, profile })
                 .Where(up => up.user.IsDeleted == isDeleted && up.user.Activate == activate)
                 .OrderByDescending(up => up.user.Id)
-                .Select(up => new
-                {
-                    user_email = up.user.Email,
-                    registration = up.user.CreatedAt,
-                    activity = up.user.LastLoginAt,
-                    sessions_count = _context.BusinessAccounts
-                        .Count(ba => ba.AccountId == up.user.Id && !ba.IsDeleted)
-                })
+                .Select(up => up.user)
                 .Skip(since * count)
                 .Take(count)
                 .ToArray();

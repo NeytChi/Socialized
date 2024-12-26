@@ -9,10 +9,6 @@ using UseCases.InstagramAccounts.Commands;
 
 namespace UseCases.InstagramAccounts
 {
-    public interface IIGAccountManager
-    {
-        IGAccount Create(CreateIgAccountCommand command);
-    }
     public class CreateIGAccountManager : IGAccountManager, IIGAccountManager
     {
         public CreateIGAccountManager(ILogger logger, 

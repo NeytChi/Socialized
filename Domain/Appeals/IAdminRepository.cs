@@ -1,15 +1,16 @@
-﻿namespace Domain.Appeals
+﻿using Domain.Users;
+
+namespace Domain.Appeals
 {
     public interface IAdminRepository
     {
         void Create(Admin admin);
         Admin Update(Admin admin);
-        Admin GetByAdminId(long id);
-        Admin GetByRecoveryCode(int recoveryCode);
-        Admin GetByEmail(string email);
-        Admin GetByPasswordToken(string email);
-        Admin[] GetActiveAdmins(long adminId, int since, int count);
-        dynamic GetUser(int since, int count);
-        dynamic GetFollowers(int since, int count);
+        Admin GetByAdminId(long id, bool deleted = false);
+        Admin GetByRecoveryCode(int recoveryCode, bool deleted = false);
+        Admin GetByEmail(string email, bool deleted = false);
+        Admin GetByPasswordToken(string email, bool deleted = false);
+        Admin[] GetActiveAdmins(long adminId, int since, int count, bool isDeleted = false);
+        ICollection<User> GetUsers(int since, int count, bool isDeleted = false, bool activate = true);
     }
 }

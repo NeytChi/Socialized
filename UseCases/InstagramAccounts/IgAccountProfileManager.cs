@@ -1,11 +1,6 @@
 ﻿using Domain.InstagramAccounts;
 using InstagramApiSharp.API;
 using Serilog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UseCases.InstagramAccounts
 {

@@ -6,11 +6,6 @@ using UseCases.Users.Commands;
 
 namespace UseCases.Users
 {
-    public interface IUserLoginManager
-    {
-        User Login(LoginUserCommand command);
-        void LogOut(string userToken);
-    }
     public class UserLoginManager : BaseManager, IUserLoginManager
     {
         private IUserRepository UserRepository;

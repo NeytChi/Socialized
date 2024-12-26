@@ -6,13 +6,7 @@ using Domain.Appeals;
 using Domain.Appeals.Replies;
 
 namespace UseCases.Appeals.Replies
-{
-    public interface IAppealMessageReplyManager
-    {
-        AppealMessageReply Create(CreateAppealMessageReplyCommand command);
-        void Update(UpdateAppealMessageReplyCommand command);
-        void Delete(DeleteAppealMessageReplyCommand command);
-    }
+{    
     public class AppealMessageReplyManager : BaseManager, IAppealMessageReplyManager
     {
         private IAppealManager AppealManager;

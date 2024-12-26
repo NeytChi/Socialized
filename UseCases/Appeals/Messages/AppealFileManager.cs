@@ -6,10 +6,6 @@ using Domain.Appeals.Messages;
 
 namespace UseCases.Appeals.Messages
 {
-    public interface IAppealFileManager
-    {
-        HashSet<AppealFile> Create(ICollection<IFormFile> upload, long messageId);
-    }
     public class AppealFileManager : BaseManager , IAppealFileManager
     {
         private IFileManager FileManager;

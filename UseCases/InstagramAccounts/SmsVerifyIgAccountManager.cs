@@ -8,10 +8,6 @@ using UseCases.InstagramAccounts.Commands;
 
 namespace UseCases.InstagramAccounts
 {
-    public interface ISmsVerifyIgAccountManager
-    {
-        void SmsVerifySession(SmsVefiryIgAccountCommand command);
-    }
     public class SmsVerifyIgAccountManager : IGAccountManager, ISmsVerifyIgAccountManager
     {
         public SmsVerifyIgAccountManager(ILogger logger, 

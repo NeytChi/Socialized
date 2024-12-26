@@ -2,12 +2,7 @@
 
 namespace UseCases.Users
 {
-    public interface IEmailMessager
-    {
-        void SendConfirmEmail(string userEmail, string culture, string userHash);
-        void SendRecoveryEmail(string userEmail, string culture, int recoveryCode);
-    }
-    public class EmailMessanger : IEmailMessager
+    public class EmailMessanger : IEmailMessanger
     {
         private SmtpSender SmtpSender;
 

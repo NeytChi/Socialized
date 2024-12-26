@@ -9,24 +9,17 @@ using Domain.Packages;
 
 namespace UseCases.Users
 {
-    public interface IUsersManager
-    {
-        void Create(CreateUserCommand command);
-        void RegistrationEmail(string userEmail, string culture);
-        void Activate(string hash);
-        void Delete(string userToken);
-    }
     public class UsersManager : BaseManager, IUsersManager
     {
         private IUserRepository UserRepository;
         
         public ProfileCondition ProfileCondition = new ProfileCondition();
         public PackageManager PackageCondition;
-        private IEmailMessager EmailMessanger;
+        private IEmailMessanger EmailMessanger;
 
         public UsersManager(ILogger logger,
             IUserRepository userRepository,
-            IEmailMessager emailMessager) : base(logger) 
+            IEmailMessanger emailMessager) : base(logger) 
         {
             UserRepository = userRepository;
             EmailMessanger = emailMessager;

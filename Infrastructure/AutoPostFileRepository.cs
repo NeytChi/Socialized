@@ -1,5 +1,4 @@
 ﻿using Domain.AutoPosting;
-using Microsoft.EntityFrameworkCore;
 using UseCases.AutoPosts.AutoPostFiles;
 
 namespace Infrastructure
@@ -40,9 +39,9 @@ namespace Infrastructure
         {
             return _context.AutoPostFiles.Where(f => f.Id == fileId && f.PostId == postId && f.IsDeleted == fileDeleted).FirstOrDefault();
         }
-        public ICollection<AutoPostFile> GetBy(long postId, bool fileDeleted = false)
+        public ICollection<AutoPostFile> GetBy(long autoPostFileId, bool fileDeleted = false)
         {
-            return _context.AutoPostFiles.Where(f => f.Id == postId && f.IsDeleted == fileDeleted).OrderBy(f => f.Order).ToList();
+            return _context.AutoPostFiles.Where(f => f.Id == autoPostFileId && f.IsDeleted == fileDeleted).OrderBy(f => f.Order).ToList();
         }
         public List<AutoPost> GetBy(
             DateTime deleteAfter,
@@ -64,13 +63,7 @@ namespace Infrastructure
             return _context.AutoPostFiles
                 .Where(f => f.PostId == autoPostId && f.IsDeleted == fileDeleted).ToArray();
         }
-
         AutoPostFile IAutoPostFileRepository.GetBy(long autoPostFileId, bool IsDeleted)
-        {
-            throw new NotImplementedException();
-        }
-
-        public AutoPostFile GetBy(string userToken, long autoPostFileId, bool IsDeleted = false)
         {
             throw new NotImplementedException();
         }

@@ -1,15 +1,33 @@
 ﻿using Domain.GettingSubscribes;
-using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    public class TaskGsRepository
+    public class TaskGsRepository : ITaskGsRepository, ITaskGettingSubscribesRepository
     {
         private Context _context;
 
         public TaskGsRepository(Context context) 
         {
             _context = context;
+        }
+        public void Create(TaskGS taskGS)
+        {
+            _context.TaskGS.Add(taskGS);
+            _context.SaveChanges();
+        }
+        public void Update(TaskGS taskGS)
+        {
+            _context.TaskGS.Update(taskGS);
+            _context.SaveChanges();
+        }
+        public void Update(ICollection<TaskGS> tasks)
+        {
+            _context.TaskGS.UpdateRange(tasks);
+            _context.SaveChanges();
+        }
+        public ICollection<TaskGS> GetBy(long accountId)
+        {
+            return _context.TaskGS.Where(t => t.AccountId == accountId).ToList();
         }
         public TaskGS GetBy(long taskId, bool taskDeleted = false)
         {

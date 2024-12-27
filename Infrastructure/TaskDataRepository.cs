@@ -1,15 +1,24 @@
 ﻿using Domain.GettingSubscribes;
-using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    public class TaskDataRepository
+    public class TaskDataRepository : ITaskDataRepository
     {
         private Context _context;
 
         public TaskDataRepository(Context context)
         {
             _context = context;
+        }
+        public void Create(TaskData taskData)
+        {
+            _context.TaskData.Add(taskData);
+            _context.SaveChanges();
+        }
+        public void Update(TaskData taskData)
+        {
+            _context.TaskData.Update(taskData);
+            _context.SaveChanges();
         }
         public TaskData GetBy(string userToken, long dataId, bool deleted = false)
         {

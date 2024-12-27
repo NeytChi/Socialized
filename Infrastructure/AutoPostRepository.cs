@@ -1,6 +1,6 @@
 ﻿using Domain.AutoPosting;
 using Microsoft.EntityFrameworkCore;
-using UseCases.AutoPosts.AutoPostFiles;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Infrastructure
 {
@@ -28,60 +28,111 @@ namespace Infrastructure
         }
         public AutoPost GetBy(string userToken, long postId, bool postDeleted = false)
         {
-            return (from autoPost in _context.AutoPosts
-                    join account in _context.IGAccounts on autoPost.AccountId equals account.Id
-                    join user in _context.Users on account.UserId equals user.Id
-                    where user.TokenForUse == userToken
-                        && autoPost.Id == postId
-                        && autoPost.IsDeleted == postDeleted
-                    select autoPost).FirstOrDefault();
+            return _context.AutoPosts
+                .Join(_context.IGAccounts,
+                      autoPost => autoPost.AccountId,
+                      account => account.Id,
+                      (autoPost, account) => new { autoPost, account })
+                .Join(_context.Users,
+                      aa => aa.account.UserId,
+                      user => user.Id,
+                      (aa, user) => new { aa.autoPost, user })
+                .Where(au => au.user.TokenForUse == userToken
+                             && au.autoPost.Id == postId
+                             && au.autoPost.IsDeleted == postDeleted)
+                .Select(au => au.autoPost)
+                .FirstOrDefault();
         }
         public AutoPost GetBy(string userToken, long postId, bool postDeleted, bool postAutoDeleted, bool postExecuted)
         {
-            return (from p in _context.AutoPosts
-                    join s in _context.IGAccounts on p.AccountId equals s.Id
-                    join u in _context.Users on s.UserId equals u.Id
-                    where u.TokenForUse == userToken
-                        && p.Id == postId
-                        && p.Deleted == postDeleted
-                        && p.AutoDeleted == postAutoDeleted
-                        && p.Executed == postExecuted
-                    select p).FirstOrDefault();
+            return _context.AutoPosts
+                .Join(_context.IGAccounts,
+                      p => p.AccountId,
+                      s => s.Id,
+                      (p, s) => new { p, s })
+                .Join(_context.Users,
+                      ps => ps.s.UserId,
+                      u => u.Id,
+                      (ps, u) => new { ps.p, u })
+                .Where(psu => psu.u.TokenForUse == userToken
+                               && psu.p.Id == postId
+                               && psu.p.Deleted == postDeleted
+                               && psu.p.AutoDeleted == postAutoDeleted
+                               && psu.p.Executed == postExecuted)
+                .Select(psu => psu.p)
+                .FirstOrDefault();
         }
         public ICollection<AutoPost> GetBy(GetAutoPostsCommand command)
         {
-            return (from p in _context.AutoPosts
-                    join s in _context.IGAccounts on p.AccountId equals s.Id
-                    join u in _context.Users on s.UserId equals u.Id
-                    join f in _context.AutoPostFiles on p.Id equals f.PostId into files
-                    where u.TokenForUse == command.UserToken
-                        && s.Id == command.AccountId
-                        && p.Executed == command.PostExecuted
-                        && p.IsDeleted == command.PostDeleted
-                        && p.AutoDeleted == command.PostAutoDeleted
-                        && p.ExecuteAt > command.From
-                        && p.ExecuteAt < command.To
-                    orderby p.Id descending
-                    select p )
-                    .Skip(command.Since * command.Count).Take(command.Count).ToList();
-        }
-
-        public List<AutoPost> GetBy(DateTime deleteAfter, bool autoDeleted = false, bool postExecuted = true, bool postAutoDeleted = false, bool postDeleted = false)
-        {
-            throw new NotImplementedException();
+            return _context.AutoPosts
+                .Join(_context.IGAccounts,
+                      p => p.AccountId,
+                      s => s.Id,
+                      (p, s) => new { p, s })
+                .Join(_context.Users,
+                      ps => ps.s.UserId,
+                      u => u.Id,
+                      (ps, u) => new { ps.p, ps.s, u })
+                .GroupJoin(_context.AutoPostFiles,
+                           psu => psu.p.Id,
+                           f => f.PostId,
+                           (psu, files) => new { psu.p, psu.s, psu.u, files })
+                .Where(psuf => psuf.u.TokenForUse == command.UserToken
+                               && psuf.s.Id == command.AccountId
+                               && psuf.p.Executed == command.PostExecuted
+                               && psuf.p.IsDeleted == command.PostDeleted
+                               && psuf.p.AutoDeleted == command.PostAutoDeleted
+                               && psuf.p.ExecuteAt > command.From
+                               && psuf.p.ExecuteAt < command.To)
+                .OrderByDescending(psuf => psuf.p.Id)
+                .Select(psuf => psuf.p)
+                .Skip(command.Since * command.Count)
+                .Take(command.Count)
+                .ToList();
         }
 
         public AutoPost GetByWithFiles(long autoPostFileId, bool postDeleted = false)
         {
-            throw new NotImplementedException();
+            return _context.AutoPosts
+                .Join(_context.IGAccounts, 
+                        p => p.AccountId, 
+                        s => s.Id, (p, s) => new { p, s })
+                .Join(_context.Users, 
+                    ps => ps.s.UserId, 
+                    u => u.Id, (ps, u) => new { ps.p, ps.s, u })
+                .Where(post => post.p.IsDeleted == postDeleted 
+                    && post.p.files.Any(f => f.Id == autoPostFileId))
+                .Select(post => post.p)
+                .Include(p => p.account)
+                .ThenInclude(a => a.User)
+                .Include(p => p.files)
+                .FirstOrDefault();
         }
 
         public AutoPost GetByWithUserAndFiles(string userToken, long autoPostId, bool postDeleted = false)
         {
-            throw new NotImplementedException();
+            return _context.AutoPosts
+                .Join(_context.IGAccounts,
+                      p => p.AccountId,
+                      s => s.Id,
+                      (p, s) => new { p, s })
+                .Join(_context.Users,
+                      ps => ps.s.UserId,
+                      u => u.Id,
+                      (ps, u) => new { ps.p, ps.s, u })
+                .GroupJoin(_context.AutoPostFiles,
+                           psu => psu.p.Id,
+                           f => f.PostId,
+                           (psu, files) => new { psu.p, psu.s, psu.u, files })
+                .Include(post => post.p.account)
+                .Include(post => post.p.account.User)
+                .Include(post => post.p.files)
+                .Where(post => post.p.Id == autoPostId
+                    && post.u.TokenForUse == userToken
+                    && post.p.IsDeleted == postDeleted)
+                .Select(post => post.p)
+                .FirstOrDefault();
         }
-
-        
     }
 }
 /*

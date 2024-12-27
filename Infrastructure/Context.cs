@@ -47,6 +47,7 @@ namespace Infrastructure
         public virtual DbSet<AppealMessage> AppealMessages { get; set; }
         public virtual DbSet<AppealMessageReply> AppealReplies { get; set; }
         public virtual DbSet<AppealFile> AppealFiles { get; set; }
+        public virtual DbSet<DiscountPackage> DiscountPackages { get; set; }
         
         public Context()
         {

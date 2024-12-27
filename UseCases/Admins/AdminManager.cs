@@ -88,7 +88,7 @@ namespace UseCases.Admins
         public ICollection<User> GetUsers(int since, int count)
         {
             Logger.Information($"Отримано список користувачів, з={since} по={count}.");
-            return adminRepository.GetFollowers(since, count);
+            return adminRepository.GetUsers(since, count);
         }
         public void CreateCodeForRecoveryPassword(string adminEmail)
         {

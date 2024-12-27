@@ -1,25 +1,36 @@
 ﻿using Domain.AutoPosting;
+using Microsoft.EntityFrameworkCore;
+using UseCases.AutoPosts.AutoPostFiles;
 
 namespace Infrastructure
 {
-    public class AutoPostRepository
+    public class AutoPostRepository : IAutoPostRepository
     {
-        private Context Context;
+        private Context _context;
         public AutoPostRepository(Context context)
         {
-            Context = context;
+            _context = context;
         }
-        public List<AutoPost> GetBy(DateTime executeAt,
-            bool postExecuted = false,
-            bool postDeleted = false)
+
+        public void Add(AutoPost autoPost)
         {
-            return Context.AutoPosts.Where(a => a.Executed == postExecuted && executeAt > a.ExecuteAt && a.Deleted == postDeleted).OrderBy(a => a.ExecuteAt).ToList();
+            _context.AutoPosts.Add(autoPost);
+            _context.SaveChanges();
+        }
+        public void Update(AutoPost autoPost)
+        {
+            _context.AutoPosts.Update(autoPost);
+            _context.SaveChanges();
+        }
+        public List<AutoPost> GetBy(DateTime executeAt, bool postExecuted = false, bool postDeleted = false)
+        {
+            return _context.AutoPosts.Where(a => a.Executed == postExecuted && executeAt > a.ExecuteAt && a.Deleted == postDeleted).OrderBy(a => a.ExecuteAt).ToList();
         }
         public AutoPost GetBy(string userToken, long postId, bool postDeleted = false)
         {
-            return (from autoPost in Context.AutoPosts
-                    join account in Context.IGAccounts on autoPost.AccountId equals account.Id
-                    join user in Context.Users on account.UserId equals user.Id
+            return (from autoPost in _context.AutoPosts
+                    join account in _context.IGAccounts on autoPost.AccountId equals account.Id
+                    join user in _context.Users on account.UserId equals user.Id
                     where user.TokenForUse == userToken
                         && autoPost.Id == postId
                         && autoPost.IsDeleted == postDeleted
@@ -27,9 +38,9 @@ namespace Infrastructure
         }
         public AutoPost GetBy(string userToken, long postId, bool postDeleted, bool postAutoDeleted, bool postExecuted)
         {
-            return (from p in Context.AutoPosts
-                    join s in Context.IGAccounts on p.AccountId equals s.Id
-                    join u in Context.Users on s.UserId equals u.Id
+            return (from p in _context.AutoPosts
+                    join s in _context.IGAccounts on p.AccountId equals s.Id
+                    join u in _context.Users on s.UserId equals u.Id
                     where u.TokenForUse == userToken
                         && p.Id == postId
                         && p.Deleted == postDeleted
@@ -39,10 +50,10 @@ namespace Infrastructure
         }
         public ICollection<AutoPost> GetBy(GetAutoPostsCommand command)
         {
-            return (from p in Context.AutoPosts
-                    join s in Context.IGAccounts on p.AccountId equals s.Id
-                    join u in Context.Users on s.UserId equals u.Id
-                    join f in Context.AutoPostFiles on p.Id equals f.PostId into files
+            return (from p in _context.AutoPosts
+                    join s in _context.IGAccounts on p.AccountId equals s.Id
+                    join u in _context.Users on s.UserId equals u.Id
+                    join f in _context.AutoPostFiles on p.Id equals f.PostId into files
                     where u.TokenForUse == command.UserToken
                         && s.Id == command.AccountId
                         && p.Executed == command.PostExecuted
@@ -54,6 +65,23 @@ namespace Infrastructure
                     select p )
                     .Skip(command.Since * command.Count).Take(command.Count).ToList();
         }
+
+        public List<AutoPost> GetBy(DateTime deleteAfter, bool autoDeleted = false, bool postExecuted = true, bool postAutoDeleted = false, bool postDeleted = false)
+        {
+            throw new NotImplementedException();
+        }
+
+        public AutoPost GetByWithFiles(long autoPostFileId, bool postDeleted = false)
+        {
+            throw new NotImplementedException();
+        }
+
+        public AutoPost GetByWithUserAndFiles(string userToken, long autoPostId, bool postDeleted = false)
+        {
+            throw new NotImplementedException();
+        }
+
+        
     }
 }
 /*

@@ -38,7 +38,7 @@ namespace Infrastructure
         {
             return _context.Admins.Where(a => a.RecoveryCode == recoveryCode && a.IsDeleted == deleted).FirstOrDefault();
         }
-        public Admin[] GetActiveAdmins(int adminId, int since, int count, bool isDeleted = false)
+        public Admin[] GetActiveAdmins(long adminId, int since, int count, bool isDeleted = false)
         {
             return _context.Admins.Where(a => a.Id != adminId && a.IsDeleted == isDeleted)
                 .Skip(since * count)

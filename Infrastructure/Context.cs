@@ -45,6 +45,7 @@ namespace Infrastructure
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Appeal> Appeals { get; set; }
         public virtual DbSet<AppealMessage> AppealMessages { get; set; }
+        public virtual DbSet<AppealMessageReply> AppealReplies { get; set; }
         public virtual DbSet<AppealFile> AppealFiles { get; set; }
         
         public Context()

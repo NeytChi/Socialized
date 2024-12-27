@@ -29,7 +29,7 @@ namespace WebAPI.Controllers
         [ActionName("GetClientToken")]
         public ActionResult<dynamic> GetClientToken()
         {
-            var userToken = "";// GetAutorizationToken();
+            var userToken = GetAutorizationToken();
             
             var result = PackageManager.GetClientTokenForPay(userToken);
 

@@ -1,8 +1,10 @@
 ﻿using Domain.Admins;
+using Domain.Appeals;
+using Domain.Appeals.Messages;
 
 namespace Infrastructure
 {
-    public class AppealRepository
+    public class AppealRepository : IAppealRepository
     {
         private Context _context;
         public AppealRepository(Context context) 
@@ -13,8 +15,8 @@ namespace Infrastructure
         {
             return _context.Appeals.Where(a => a.Id == appealId).FirstOrDefault();
         }
-        public Appeal GetBy(long appealId, string userToken, int appealStateIsNot = 4) => _context.Appeals
-                .Join(_context.Users,
+        public Appeal GetBy(long appealId, string userToken, int appealStateIsNot = 4) 
+            => _context.Appeals.Join(_context.Users,
                     appeal => appeal.UserId,
                     user => user.Id,
                     (appeal, user) => new { appeal, user })
@@ -45,6 +47,42 @@ namespace Infrastructure
                     orderby appeal.CreatedAt descending
                     select appeal)
             .Skip(since * count).Take(count).ToArray();
+        }
+        public void Create(Appeal appeal)
+        {
+            _context.Appeals.Add(appeal);
+            _context.SaveChanges();
+        }
+        public void Update(Appeal appeal)
+        {
+            _context.Appeals.Update(appeal);
+            _context.SaveChanges();
+        }
+        public Appeal GetBy(long appealId)
+        {
+            return _context.Appeals
+                .Join(_context.Users,
+                    appeal => appeal.UserId,
+                    user => user.Id,
+                    (appeal, user) => new { appeal, user })
+                .Where(au => au.appeal.Id == appealId)
+                .Select(au => au.appeal)
+                .FirstOrDefault();
+        }
+        public Appeal GetBy(long appealId, string userToken)
+        {
+            return _context.Appeals.Where(a => a.Id == appealId).FirstOrDefault();
+        }
+        public Appeal[] GetAppealsBy(string userToken, int since = 0, int count = 10)
+        {
+            return _context.Appeals
+                .Join(_context.Users,
+                    appeal => appeal.UserId,
+                    user => user.Id,
+                    (appeal, user) => new { appeal, user })
+                .Where(au => au.user.TokenForUse == userToken)
+                .Select(au => au.appeal)
+                .ToArray();
         }
     }
 }

@@ -3,7 +3,7 @@ using Domain.Appeals.Messages;
 
 namespace Infrastructure
 {
-    public class AppealFileRepository : IAppealFilesRepository
+    public class AppealFileRepository : IAppealFileRepository
     {
         private Context _context;
         public AppealFileRepository(Context context)

@@ -1,10 +1,12 @@
-﻿using Domain.InstagramAccounts;
+﻿using Domain.AutoPosting;
+using Domain.InstagramAccounts;
+using Domain.Packages;
 using Domain.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure
 {
-    public class IGAccountRepository : IIGAccountRepository
+    public class IGAccountRepository : IIGAccountRepository, IForServerAccessCountingRepository
     {
         private Context Context;
         public IGAccountRepository(Context context)
@@ -58,13 +60,28 @@ namespace Infrastructure
                 .Where(a => a.Username == instagramUsername
                     && a.User.TokenForUse == userToken).FirstOrDefault();
         }
-
         public IGAccount GetByWithState(long accountId, bool accountDeleted = false)
         {
             return Context.IGAccounts
                 .Include(a => a.State)
                 .Where(a => a.Id == accountId
                     && a.IsDeleted == accountDeleted).FirstOrDefault();
+        }
+        public ICollection<IGAccount> GetAccounts(long userId, bool accountDeleted = false)
+        {
+            return Context.IGAccounts.Where(a => a.UserId == userId && a.IsDeleted == accountDeleted).ToArray();
+        }
+
+        public ICollection<AutoPost> Get(long userId, bool postType)
+        {
+            return Context.AutoPosts
+                .Join(Context.IGAccounts,
+                    post => post.AccountId,
+                    account => account.Id,
+                    (post, account) => new { post, account })
+                .Where(pa => pa.account.UserId == userId && pa.post.Type == postType)
+                .Select(pa => pa.post)
+                .ToArray();
         }
     }
 }

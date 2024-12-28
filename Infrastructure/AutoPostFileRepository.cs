@@ -31,17 +31,34 @@ namespace Infrastructure
             _context.AutoPostFiles.UpdateRange(posts);
             _context.SaveChanges();
         }
-        public AutoPostFile GetBy(long postId)
+        public AutoPostFile GetBy(long postId, bool IsDeleted)
         {
-            return _context.AutoPostFiles.Where(p => p.Id == postId).FirstOrDefault();
+            return _context.AutoPostFiles.Where(p => p.Id == postId && p.IsDeleted == IsDeleted).FirstOrDefault();
         }
         public AutoPostFile GetBy(long fileId, long postId, bool fileDeleted = false)
         {
             return _context.AutoPostFiles.Where(f => f.Id == fileId && f.PostId == postId && f.IsDeleted == fileDeleted).FirstOrDefault();
         }
-        public ICollection<AutoPostFile> GetBy(long autoPostFileId, bool fileDeleted = false)
+        public AutoPostFile GetBy(string userToken, long autoPostFileId, bool isDeleted = false)
         {
-            return _context.AutoPostFiles.Where(f => f.Id == autoPostFileId && f.IsDeleted == fileDeleted).OrderBy(f => f.Order).ToList();
+            return _context.AutoPostFiles
+                .Join(_context.AutoPosts,
+                      file => file.PostId,
+                      post => post.Id,
+                      (file, post) => new { file, post })
+                .Join(_context.IGAccounts,
+                      filepost => filepost.post.AccountId,
+                      account => account.Id,
+                      (filepost, account) => new { filepost, account })
+                .Join(_context.Users,
+                      fpa => fpa.account.UserId,
+                      user => user.Id,
+                      (fpa, user) => new { fpa, user })
+                .Where(fpau => fpau.user.TokenForUse == userToken
+                             && fpau.fpa.filepost.file.Id == autoPostFileId
+                             && fpau.fpa.filepost.file.IsDeleted == isDeleted)
+                .Select(fpau => fpau.fpa.filepost.file)
+                .FirstOrDefault();
         }
         public List<AutoPost> GetBy(
             DateTime deleteAfter,
@@ -62,10 +79,6 @@ namespace Infrastructure
         {
             return _context.AutoPostFiles
                 .Where(f => f.PostId == autoPostId && f.IsDeleted == fileDeleted).ToArray();
-        }
-        AutoPostFile IAutoPostFileRepository.GetBy(long autoPostFileId, bool IsDeleted)
-        {
-            throw new NotImplementedException();
-        }
+        }    
     }
 }

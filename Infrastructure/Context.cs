@@ -48,7 +48,9 @@ namespace Infrastructure
         public virtual DbSet<AppealMessageReply> AppealReplies { get; set; }
         public virtual DbSet<AppealFile> AppealFiles { get; set; }
         public virtual DbSet<DiscountPackage> DiscountPackages { get; set; }
-        
+        public virtual DbSet<ServiceAccess> ServiceAccesses  { get; set; }
+        public virtual DbSet<PackageAccess> PackageAccess { get; set; }
+
         public Context()
         {
 
@@ -64,21 +66,7 @@ namespace Infrastructure
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (useInMemoryDatabase) 
-            {
-                optionsBuilder.UseInMemoryDatabase(databaseConfiguration().GetValue<string>("Database"));
-            }
             optionsBuilder.EnableSensitiveDataLogging();
-            if (useConfiguration) {
-                if (!optionsBuilder.IsConfigured) 
-                {
-                    optionsBuilder.UseMySql(databaseConnection());
-                }
-            }
-        }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            
         }
     }
 }

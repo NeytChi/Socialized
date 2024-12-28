@@ -61,3 +61,10 @@ UseCases/obj/Debug/net8.0/UseCases.csproj.CoreCompileInputs.cache
 UseCases/obj/Debug/net8.0/UseCases.dll
 UseCases/obj/Debug/net8.0/UseCases.pdb
 UseCases/obj/Debug/net8.0/UseCases.sourcelink.json
+/Domain/.vs
+/Domain/bin
+/Domain/obj/Debug
+/Infrastructure/.vs
+/Infrastructure/bin
+/Infrastructure/obj
+/UseCases/.vs

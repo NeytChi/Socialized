@@ -10,6 +10,5 @@ namespace UseCases.Appeals
         ICollection<Appeal> GetAppealsByAdmin(int since, int count);
         void UpdateAppealToClosed(long appealId);
         void UpdateAppealToAnswered(long appealId);
-        void UpdateAppealToRead(long appealId);
     }
 }

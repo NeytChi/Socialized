@@ -97,10 +97,5 @@ namespace UseCases.Appeals
                 Logger.Information($"Звернення було оновлено, як прочитане, id={appeal.Id}.");
             }
         }
-
-        public void UpdateAppealToRead(long appealId)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

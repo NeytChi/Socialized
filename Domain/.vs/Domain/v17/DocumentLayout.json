@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\Domain\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\iappealfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\iappealfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -23,6 +27,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "IAppealFileRepository.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAppealFileRepository.cs",
+              "RelativeDocumentMoniker": "Appeals\\IAppealFileRepository.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAppealFileRepository.cs",
+              "RelativeToolTip": "Appeals\\IAppealFileRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T20:33:09.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "IAdminRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAdminRepository.cs",
               "RelativeDocumentMoniker": "Appeals\\IAdminRepository.cs",
@@ -30,8 +47,7 @@
               "RelativeToolTip": "Appeals\\IAdminRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T21:25:37.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-26T21:25:37.836Z"
             }
           ]
         }

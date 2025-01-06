@@ -9,7 +9,7 @@ using Domain.Appeals;
 
 namespace UseCases.Appeals
 {
-    public class AppealManager
+    public class AppealManager : IAppealManager
     {
         private IAppealRepository AppealRepository;
         private IUserRepository UserRepository;
@@ -96,6 +96,11 @@ namespace UseCases.Appeals
                 AppealRepository.Update(appeal);
                 Logger.Information($"Звернення було оновлено, як прочитане, id={appeal.Id}.");
             }
+        }
+
+        public void UpdateAppealToRead(long appealId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\Domain\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\iappealfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\iappealfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\autoposting\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:autoposting\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\autoposting\\iautopostrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:autoposting\\iautopostrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\autoposting\\iautopostfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:autoposting\\iautopostfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\autoposting\\autopostfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:autoposting\\autopostfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\autoposting\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:autoposting\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\autoposting\\getautopostscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:autoposting\\getautopostscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\users\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:users\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,105 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IAdminRepository.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAdminRepository.cs",
-              "RelativeDocumentMoniker": "Appeals\\IAdminRepository.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAdminRepository.cs",
-              "RelativeToolTip": "Appeals\\IAdminRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABnAAAAAAAAAA==",
+              "Title": "IAppealFileRepository.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAppealFileRepository.cs",
+              "RelativeDocumentMoniker": "Appeals\\IAppealFileRepository.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAppealFileRepository.cs",
+              "RelativeToolTip": "Appeals\\IAppealFileRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T21:25:37.836Z",
+              "WhenOpened": "2024-12-28T20:33:09.455Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ICategoryRepository.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\ICategoryRepository.cs",
-              "RelativeDocumentMoniker": "AutoPosting\\ICategoryRepository.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\ICategoryRepository.cs",
-              "RelativeToolTip": "AutoPosting\\ICategoryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IAdminRepository.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAdminRepository.cs",
+              "RelativeDocumentMoniker": "Appeals\\IAdminRepository.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAdminRepository.cs",
+              "RelativeToolTip": "Appeals\\IAdminRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T21:25:24.848Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IAutoPostRepository.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\IAutoPostRepository.cs",
-              "RelativeDocumentMoniker": "AutoPosting\\IAutoPostRepository.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\IAutoPostRepository.cs",
-              "RelativeToolTip": "AutoPosting\\IAutoPostRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T21:25:21.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IAutoPostFileRepository.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\IAutoPostFileRepository.cs",
-              "RelativeDocumentMoniker": "AutoPosting\\IAutoPostFileRepository.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\IAutoPostFileRepository.cs",
-              "RelativeToolTip": "AutoPosting\\IAutoPostFileRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T21:25:18.945Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AutoPostFile.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\AutoPostFile.cs",
-              "RelativeDocumentMoniker": "AutoPosting\\AutoPostFile.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\AutoPostFile.cs",
-              "RelativeToolTip": "AutoPosting\\AutoPostFile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T21:25:17.205Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Category.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\Category.cs",
-              "RelativeDocumentMoniker": "AutoPosting\\Category.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\Category.cs",
-              "RelativeToolTip": "AutoPosting\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T21:25:15.307Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GetAutoPostsCommand.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\GetAutoPostsCommand.cs",
-              "RelativeDocumentMoniker": "AutoPosting\\GetAutoPostsCommand.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\GetAutoPostsCommand.cs",
-              "RelativeToolTip": "AutoPosting\\GetAutoPostsCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T21:25:13.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Users\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "Users\\IUserRepository.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Users\\IUserRepository.cs",
-              "RelativeToolTip": "Users\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T14:39:50.082Z",
+              "WhenOpened": "2024-12-26T21:25:37.836Z",
               "EditorCaption": ""
             }
           ]

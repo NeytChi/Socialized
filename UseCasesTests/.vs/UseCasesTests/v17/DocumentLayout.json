@@ -1,7 +1,16 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\Socialized\\UseCases\\UseCasesTests\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\UseCasesTests\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|d:\\vs projects\\socialized\\usecasestests\\users\\userpasswordrecoverymanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|solutionrelative:users\\userpasswordrecoverymanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|d:\\vs projects\\socialized\\usecasestests\\users\\usersmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|solutionrelative:users\\usersmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +18,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserPasswordRecoveryManagerTests.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCasesTests\\Users\\UserPasswordRecoveryManagerTests.cs",
+              "RelativeDocumentMoniker": "Users\\UserPasswordRecoveryManagerTests.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCasesTests\\Users\\UserPasswordRecoveryManagerTests.cs",
+              "RelativeToolTip": "Users\\UserPasswordRecoveryManagerTests.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAAB4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T09:47:23.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsersManagerTests.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCasesTests\\Users\\UsersManagerTests.cs",
+              "RelativeDocumentMoniker": "Users\\UsersManagerTests.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCasesTests\\Users\\UsersManagerTests.cs",
+              "RelativeToolTip": "Users\\UsersManagerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T16:09:52.193Z",
+              "EditorCaption": ""
             }
           ]
         }

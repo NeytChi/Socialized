@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\UseCases\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\appeals\\replies\\appealmessagereplymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:appeals\\replies\\appealmessagereplymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\users\\usersmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:users\\usersmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\users\\iuserpasswordrecoverymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:users\\iuserpasswordrecoverymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\users\\iuserloginmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:users\\iuserloginmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\users\\iemailmessanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:users\\iemailmessanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\users\\emailmessanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:users\\emailmessanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\basemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:basemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +34,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IUserPasswordRecoveryManager.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Users\\IUserPasswordRecoveryManager.cs",
+              "RelativeDocumentMoniker": "Users\\IUserPasswordRecoveryManager.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Users\\IUserPasswordRecoveryManager.cs",
+              "RelativeToolTip": "Users\\IUserPasswordRecoveryManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T08:39:04.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IUserLoginManager.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Users\\IUserLoginManager.cs",
+              "RelativeDocumentMoniker": "Users\\IUserLoginManager.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Users\\IUserLoginManager.cs",
+              "RelativeToolTip": "Users\\IUserLoginManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T08:39:02.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IEmailMessanger.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Users\\IEmailMessanger.cs",
+              "RelativeDocumentMoniker": "Users\\IEmailMessanger.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Users\\IEmailMessanger.cs",
+              "RelativeToolTip": "Users\\IEmailMessanger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T08:39:01.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmailMessanger.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Users\\EmailMessanger.cs",
+              "RelativeDocumentMoniker": "Users\\EmailMessanger.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Users\\EmailMessanger.cs",
+              "RelativeToolTip": "Users\\EmailMessanger.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T08:38:58.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BaseManager.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\BaseManager.cs",
+              "RelativeDocumentMoniker": "BaseManager.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\BaseManager.cs",
+              "RelativeToolTip": "BaseManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T08:38:45.015Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -23,14 +108,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AppealMessageReplyManager.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Appeals\\Replies\\AppealMessageReplyManager.cs",
-              "RelativeDocumentMoniker": "Appeals\\Replies\\AppealMessageReplyManager.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Appeals\\Replies\\AppealMessageReplyManager.cs",
-              "RelativeToolTip": "Appeals\\Replies\\AppealMessageReplyManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "UsersManager.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Users\\UsersManager.cs",
+              "RelativeDocumentMoniker": "Users\\UsersManager.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Users\\UsersManager.cs",
+              "RelativeToolTip": "Users\\UsersManager.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAwFkAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T14:26:49.442Z",
+              "WhenOpened": "2025-01-05T16:10:10.383Z",
               "EditorCaption": ""
             }
           ]

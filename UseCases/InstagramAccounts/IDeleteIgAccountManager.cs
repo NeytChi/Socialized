@@ -1,6 +1,6 @@
 ﻿namespace UseCases.InstagramAccounts
 {
-    internal interface IDeleteIgAccountManager
+    public interface IDeleteIgAccountManager
     {
         void Delete(long accountId);
     }

@@ -15,6 +15,7 @@ namespace WebAPI.Controllers
         public AdminsController(IAdminManager adminManager, IJwtTokenManager jwtTokenManager)
         {
             AdminManager = adminManager;
+            JwtTokenManager = jwtTokenManager;
         }
         [HttpPost]
         [Authorize]

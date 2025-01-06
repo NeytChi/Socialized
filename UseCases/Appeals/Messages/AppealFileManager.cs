@@ -9,11 +9,11 @@ namespace UseCases.Appeals.Messages
     public class AppealFileManager : BaseManager , IAppealFileManager
     {
         private IFileManager FileManager;
-        private IAppealFilesRepository AppealFilesRepository;
+        private IAppealFileRepository AppealFilesRepository;
 
         public AppealFileManager(ILogger logger, 
             IFileManager fileManager,
-            IAppealFilesRepository appealFilesRepository) : base(logger)
+            IAppealFileRepository appealFilesRepository) : base(logger)
         {
             AppealFilesRepository = appealFilesRepository;
         }

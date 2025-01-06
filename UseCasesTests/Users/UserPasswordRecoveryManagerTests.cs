@@ -13,12 +13,22 @@
 
         }
         [Fact]
-        public void CheckRecoveryCode()
+        public void CheckRecoveryCode_WhenCodeAndEmailIsValid_Return()
         {
 
         }
         [Fact]
-        public void ChangePassword()
+        public void CheckRecoveryCode_WhenEmailIsNotValid_ThrowException()
+        {
+
+        }
+        [Fact]
+        public void CheckRecoveryCode_WhenCodeIsNotValid_ThrowException()
+        {
+
+        }
+        [Fact]
+        public void ChangePassword_W()
         {
 
         }

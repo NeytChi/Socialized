@@ -7,7 +7,7 @@ using UseCases.Packages;
 using UseCases.Users;
 using UseCases.Users.Commands;
 
-namespace UseCasesTests
+namespace UseCasesTests.Users
 {
     public class UsersManagerTests
     {
@@ -99,7 +99,7 @@ namespace UseCasesTests
             userRepository.GetByEmail(email).ReturnsNull();
             var userManager = new UsersManager(logger, userRepository, emailMessanger, packageManager);
 
-            Assert.Throws<NotFoundException>(() => userManager.RegistrationEmail(email, culture));   
+            Assert.Throws<NotFoundException>(() => userManager.RegistrationEmail(email, culture));
         }
         [Fact]
         public void RegistrationEmail_WhenIsValid_Return()
@@ -110,7 +110,7 @@ namespace UseCasesTests
             var userRepository = Substitute.For<IUserRepository>();
             var emailMessanger = Substitute.For<IEmailMessanger>();
             var packageManager = Substitute.For<IPackageManager>();
-            var user = new User { Email = email, IsDeleted = true }; 
+            var user = new User { Email = email, IsDeleted = true };
             userRepository.GetByEmail(email).Returns(user);
             var userManager = new UsersManager(logger, userRepository, emailMessanger, packageManager);
 

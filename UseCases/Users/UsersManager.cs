@@ -14,28 +14,31 @@ namespace UseCases.Users
         private IUserRepository UserRepository;
         
         public ProfileCondition ProfileCondition = new ProfileCondition();
-        public PackageManager PackageCondition;
+        public IPackageManager PackageCondition;
         private IEmailMessanger EmailMessanger;
 
         public UsersManager(ILogger logger,
             IUserRepository userRepository,
-            IEmailMessanger emailMessager) : base(logger) 
+            IEmailMessanger emailMessager,
+            IPackageManager packageManager) : base(logger) 
         {
             UserRepository = userRepository;
             EmailMessanger = emailMessager;
+            PackageCondition = packageManager;
         }
         public void Create(CreateUserCommand command)
         {
             var user = UserRepository.GetByEmail(command.Email);
-            if (user != null)
+            if (user != null && user.IsDeleted)
             {
-                if (user.IsDeleted)
-                {
-                    user.IsDeleted = false;
-                    user.TokenForUse = Guid.NewGuid().ToString();
-                    UserRepository.Update(user);
-                    Logger.Information($"Був востановлен видалений аккаунт, id={user.Id}.");
-                }
+                user.IsDeleted = false;
+                user.TokenForUse = Guid.NewGuid().ToString();
+                UserRepository.Update(user);
+                Logger.Information($"Був востановлен видалений аккаунт, id={user.Id}.");
+                return;   
+            }
+            if (user != null && !user.IsDeleted)
+            {
                 throw new NotFoundException("Користувач з таким email-адресом вже існує.");
             }
             user = new User
@@ -84,7 +87,7 @@ namespace UseCases.Users
         public void Delete(string userToken)
         {
             var user = UserRepository.GetByUserTokenNotDeleted(userToken);
-            if (userToken == null)
+            if (user == null)
             {
                 throw new NotFoundException("Сервер не визначив користувача по його токену для видалення аккаунту.");                
             }

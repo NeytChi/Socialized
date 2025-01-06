@@ -4,27 +4,28 @@ using System.Web;
 using UseCases.Exceptions;
 using UseCases.Admins.Commands;
 using Domain.Users;
-using Domain;
-using Domain.Appeals;
+using Domain.Admins;
 
 namespace UseCases.Admins
 {
-    
     public class AdminManager : BaseManager, IAdminManager
     {
-        private IAdminRepository adminRepository;
+        private IAdminRepository AdminRepository;
         private IAdminEmailManager AdminEmailManager;
         private ProfileCondition ProfileCondition = new ProfileCondition();
         
-        public AdminManager(ILogger logger, IAdminEmailManager adminEmailManager) : base(logger)
+        public AdminManager(ILogger logger, 
+            IAdminRepository adminRepository,
+            IAdminEmailManager adminEmailManager) : base(logger)
         {
+            AdminRepository = adminRepository;
             AdminEmailManager = adminEmailManager;
         }
         public Admin Create(CreateAdminCommand command)
         {
-            if (adminRepository.GetByEmail(command.Email) != null)
+            if (AdminRepository.GetByEmail(command.Email) != null)
             {
-                throw new DuplicateWaitObjectException($"Admin with email={command.Email} is already exist.");
+                throw new NotFoundException($"Admin with email={command.Email} is already exist.");
             }
             var admin = new Admin
             {
@@ -43,19 +44,19 @@ namespace UseCases.Admins
         }
         public void SetupPassword(SetupPasswordCommand command)
         {
-            var admin = adminRepository.GetByPasswordToken(command.Password);
+            var admin = AdminRepository.GetByPasswordToken(command.Token);
             if (admin == null)
             {
                 throw new NotFoundException("Не було знайдено адміна по токену для зміни паролю.");
             }   
             admin.Password = ProfileCondition.HashPassword(command.Password);
             admin.TokenForStart = null;
-            adminRepository.Update(admin);
+            AdminRepository.Update(admin);
             Logger.Information($"Був налаштован пароль для адміна id={admin.Id}.");
         }
         public Admin Authentication(AuthenticationCommand command)
         {
-            var admin = adminRepository.GetByEmail(command.Email);
+            var admin = AdminRepository.GetByEmail(command.Email);
             if (admin == null)
             {
                 throw new NotFoundException("Не було знайдено адміна по email-адресі.");
@@ -66,52 +67,51 @@ namespace UseCases.Admins
             }
             Logger.Information($"Був аутентифікований адмін id={admin.Id}.");
             return admin;
-            // return Token(admin);
         }
         public void Delete(DeleteAdminCommand command)
         {
-            var admin = adminRepository.GetByAdminId(command.AdminId);
+            var admin = AdminRepository.GetByAdminId(command.AdminId);
             if (admin == null)
             {
                 throw new NotFoundException("Не було знайдено адміна по id.");
             }
             admin.IsDeleted = true;
             admin.DeletedAt = DateTime.UtcNow;
-            adminRepository.Update(admin);
+            AdminRepository.Update(admin);
             Logger.Information($"Адмін був видалений, id={admin.Id}.");
         }
         public ICollection<Admin> GetAdmins(long adminId, int since, int count)
         {
             Logger.Information($"Отримано список адмінів, з={since} по={count} адміном id={adminId}.");
-            return adminRepository.GetActiveAdmins(adminId, since, count);
+            return AdminRepository.GetActiveAdmins(adminId, since, count);
         }
         public ICollection<User> GetUsers(int since, int count)
         {
             Logger.Information($"Отримано список користувачів, з={since} по={count}.");
-            return adminRepository.GetUsers(since, count);
+            return AdminRepository.GetUsers(since, count);
         }
         public void CreateCodeForRecoveryPassword(string adminEmail)
         {
-            var admin = adminRepository.GetByEmail(adminEmail);
+            var admin = AdminRepository.GetByEmail(adminEmail);
             if (admin == null)
             {
                 throw new NotFoundException("Не було знайдено адміна по email-адресі.");
             }
             admin.RecoveryCode = ProfileCondition.CreateCode(6);
-            adminRepository.Update(admin);
+            AdminRepository.Update(admin);
             AdminEmailManager.RecoveryPassword(admin.RecoveryCode.Value, admin.Email);
             Logger.Information($"Був створений новий код відновлення паролю адміна, id={admin.Id}.");   
         }
         public void ChangePassword(ChangePasswordCommand command) 
         {
-            var admin = adminRepository.GetByRecoveryCode(command.RecoveryCode);
+            var admin = AdminRepository.GetByRecoveryCode(command.RecoveryCode);
             if (admin == null)
             {
                 throw new ArgumentNullException("Сервер не визначив адміна по коду. Неправильний код.");
             }    
             admin.Password = ProfileCondition.HashPassword(command.Password);
             admin.RecoveryCode = null;
-            adminRepository.Update(admin);
+            AdminRepository.Update(admin);
             Logger.Information($"Був змінений пароль у адміна, id={admin.Id}.");
         }
     }

@@ -1,5 +1,4 @@
-﻿using Domain;
-using Domain.Appeals;
+﻿using Domain.Admins;
 using Domain.Users;
 
 namespace Infrastructure

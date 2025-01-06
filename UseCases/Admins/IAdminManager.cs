@@ -1,5 +1,5 @@
 ﻿using Domain.Users;
-using Domain;
+using Domain.Admins;
 using UseCases.Admins.Commands;
 
 namespace UseCases.Admins

@@ -1,4 +1,5 @@
-﻿using Domain.Users;
+﻿using Core;
+using Domain.Users;
 using NSubstitute;
 using NSubstitute.ReturnsExtensions;
 using Serilog;

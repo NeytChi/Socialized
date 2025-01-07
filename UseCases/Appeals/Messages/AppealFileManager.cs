@@ -15,6 +15,7 @@ namespace UseCases.Appeals.Messages
             IFileManager fileManager,
             IAppealFileRepository appealFilesRepository) : base(logger)
         {
+            FileManager = fileManager;
             AppealFilesRepository = appealFilesRepository;
         }
         public HashSet<AppealFile> Create(ICollection<IFormFile> upload, long messageId)

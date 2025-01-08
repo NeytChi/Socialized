@@ -17,7 +17,7 @@ namespace UseCasesTests.Admins
         ProfileCondition profileCondition = new ProfileCondition();
 
         [Fact]
-        public void Create_WhenEmailIsValid_ReturnNewAdmin()
+        public void Create_WhenSameEmailIsNotFound_ReturnNewAdmin()
         {
             var command = new CreateAdminCommand
             {
@@ -36,7 +36,7 @@ namespace UseCasesTests.Admins
             Assert.Equal(result.LastName, command.LastName);
         }
         [Fact]
-        public void Create_WhenEmailIsNotValid_ThrowException()
+        public void Create_WhenSameEmailIsFound_ThrowNotFoundException()
         {
             var command = new CreateAdminCommand
             {
@@ -51,7 +51,7 @@ namespace UseCasesTests.Admins
             Assert.Throws<NotFoundException>(() => adminManager.Create(command));
         }
         [Fact]
-        public void SetupPassword_WhenTokenIsValid_Return()
+        public void SetupPassword_WhenAdminTokenIsFound_Return()
         {
             var command = new SetupPasswordCommand { Token = "1234567890", Password = "password" };
             repository.GetByPasswordToken(command.Token, false).Returns(new Admin { });
@@ -60,7 +60,7 @@ namespace UseCasesTests.Admins
             adminManager.SetupPassword(command);
         }
         [Fact]
-        public void SetupPassword_WhenTokenIsNotValid_ThrowException()
+        public void SetupPassword_WhenTokenIsNotFound_ThrowNotFoundException()
         {
             var command = new SetupPasswordCommand { Token = "1234567890", Password = "password" };
             repository.GetByPasswordToken(command.Token, false).ReturnsNull();
@@ -69,7 +69,7 @@ namespace UseCasesTests.Admins
             Assert.Throws<NotFoundException>(() => adminManager.SetupPassword(command));
         }
         [Fact]
-        public void Authentication_WhenEmailAndPasswordIsValid_ReturnAdmin()
+        public void Authentication_WhenEmailIsFoundAndPasswordIsValid_ReturnAdmin()
         {
             var command = new AuthenticationCommand
             {
@@ -87,7 +87,7 @@ namespace UseCasesTests.Admins
             Assert.Equal(command.Email, result.Email);
         }
         [Fact]
-        public void Authentication_WhenEmailIsNotValid_ThrowException()
+        public void Authentication_WhenEmailIsNotFound_ThrowNotFoundException()
         {
             var command = new AuthenticationCommand
             {
@@ -100,7 +100,7 @@ namespace UseCasesTests.Admins
             Assert.Throws<NotFoundException>(() => adminManager.Authentication(command));
         }
         [Fact]
-        public void Authentication_WhenPasswordIsNotValid_ThrowException()
+        public void Authentication_WhenPasswordIsNotValid_ThrowValidationExceptionException()
         {
             var command = new AuthenticationCommand
             {
@@ -115,7 +115,7 @@ namespace UseCasesTests.Admins
             Assert.Throws<ValidationException>(() => adminManager.Authentication(command));
         }
         [Fact]
-        public void Delete_WhenIdIsValid_Return()
+        public void Delete_WhenIdIsFound_Return()
         {
             var command = new DeleteAdminCommand { AdminId = 1 };
             repository.GetByAdminId(command.AdminId, false).Returns(new Admin { Id = 1 });
@@ -124,7 +124,7 @@ namespace UseCasesTests.Admins
             adminManager.Delete(command);
         }
         [Fact]
-        public void Delete_WhenIdIsNotValid_ThrowException()
+        public void Delete_WhenIdIsNotFound_ThrowNotFoundException()
         {
             var command = new DeleteAdminCommand { AdminId = 1 };
             repository.GetByAdminId(command.AdminId, false).ReturnsNull();
@@ -133,7 +133,7 @@ namespace UseCasesTests.Admins
             Assert.Throws<NotFoundException>(() => adminManager.Delete(command));
         }
         [Fact]
-        public void CreateCodeForRecoveryPassword_WhenEmailIsValid_Return()
+        public void CreateCodeForRecoveryPassword_WhenEmailIsFound_Return()
         {
             var email = "test@test.com";
             repository.GetByEmail(email, false).Returns(new Admin { Email = email });
@@ -142,7 +142,7 @@ namespace UseCasesTests.Admins
             adminManager.CreateCodeForRecoveryPassword(email);
         }
         [Fact]
-        public void CreateCodeForRecoveryPassword_WhenEmailIsNotValid_Return()
+        public void CreateCodeForRecoveryPassword_WhenEmailIsNotFound_Return()
         {
             var email = "test@test.com";
             repository.GetByEmail(email, false).ReturnsNull();

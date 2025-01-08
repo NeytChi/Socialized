@@ -1,7 +1,7 @@
 ﻿using Domain.Appeals;
-using Domain.Appeals.Messages;
 using Microsoft.AspNetCore.Http;
 using NSubstitute;
+using NSubstitute.ReturnsExtensions;
 using Serilog;
 using UseCases.Appeals.Messages;
 using UseCases.Appeals.Messages.Commands;
@@ -17,7 +17,7 @@ namespace UseCasesTests.Appeals
         IAppealFileManager appealFileManager = Substitute.For<IAppealFileManager>();
 
         [Fact]
-        public void Create_WhenIdAndTokenIsNotValid_ThrowException()
+        public void Create_WhenAppealIdAndUserTokenIsNotFound_ThrowNotFoundException()
         {
             var manager = new AppealMessageManager(logger, appealRepository, appealMessageRepository, appealFileManager);
             var command = new CreateAppealMessageCommand
@@ -31,29 +31,71 @@ namespace UseCasesTests.Appeals
             Assert.Throws<NotFoundException>(() => manager.Create(command));
         }
         [Fact]
-        public void Create_WhenIdAndTokenIsValid_ReturnMessage()
+        public void Create_WhenAppealIdAndTokenIsFound_ReturnMessage()
         {
+            var command = new CreateAppealMessageCommand
+            {
+                AppealId = 1, Message = "test", UserToken = "",
+                Files = new List<IFormFile> { new FormFileTest() }
+            };
+            appealRepository.GetBy(command.AppealId, command.UserToken)
+                .Returns(new Domain.Admins.Appeal { Id = command.AppealId });
+            var manager = new AppealMessageManager(logger, appealRepository, appealMessageRepository, appealFileManager);
+            
+            var result = manager.Create(command);
 
+            Assert.Equal(command.AppealId, result.AppealId);
+            Assert.Equal(command.Message, result.Message);
         }
         [Fact]
-        public void Update_WhenIdIsNotValid_ThrowException()
+        public void Update_WhenAppealIdIsNotFound_ThrowNotFoundException()
         {
-
+            var command = new UpdateAppealMessageCommand
+            {
+                MessageId = 1,
+                Message = "update test",
+            };
+            appealMessageRepository.GetBy(command.MessageId).ReturnsNull();
+            var manager = new AppealMessageManager(logger, appealRepository, appealMessageRepository, appealFileManager);
+            
+            Assert.Throws<NotFoundException>(() => manager.Update(command));
         }
         [Fact]
-        public void Update_WhenIdIsValid_Return()
+        public void Update_WhenAppealIdIsFound_Return()
         {
+            var command = new UpdateAppealMessageCommand
+            {
+                MessageId = 1,
+                Message = "update test",
+            };
+            appealMessageRepository.GetBy(command.MessageId).Returns(new Domain.Admins.AppealMessage { Id = command.MessageId, Message = "text" });
+            var manager = new AppealMessageManager(logger, appealRepository, appealMessageRepository, appealFileManager);
 
+            manager.Update(command);
         }
         [Fact]
-        public void Delete_WhenIdIsNotValid_ThrowException()
+        public void Delete_WhenIdIsNotFound_ThrowNotFoundException()
         {
+            var command = new DeleteAppealMessageCommand
+            {
+                MessageId = 1
+            };
+            appealMessageRepository.GetBy(command.MessageId).ReturnsNull();
+            var manager = new AppealMessageManager(logger, appealRepository, appealMessageRepository, appealFileManager);
 
+            Assert.Throws<NotFoundException>(() => manager.Delete(command));
         }
         [Fact]
-        public void Deletete_WhenIdIsValid_Return()
+        public void Delete_WhenIdIsFound_Return()
         {
+            var command = new DeleteAppealMessageCommand
+            {
+                MessageId = 1
+            };
+            appealMessageRepository.GetBy(command.MessageId).Returns(new Domain.Admins.AppealMessage { Id = command.MessageId, Message = "text" });
+            var manager = new AppealMessageManager(logger, appealRepository, appealMessageRepository, appealFileManager);
 
+            manager.Delete(command);
         }
     }
 }

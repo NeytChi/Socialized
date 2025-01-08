@@ -15,7 +15,7 @@ namespace UseCasesTests.Users
         IEmailMessanger emailMessanger = Substitute.For<IEmailMessanger>();
 
         [Fact]
-        public void RecoveryPassword_WhenEmailIsValid_Return()
+        public void RecoveryPassword_WhenEmailIsFound_Return()
         {
             var culture = "en_EN";
             var email = "test@test.com";
@@ -26,7 +26,7 @@ namespace UseCasesTests.Users
             userPasswordRecoveryManager.RecoveryPassword(email, culture);
         }
         [Fact]
-        public void RecoveryPassword_WhenEmailIsNotValid_ThrowException()
+        public void RecoveryPassword_WhenEmailIsNotFound_ThrowNotFoundException()
         {
             var culture = "en_EN";
             var email = "test@test.com";
@@ -36,7 +36,7 @@ namespace UseCasesTests.Users
             Assert.Throws<NotFoundException>(() => userPasswordRecoveryManager.RecoveryPassword(email, culture));
         }
         [Fact]
-        public void CheckRecoveryCode_WhenCodeAndEmailIsValid_Return()
+        public void CheckRecoveryCode_WhenCodeIsFoundAndEmailIsFound_Return()
         {
             var command = new CheckRecoveryCodeCommand { UserEmail = "test@test.com", RecoveryCode = 1111 };
             var user = new User 
@@ -53,7 +53,7 @@ namespace UseCasesTests.Users
             Assert.NotEqual("", result);
         }
         [Fact]
-        public void CheckRecoveryCode_WhenEmailIsNotValid_ThrowException()
+        public void CheckRecoveryCode_WhenEmailIsNotFound_ThrowNotFoundException()
         {
             var command = new CheckRecoveryCodeCommand
             {
@@ -66,7 +66,7 @@ namespace UseCasesTests.Users
             Assert.Throws<NotFoundException>(() => userPasswordRecoveryManager.CheckRecoveryCode(command));
         }
         [Fact]
-        public void CheckRecoveryCode_WhenCodeIsNotValid_ThrowException()
+        public void CheckRecoveryCode_WhenCodeIsNotFound_ThrowNotFoundException()
         {
             var command = new CheckRecoveryCodeCommand
             {
@@ -85,7 +85,7 @@ namespace UseCasesTests.Users
             Assert.Throws<ValidationException>(() => userPasswordRecoveryManager.CheckRecoveryCode(command));
         }
         [Fact]
-        public void ChangePassword_WhenTokenAndPasswordIsValid_Return()
+        public void ChangePassword_WhenTokenIsFoundAndPasswordIsValid_Return()
         {
             var command = new ChangeUserPasswordCommand
             {
@@ -100,7 +100,7 @@ namespace UseCasesTests.Users
             userPasswordRecoveryManager.ChangePassword(command);
         }
         [Fact]
-        public void ChangePassword_WhenTokenIsNotValid_ThrowException()
+        public void ChangePassword_WhenTokenIsNotFound_ThrowNotFoundException()
         {
             var command = new ChangeUserPasswordCommand
             {
@@ -114,7 +114,7 @@ namespace UseCasesTests.Users
             Assert.Throws<NotFoundException>(() => userPasswordRecoveryManager.ChangePassword(command));
         }
         [Fact]
-        public void ChangePassword_WhenPasswordIsNotValid_ThrowException()
+        public void ChangePassword_WhenPasswordIsNotValid_ThrowValidationException()
         {
             var command = new ChangeUserPasswordCommand
             {

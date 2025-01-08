@@ -18,7 +18,7 @@ namespace UseCasesTests.Users
         IPackageManager packageManager = Substitute.For<IPackageManager>();
 
         [Fact]
-        public void Create_WhenIsNotFound_ThrowException()
+        public void Create_WhenUserIsAlreadyExistAndNotDeleted_ThrowNotFoundException()
         {
             var command = new CreateUserCommand
             {
@@ -37,7 +37,7 @@ namespace UseCasesTests.Users
             Assert.Throws<NotFoundException>(() => userManager.Create(command));
         }
         [Fact]
-        public void Create_WhenWasDeleted_Return()
+        public void Create_WhenUserWasDeleted_RestoreUserAndReturn()
         {
             var command = new CreateUserCommand
             {
@@ -56,7 +56,7 @@ namespace UseCasesTests.Users
             userManager.Create(command);
         }
         [Fact]
-        public void Create_WhenJustNewUser_Return()
+        public void Create_WhenJustNewUser_CreateNewUserAndReturn()
         {
             var command = new CreateUserCommand
             {
@@ -74,7 +74,7 @@ namespace UseCasesTests.Users
             userManager.Create(command);
         }
         [Fact]
-        public void RegistrationEmail_WhenIsNotFoundByEmail_ThrowException()
+        public void RegistrationEmail_WhenUserIsNotFoundByEmail_ThrowNotFoundException()
         {
             var culture = "en_EN";
             var email = "test@test.com";
@@ -84,7 +84,7 @@ namespace UseCasesTests.Users
             Assert.Throws<NotFoundException>(() => userManager.RegistrationEmail(email, culture));
         }
         [Fact]
-        public void RegistrationEmail_WhenIsValid_Return()
+        public void RegistrationEmail_WhenUserIsFoundByEmailValid_SendEmailAndReturn()
         {
             var culture = "en_EN";
             var email = "test@test.com";
@@ -95,7 +95,7 @@ namespace UseCasesTests.Users
             userManager.RegistrationEmail(email, culture);
         }
         [Fact]
-        public void Activate_WhenIsNotFoundByToken_ThrowException()
+        public void Activate_WhenUserIsNotFoundByToken_ThrowNotFoundException()
         {
             var hash = "1234567890";
             userRepository.GetByHash(hash, false, false).ReturnsNull();
@@ -104,7 +104,7 @@ namespace UseCasesTests.Users
             Assert.Throws<NotFoundException>(() => userManager.Activate(hash));
         }
         [Fact]
-        public void Activate_WhenIsValidToken_Return()
+        public void Activate_WhenUserIsFoundByToken_ActivateAndReturn()
         {
             var hash = "1234567890";
             var user = new User { Email = "test@test.com", IsDeleted = true };
@@ -114,7 +114,7 @@ namespace UseCasesTests.Users
             userManager.Activate(hash);
         }
         [Fact]
-        public void Delete_WhenIsNotFoundByToken_ThrowException()
+        public void Delete_WhenUserIsNotFoundByToken_ThrowNotFoundException()
         {
             var userToken = "1234567890";
             userRepository.GetByUserTokenNotDeleted(userToken).ReturnsNull();
@@ -123,7 +123,7 @@ namespace UseCasesTests.Users
             Assert.Throws<NotFoundException>(() => userManager.Delete(userToken));
         }
         [Fact]
-        public void Delete_WhenIsValid_Return()
+        public void Delete_WhenUserIsFoundByToken_DeleteAndReturn()
         {
             var userToken = "1234567890";
             var user = new User { Email = "test@test.com", IsDeleted = false };

@@ -14,10 +14,8 @@ namespace UseCasesTests.Users
         ILogger logger = Substitute.For<ILogger>();
         IUserRepository userRepository = Substitute.For<IUserRepository>();
         ProfileCondition profileCondition = new ProfileCondition();
-
-
         [Fact]
-        public void Login_WhenPasswordAndEmailIsValid_ReturnUser()
+        public void Login_WhenUserPasswordValidAndEmailIsFound_ReturnUser()
         {
             var command = new LoginUserCommand
             {
@@ -35,7 +33,7 @@ namespace UseCasesTests.Users
             Assert.Equal(hashedPassword, result.Password);
         }
         [Fact]
-        public void Login_WhenPasswordIsNotValid_ThrowException()
+        public void Login_WhenUserPasswordIsNotValid_ThrowValidationException()
         {
             var command = new LoginUserCommand
             {
@@ -50,7 +48,7 @@ namespace UseCasesTests.Users
             Assert.Throws<ValidationException>(() => userLoginManager.Login(command));
         }
         [Fact]
-        public void Login_WhenEmailIsNotValid_ThrowException()
+        public void Login_WhenUserEmailIsNotFound_ThrowNotFoundException()
         {
             var command = new LoginUserCommand
             {
@@ -65,7 +63,7 @@ namespace UseCasesTests.Users
             Assert.Throws<NotFoundException>(() => userLoginManager.Login(command));
         }
         [Fact]
-        public void Logout_WhenTokenIsValid_Return()
+        public void Logout_WhenUserTokenIsFound_Return()
         {
             var tokenForUse = "1234567890";
             var user = new User { TokenForUse = tokenForUse };
@@ -75,7 +73,7 @@ namespace UseCasesTests.Users
             userLoginManager.LogOut(tokenForUse);
         }
         [Fact]
-        public void Logout_WhenTokenIsNotValid_Return()
+        public void Logout_WhenUserTokenIsNotFound_ThrowNotFoundException()
         {
             var tokenForUse = "1234567890";
             var user = new User { TokenForUse = tokenForUse };

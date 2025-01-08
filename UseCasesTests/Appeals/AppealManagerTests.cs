@@ -20,7 +20,7 @@ namespace UseCasesTests.Appeals
         ICategoryRepository categoryRepository = Substitute.For<ICategoryRepository>();
 
         [Fact]
-        public void Create_WhenTokenAndIdIsValid_ReturnMessage()
+        public void Create_WhenUserTokenAndIdIsValid_ReturnMessage()
         {
             var command = new CreateAppealCommand { Subject = "Test", UserToken = "1234567890" };
             userRepository.GetByUserTokenNotDeleted(command.UserToken).Returns(new User { Id = 1 });
@@ -38,7 +38,7 @@ namespace UseCasesTests.Appeals
             Assert.Equal(1, result.State);
         }
         [Fact]
-        public void Create_WhenTokenAndIdIsNotValid_ThrowException()
+        public void Create_WhenUserTokenAndIdIsNotValid_ThrowNotFoundException()
         {
             var command = new CreateAppealCommand { Subject = "Test", UserToken = "1234567890" };
             userRepository.GetByUserTokenNotDeleted(command.UserToken).ReturnsNull();
@@ -54,7 +54,7 @@ namespace UseCasesTests.Appeals
             Assert.Throws<NotFoundException>(() => manager.Create(command));
         }
         [Fact]
-        public void UpdateAppealToClosed_WhenIdIsValid_Return()
+        public void UpdateAppealToClosed_WhenAppealIdIsValid_Return()
         {
             var appealId = 1;
             appealRepository.GetBy(appealId).Returns(new Appeal { Id = appealId });
@@ -70,7 +70,7 @@ namespace UseCasesTests.Appeals
             manager.UpdateAppealToClosed(appealId);
         }
         [Fact]
-        public void UpdateAppealToClosed_WhenIdIsNotValid_ThrowException()
+        public void UpdateAppealToClosed_WhenAppealIdIsNotValid_ThrowNotFoundException()
         {
             var appealId = 1;
             appealRepository.GetBy(appealId).ReturnsNull();
@@ -86,7 +86,7 @@ namespace UseCasesTests.Appeals
             Assert.Throws<NotFoundException>(() => manager.UpdateAppealToClosed(appealId));
         }
         [Fact]
-        public void UpdateAppealToAnswered_WhenIdIsValid_Return()
+        public void UpdateAppealToAnswered_WhenAppealIdIsValid_Return()
         {
             var appealId = 1;
             appealRepository.GetBy(appealId).Returns(new Appeal { Id = appealId });
@@ -102,7 +102,7 @@ namespace UseCasesTests.Appeals
             manager.UpdateAppealToAnswered(appealId);
         }
         [Fact]
-        public void UpdateAppealToAnswered_WhenIdIsNotValid_ThrowException()
+        public void UpdateAppealToAnswered_WhenAppealIdIsNotValid_ThrowNotFoundException()
         {
             var appealId = 1;
             appealRepository.GetBy(appealId).ReturnsNull();
@@ -118,7 +118,7 @@ namespace UseCasesTests.Appeals
             Assert.Throws<NotFoundException>(() => manager.UpdateAppealToAnswered(appealId));
         }
         [Fact]
-        public void UpdateAppealToAnswered_WhenStateIsNotRight_ThrowException()
+        public void UpdateAppealToAnswered_WhenStateIsNotRight_Return()
         {
             var appealId = 1;
             appealRepository.GetBy(appealId).Returns(new Appeal { State = 1 });

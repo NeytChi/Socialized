@@ -1,5 +1,4 @@
-﻿using Braintree;
-using Core;
+﻿using Core;
 using Domain.Admins;
 using NSubstitute;
 using NSubstitute.ReturnsExtensions;
@@ -12,12 +11,14 @@ namespace UseCasesTests.Admins
 {
     public class AdminManagerTests
     {
+        ILogger logger = Substitute.For<ILogger>();
+        IAdminRepository repository = Substitute.For<IAdminRepository>();
+        IAdminEmailManager emailManager = Substitute.For<IAdminEmailManager>();
+        ProfileCondition profileCondition = new ProfileCondition();
+
         [Fact]
         public void Create_WhenEmailIsValid_ReturnNewAdmin()
         {
-            var logger = Substitute.For<ILogger>();
-            var repository = Substitute.For<IAdminRepository>();
-            var emailManager = Substitute.For<IAdminEmailManager>();
             var command = new CreateAdminCommand
             {
                 Email = "test@test.com",
@@ -37,9 +38,6 @@ namespace UseCasesTests.Admins
         [Fact]
         public void Create_WhenEmailIsNotValid_ThrowException()
         {
-            var logger = Substitute.For<ILogger>();
-            var repository = Substitute.For<IAdminRepository>();
-            var emailManager = Substitute.For<IAdminEmailManager>();
             var command = new CreateAdminCommand
             {
                 Email = "test@test.com",
@@ -55,9 +53,6 @@ namespace UseCasesTests.Admins
         [Fact]
         public void SetupPassword_WhenTokenIsValid_Return()
         {
-            var logger = Substitute.For<ILogger>();
-            var repository = Substitute.For<IAdminRepository>();
-            var emailManager = Substitute.For<IAdminEmailManager>();
             var command = new SetupPasswordCommand { Token = "1234567890", Password = "password" };
             repository.GetByPasswordToken(command.Token, false).Returns(new Admin { });
             var adminManager = new AdminManager(logger, repository, emailManager);
@@ -67,9 +62,6 @@ namespace UseCasesTests.Admins
         [Fact]
         public void SetupPassword_WhenTokenIsNotValid_ThrowException()
         {
-            var logger = Substitute.For<ILogger>();
-            var repository = Substitute.For<IAdminRepository>();
-            var emailManager = Substitute.For<IAdminEmailManager>();
             var command = new SetupPasswordCommand { Token = "1234567890", Password = "password" };
             repository.GetByPasswordToken(command.Token, false).ReturnsNull();
             var adminManager = new AdminManager(logger, repository, emailManager);
@@ -79,10 +71,6 @@ namespace UseCasesTests.Admins
         [Fact]
         public void Authentication_WhenEmailAndPasswordIsValid_ReturnAdmin()
         {
-            var logger = Substitute.For<ILogger>();
-            var repository = Substitute.For<IAdminRepository>();
-            var emailManager = Substitute.For<IAdminEmailManager>();
-            var profileCondition = new ProfileCondition();
             var command = new AuthenticationCommand
             {
                 Email = "test@test.com",
@@ -101,10 +89,6 @@ namespace UseCasesTests.Admins
         [Fact]
         public void Authentication_WhenEmailIsNotValid_ThrowException()
         {
-            var logger = Substitute.For<ILogger>();
-            var repository = Substitute.For<IAdminRepository>();
-            var emailManager = Substitute.For<IAdminEmailManager>();
-            var profileCondition = new ProfileCondition();
             var command = new AuthenticationCommand
             {
                 Email = "test@test.com",
@@ -118,10 +102,6 @@ namespace UseCasesTests.Admins
         [Fact]
         public void Authentication_WhenPasswordIsNotValid_ThrowException()
         {
-            var logger = Substitute.For<ILogger>();
-            var repository = Substitute.For<IAdminRepository>();
-            var emailManager = Substitute.For<IAdminEmailManager>();
-            var profileCondition = new ProfileCondition();
             var command = new AuthenticationCommand
             {
                 Email = "test@test.com",
@@ -137,9 +117,6 @@ namespace UseCasesTests.Admins
         [Fact]
         public void Delete_WhenIdIsValid_Return()
         {
-            var logger = Substitute.For<ILogger>();
-            var repository = Substitute.For<IAdminRepository>();
-            var emailManager = Substitute.For<IAdminEmailManager>();
             var command = new DeleteAdminCommand { AdminId = 1 };
             repository.GetByAdminId(command.AdminId, false).Returns(new Admin { Id = 1 });
             var adminManager = new AdminManager(logger, repository, emailManager);
@@ -149,9 +126,6 @@ namespace UseCasesTests.Admins
         [Fact]
         public void Delete_WhenIdIsNotValid_ThrowException()
         {
-            var logger = Substitute.For<ILogger>();
-            var repository = Substitute.For<IAdminRepository>();
-            var emailManager = Substitute.For<IAdminEmailManager>();
             var command = new DeleteAdminCommand { AdminId = 1 };
             repository.GetByAdminId(command.AdminId, false).ReturnsNull();
             var adminManager = new AdminManager(logger, repository, emailManager);
@@ -161,9 +135,6 @@ namespace UseCasesTests.Admins
         [Fact]
         public void CreateCodeForRecoveryPassword_WhenEmailIsValid_Return()
         {
-            var logger = Substitute.For<ILogger>();
-            var repository = Substitute.For<IAdminRepository>();
-            var emailManager = Substitute.For<IAdminEmailManager>();
             var email = "test@test.com";
             repository.GetByEmail(email, false).Returns(new Admin { Email = email });
             var adminManager = new AdminManager(logger, repository, emailManager);
@@ -173,9 +144,6 @@ namespace UseCasesTests.Admins
         [Fact]
         public void CreateCodeForRecoveryPassword_WhenEmailIsNotValid_Return()
         {
-            var logger = Substitute.For<ILogger>();
-            var repository = Substitute.For<IAdminRepository>();
-            var emailManager = Substitute.For<IAdminEmailManager>();
             var email = "test@test.com";
             repository.GetByEmail(email, false).ReturnsNull();
             var adminManager = new AdminManager(logger, repository, emailManager);

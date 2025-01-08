@@ -13,14 +13,15 @@ namespace UseCasesTests.Appeals
 {
     public class AppealManagerTests
     {
+        ILogger logger = Substitute.For<ILogger>();
+        IAppealRepository appealRepository = Substitute.For<IAppealRepository>();
+        IUserRepository userRepository = Substitute.For<IUserRepository>();
+        IAppealMessageRepository appealMessageRepository = Substitute.For<IAppealMessageRepository>();
+        ICategoryRepository categoryRepository = Substitute.For<ICategoryRepository>();
+
         [Fact]
         public void Create_WhenTokenAndIdIsValid_ReturnMessage()
         {
-            var logger = Substitute.For<ILogger>();
-            var appealRepository = Substitute.For<IAppealRepository>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var appealMessageRepository = Substitute.For<IAppealMessageRepository>();
-            var categoryRepository = Substitute.For<ICategoryRepository>();
             var command = new CreateAppealCommand { Subject = "Test", UserToken = "1234567890" };
             userRepository.GetByUserTokenNotDeleted(command.UserToken).Returns(new User { Id = 1 });
             var manager = new AppealManager
@@ -39,11 +40,6 @@ namespace UseCasesTests.Appeals
         [Fact]
         public void Create_WhenTokenAndIdIsNotValid_ThrowException()
         {
-            var logger = Substitute.For<ILogger>();
-            var appealRepository = Substitute.For<IAppealRepository>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var appealMessageRepository = Substitute.For<IAppealMessageRepository>();
-            var categoryRepository = Substitute.For<ICategoryRepository>();
             var command = new CreateAppealCommand { Subject = "Test", UserToken = "1234567890" };
             userRepository.GetByUserTokenNotDeleted(command.UserToken).ReturnsNull();
             var manager = new AppealManager
@@ -61,11 +57,6 @@ namespace UseCasesTests.Appeals
         public void UpdateAppealToClosed_WhenIdIsValid_Return()
         {
             var appealId = 1;
-            var logger = Substitute.For<ILogger>();
-            var appealRepository = Substitute.For<IAppealRepository>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var appealMessageRepository = Substitute.For<IAppealMessageRepository>();
-            var categoryRepository = Substitute.For<ICategoryRepository>();
             appealRepository.GetBy(appealId).Returns(new Appeal { Id = appealId });
             var manager = new AppealManager
             (
@@ -82,11 +73,6 @@ namespace UseCasesTests.Appeals
         public void UpdateAppealToClosed_WhenIdIsNotValid_ThrowException()
         {
             var appealId = 1;
-            var logger = Substitute.For<ILogger>();
-            var appealRepository = Substitute.For<IAppealRepository>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var appealMessageRepository = Substitute.For<IAppealMessageRepository>();
-            var categoryRepository = Substitute.For<ICategoryRepository>();
             appealRepository.GetBy(appealId).ReturnsNull();
             var manager = new AppealManager
             (
@@ -103,11 +89,6 @@ namespace UseCasesTests.Appeals
         public void UpdateAppealToAnswered_WhenIdIsValid_Return()
         {
             var appealId = 1;
-            var logger = Substitute.For<ILogger>();
-            var appealRepository = Substitute.For<IAppealRepository>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var appealMessageRepository = Substitute.For<IAppealMessageRepository>();
-            var categoryRepository = Substitute.For<ICategoryRepository>();
             appealRepository.GetBy(appealId).Returns(new Appeal { Id = appealId });
             var manager = new AppealManager
             (
@@ -124,11 +105,6 @@ namespace UseCasesTests.Appeals
         public void UpdateAppealToAnswered_WhenIdIsNotValid_ThrowException()
         {
             var appealId = 1;
-            var logger = Substitute.For<ILogger>();
-            var appealRepository = Substitute.For<IAppealRepository>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var appealMessageRepository = Substitute.For<IAppealMessageRepository>();
-            var categoryRepository = Substitute.For<ICategoryRepository>();
             appealRepository.GetBy(appealId).ReturnsNull();
             var manager = new AppealManager
             (
@@ -145,11 +121,6 @@ namespace UseCasesTests.Appeals
         public void UpdateAppealToAnswered_WhenStateIsNotRight_ThrowException()
         {
             var appealId = 1;
-            var logger = Substitute.For<ILogger>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var appealMessageRepository = Substitute.For<IAppealMessageRepository>();
-            var categoryRepository = Substitute.For<ICategoryRepository>();
-            var appealRepository = Substitute.For<IAppealRepository>();
             appealRepository.GetBy(appealId).Returns(new Appeal { State = 1 });
             var firstManager = new AppealManager
             (

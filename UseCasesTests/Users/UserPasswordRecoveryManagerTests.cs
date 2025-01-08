@@ -10,19 +10,16 @@ namespace UseCasesTests.Users
 {
     public class UserPasswordRecoveryManagerTests
     {
+        ILogger logger = Substitute.For<ILogger>();
+        IUserRepository userRepository = Substitute.For<IUserRepository>();
+        IEmailMessanger emailMessanger = Substitute.For<IEmailMessanger>();
+
         [Fact]
         public void RecoveryPassword_WhenEmailIsValid_Return()
         {
             var culture = "en_EN";
             var email = "test@test.com";
-            var logger = Substitute.For<ILogger>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var emailMessanger = Substitute.For<IEmailMessanger>();
-            var user = new User
-            {
-                Email = email,
-                IsDeleted = false
-            };
+            var user = new User { Email = email, IsDeleted = false };
             userRepository.GetByEmail(email, false, true).Returns(user);
             var userPasswordRecoveryManager = new UserPasswordRecoveryManager(logger, userRepository, emailMessanger);
 
@@ -33,9 +30,6 @@ namespace UseCasesTests.Users
         {
             var culture = "en_EN";
             var email = "test@test.com";
-            var logger = Substitute.For<ILogger>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var emailMessanger = Substitute.For<IEmailMessanger>();
             userRepository.GetByEmail(email, false, true).ReturnsNull();
             var userPasswordRecoveryManager = new UserPasswordRecoveryManager(logger, userRepository, emailMessanger);
 
@@ -44,14 +38,7 @@ namespace UseCasesTests.Users
         [Fact]
         public void CheckRecoveryCode_WhenCodeAndEmailIsValid_Return()
         {
-            var command = new CheckRecoveryCodeCommand
-            {
-                UserEmail = "test@test.com",
-                RecoveryCode = 1111
-            };
-            var logger = Substitute.For<ILogger>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var emailMessanger = Substitute.For<IEmailMessanger>();
+            var command = new CheckRecoveryCodeCommand { UserEmail = "test@test.com", RecoveryCode = 1111 };
             var user = new User 
             { 
                 Email = command.UserEmail, 
@@ -63,7 +50,7 @@ namespace UseCasesTests.Users
 
             var result = userPasswordRecoveryManager.CheckRecoveryCode(command);
 
-            Assert.NotEqual(result, "");
+            Assert.NotEqual("", result);
         }
         [Fact]
         public void CheckRecoveryCode_WhenEmailIsNotValid_ThrowException()
@@ -73,9 +60,6 @@ namespace UseCasesTests.Users
                 UserEmail = "test@test.com",
                 RecoveryCode = 1111
             };
-            var logger = Substitute.For<ILogger>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var emailMessanger = Substitute.For<IEmailMessanger>();
             userRepository.GetByEmail(command.UserEmail).ReturnsNull();
             var userPasswordRecoveryManager = new UserPasswordRecoveryManager(logger, userRepository, emailMessanger);
 
@@ -89,9 +73,6 @@ namespace UseCasesTests.Users
                 UserEmail = "test@test.com",
                 RecoveryCode = 1111
             };
-            var logger = Substitute.For<ILogger>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var emailMessanger = Substitute.For<IEmailMessanger>();
             var user = new User
             {
                 Email = command.UserEmail,
@@ -112,9 +93,6 @@ namespace UseCasesTests.Users
                 UserPassword = "Pass1234!",
                 UserConfirmPassword = "Pass1234!"
             };
-            var logger = Substitute.For<ILogger>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var emailMessanger = Substitute.For<IEmailMessanger>();
             var user = new User { IsDeleted = false, RecoveryToken = command.RecoveryToken };
             userRepository.GetByRecoveryToken(command.RecoveryToken, false).Returns(user);
             var userPasswordRecoveryManager = new UserPasswordRecoveryManager(logger, userRepository, emailMessanger);
@@ -130,9 +108,6 @@ namespace UseCasesTests.Users
                 UserPassword = "Pass1234!",
                 UserConfirmPassword = "Pass1234!"
             };
-            var logger = Substitute.For<ILogger>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var emailMessanger = Substitute.For<IEmailMessanger>();
             userRepository.GetByRecoveryToken(command.RecoveryToken, false).ReturnsNull();
             var userPasswordRecoveryManager = new UserPasswordRecoveryManager(logger, userRepository, emailMessanger);
 
@@ -147,9 +122,6 @@ namespace UseCasesTests.Users
                 UserPassword = "Pass1234!",
                 UserConfirmPassword = ""
             };
-            var logger = Substitute.For<ILogger>();
-            var userRepository = Substitute.For<IUserRepository>();
-            var emailMessanger = Substitute.For<IEmailMessanger>();
             var user = new User { IsDeleted = false, RecoveryToken = command.RecoveryToken };
             userRepository.GetByRecoveryToken(command.RecoveryToken, false).Returns(user);
             var userPasswordRecoveryManager = new UserPasswordRecoveryManager(logger, userRepository, emailMessanger);

@@ -6,22 +6,20 @@ using Microsoft.AspNetCore.Http;
 
 namespace UseCases.AutoPosts.AutoPostFiles
 {
-    public interface IAutoPostFileSave
-    {
-        public bool CreateVideoFile(AutoPostFile post, IFormFile file);
-        public bool CreateImageFile(AutoPostFile post, IFormFile file);
-    }
     public class AutoPostFileSave : BaseManager, IAutoPostFileSave
     {
         private IFileConverter FileConverter;
         private IFileManager FileManager;
+        private IFileMover FileMover;
 
         public AutoPostFileSave(ILogger logger,
             IFileConverter fileConverter,
-            IFileManager fileManager) : base(logger)
+            IFileManager fileManager,
+            IFileMover fileMover) : base(logger)
         {
             FileConverter = fileConverter;
             FileManager = fileManager;
+            FileMover = fileMover;
         }
         public bool CreateImageFile(AutoPostFile post, IFormFile file)
         {
@@ -44,15 +42,15 @@ namespace UseCases.AutoPosts.AutoPostFiles
                 Logger.Error("Сервер не визначив формат відео для збереження.");
                 return false;
             }
-            var stream = File.OpenRead(pathFile + ".mp4");
-            if (File.Exists(pathFile))
+            var stream = FileMover.OpenRead(pathFile + ".mp4");
+            if (FileMover.Exists(pathFile))
             {
-                File.Delete(pathFile);
+                FileMover.Delete(pathFile);
             }
             post.Path = FileManager.SaveFile(stream, "auto-posts");
             var thumbnail = FileConverter.GetVideoThumbnail(pathFile + ".mp4");
             post.VideoThumbnail = FileManager.SaveFile(thumbnail, "auto-posts");
-            File.Delete(pathFile + ".mp4");
+            FileMover.Delete(pathFile + ".mp4");
             return true;
         }
     }

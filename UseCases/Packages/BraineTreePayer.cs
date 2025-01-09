@@ -5,18 +5,11 @@ namespace UseCases.Packages
 {
     public class BraineTreePayer : BaseManager
     {
-        public static BraintreeGateway gateway;
+        private IGatewayTransaction GatewayTransaction;
 
-        public BraineTreePayer(ILogger logger, BrainTreeSettings treeSettings) : base(logger)
+        public BraineTreePayer(ILogger logger, IGatewayTransaction gatewayTransaction) : base(logger)
         {
-            gateway = new BraintreeGateway
-            {
-                Environment = treeSettings.BraintreeEnvironment == 0 ?
-                    Braintree.Environment.SANDBOX : Braintree.Environment.PRODUCTION,
-                MerchantId = treeSettings.MerchantId,
-                PublicKey = treeSettings.PublicKey,
-                PrivateKey = treeSettings.PrivateKey
-            };
+            GatewayTransaction = gatewayTransaction;
         }
         public bool PayForPackage(decimal price, string nonceToken, string deviceData, ref string message)
         {
@@ -30,14 +23,13 @@ namespace UseCases.Packages
                     SubmitForSettlement = true
                 }
             };
-            var result = gateway.Transaction.Sale(request);
-            if (result.IsSuccess())
+            var result = GatewayTransaction.Sale(request);
+            if (result)
             {
                 Logger.Information("Сплачено за пакет.");
                 return true;
-            }    
-            message = result.Message;
-            Logger.Error($"Пакет не було сплачено. Помилка={result.Message}.");
+            }
+            Logger.Error($"Пакет не було сплачено.");
             return false;
         }
     }

@@ -54,7 +54,7 @@ namespace UseCases.AutoPosts
         }
         private AutoPost Save(AutoPostCommand command, ICollection<AutoPostFile> postFiles)
         {
-            int timezone = command.TimeZone > 0 ? -command.TimeZone : command.TimeZone * -1;
+            int timezone = command.TimeZone > 0 ? -command.TimeZone : command.TimeZone * (-1);
             var post = new AutoPost
             {
                 AccountId = command.AccountId,
@@ -62,7 +62,7 @@ namespace UseCases.AutoPosts
                 CreatedAt = DateTime.UtcNow,
                 ExecuteAt = command.ExecuteAt.AddHours(timezone),
                 AutoDelete = command.AutoDelete,
-                DeleteAfter = command.DeleteAfter.AddHours(timezone),
+                DeleteAfter = command.AutoDelete ? command.DeleteAfter.AddHours(timezone) : DateTime.UtcNow,
                 Location = HttpUtility.UrlDecode(command.Location),
                 Description = HttpUtility.UrlDecode(command.Description),
                 Comment = HttpUtility.UrlDecode(command.Comment),

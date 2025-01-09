@@ -11,7 +11,7 @@ namespace UseCases.AutoPosts
         }
         public bool IsExecuteTimeTrue(DateTime executeAt, int timezone)
         {
-            timezone = timezone > 0 ? -timezone : timezone * -1;
+            timezone = timezone > 0 ? -timezone : timezone * (-1);
             if (executeAt.AddHours(timezone) > DateTimeOffset.UtcNow)
             {
                 return true;

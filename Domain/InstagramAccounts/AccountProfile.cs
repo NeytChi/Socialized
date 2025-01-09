@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Domain.InstagramAccounts
 {
     public partial class AccountProfile : BaseEntity
     {
+        [ForeignKey("Account")]
         public long AccountId { get; set; }
         public DateTime UpdatedAt { get; set; }
         public string Username { get; set; }

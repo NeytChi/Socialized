@@ -1,9 +1,11 @@
 using Domain.InstagramAccounts;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Statistics
 {
     public partial class DayStatistics : BaseEntity
     {
+        [ForeignKey("Account")]
         public long AccountId { get; set; }
         public int FollowerCount { get; set; }
         public int EmailContacts { get; set; }

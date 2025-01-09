@@ -1,4 +1,5 @@
 using Domain.Users;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Admins
 {
@@ -8,6 +9,7 @@ namespace Domain.Admins
         {
             Messages = new HashSet<AppealMessage>();
         }
+        [ForeignKey("User")]
         public long UserId { get; set; }
         public string Subject { get; set; }
         public int State { get; set; }

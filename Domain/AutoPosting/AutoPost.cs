@@ -1,4 +1,5 @@
 using Domain.InstagramAccounts;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.AutoPosting
 {
@@ -8,6 +9,7 @@ namespace Domain.AutoPosting
         {
             files = new HashSet<AutoPostFile>();
         }
+        [ForeignKey("Account")]
         public long AccountId { get; set; }
         public bool Type { get; set; }
         public bool Executed { get; set; }

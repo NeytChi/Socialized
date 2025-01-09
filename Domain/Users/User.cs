@@ -1,6 +1,7 @@
 ﻿using Domain.InstagramAccounts;
 using Domain.Admins;
 using Domain.Packages;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Users
 {
@@ -11,9 +12,13 @@ namespace Domain.Users
             IGAccounts = new HashSet<IGAccount>();
         }
         public string TokenForUse { get; set; }
+        [MaxLength(320)]
         public string Email { get; set; }
+        [MaxLength(100)]
         public string FirstName { get; set; }
+        [MaxLength(100)]
         public string LastName { get; set; }
+        [MaxLength(100)]
         public string Password { get; set; }
         public DateTime LastLoginAt { get; set; }
         public string HashForActivate { get; set; }

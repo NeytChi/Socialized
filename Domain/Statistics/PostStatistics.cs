@@ -1,9 +1,11 @@
 using Domain.InstagramAccounts;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Statistics
 {
     public partial class PostStatistics : BaseEntity
     {
+        [ForeignKey("Account")]
         public long AccountId { get; set; }
         public long LikeCount { get; set; }
         public string IGMediaId { get; set; }

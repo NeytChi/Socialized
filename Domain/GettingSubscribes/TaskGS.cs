@@ -1,5 +1,6 @@
 ﻿using Domain.Users;
 using Domain.InstagramAccounts;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.GettingSubscribes
 {
@@ -9,6 +10,7 @@ namespace Domain.GettingSubscribes
         {
             Data = new HashSet<TaskData>();
         }
+        [ForeignKey("Account")]
         public long AccountId { get; set; }
         public sbyte Type { get; set; }
         public sbyte Subtype { get; set; }
@@ -19,7 +21,6 @@ namespace Domain.GettingSubscribes
         public long NextTaskData { get; set; }
         public bool Deleted { get; set; }
         public virtual IGAccount Account { get; set; }
-        public virtual User User { get; set; }
         public virtual TaskFilter Filter { get; set; }
         public virtual TaskOption Option { get; set; }
         public virtual ICollection<TaskData>  Data { get; set; }

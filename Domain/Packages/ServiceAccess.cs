@@ -1,9 +1,11 @@
 using Domain.Users;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Packages
 {
     public partial class ServiceAccess : BaseEntity
     {
+        [ForeignKey("User")]
         public long UserId { get; set; }
         public bool Available { get; set; }
         public long Type { get; set; }

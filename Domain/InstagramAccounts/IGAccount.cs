@@ -1,16 +1,13 @@
 using Domain.Users;
 using Domain.AutoPosting;
 using Domain.GettingSubscribes;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.InstagramAccounts
 {
     public partial class IGAccount : BaseEntity
     {
-        public IGAccount()
-        {
-            Categories = new HashSet<Category>();
-            Tasks = new HashSet<TaskGS>();
-        }
+        [ForeignKey("User")]
         public long UserId { get; set; }
         public string Username { get; set; }
         public virtual BusinessAccount Business { get; set; }
@@ -20,5 +17,10 @@ namespace Domain.InstagramAccounts
         public virtual ICollection<TaskGS> Tasks { get; set; }
         public virtual ICollection<AutoPost> AutoPosts { get; set; }
         public virtual ICollection<Category> Categories { get; set; }
+        public IGAccount()
+        {
+            Categories = new HashSet<Category>();
+            Tasks = new HashSet<TaskGS>();
+        }
     }
 }

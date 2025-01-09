@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Domain.Admins
 {
     public partial class AppealMessage : BaseEntity
@@ -7,6 +9,7 @@ namespace Domain.Admins
             Files = new HashSet<AppealFile>();
             AppealMessageReplies = new HashSet<AppealMessageReply>();
         }
+        [ForeignKey("Appeal")]
         public long AppealId { get; set; }
         public string Message { get; set; }
         public DateTimeOffset UpdatedAt { get; set; }

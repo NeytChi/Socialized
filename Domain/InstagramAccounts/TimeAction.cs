@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Domain.InstagramAccounts
 {
     public partial class TimeAction : BaseEntity
     {
+        [ForeignKey("Account")]
         public long AccountId { get; set; }
         public bool AccountOld { get; set; }
         public int FollowCount  { get; set; } 

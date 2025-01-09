@@ -1,9 +1,11 @@
 using Domain.Statistics;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.InstagramAccounts
 {
     public partial class BusinessAccount : BaseEntity
     {
+        [ForeignKey("Account")]
         public long AccountId { get; set; }
         public string AccessToken { get; set; }
         public string ProfilePicture { get; set; }

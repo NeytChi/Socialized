@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Domain.AutoPosting
 {
     public partial class AutoPostFile : BaseEntity
     {
+        [ForeignKey("post")]
         public long PostId { get; set; }
         public string Path { get; set; }
         public sbyte Order { get; set; }

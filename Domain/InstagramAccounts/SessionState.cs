@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Domain.InstagramAccounts
 {
     public partial class SessionState : BaseEntity
     {
+        [ForeignKey("Account")]
         public long AccountId { get; set; }
         public string SessionSave { get; set; }
         public bool Usable { get; set; }

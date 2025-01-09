@@ -1,9 +1,12 @@
 using Domain.InstagramAccounts;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Statistics
 {
     public partial class StoryStatistics : BaseEntity
     {
+        [ForeignKey("Account")]
         public long AccountId { get; set; }
         public string MediaId { get; set; }
         public string Url { get; set; }

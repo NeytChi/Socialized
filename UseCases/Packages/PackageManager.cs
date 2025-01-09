@@ -92,7 +92,10 @@ namespace UseCases.Packages
         public ServiceAccess GetWorkingServiceAccess(long userId)
         {
             var access = ServiceAccessRepository.GetByUser(userId);
-
+            if (access == null)
+            {
+                return null;
+            }
             if (access.Type != 1 && access.DisableAt < DateTime.UtcNow)
             {
                 SetPackage(userId, 1, -1);

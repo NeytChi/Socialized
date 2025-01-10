@@ -1,20 +1,34 @@
-﻿using Serilog;
-using Core;
-using InstagramApiSharp.API;
-using InstagramApiSharp.Classes;
+﻿using Core;
+using Serilog;
 using UseCases.Exceptions;
 using Domain.InstagramAccounts;
+using UseCases.InstagramApi;
 using UseCases.InstagramAccounts.Commands;
 
 namespace UseCases.InstagramAccounts
 {
-    public class SmsVerifyIgAccountManager : IGAccountManager, ISmsVerifyIgAccountManager
+    public class SmsVerifyIgAccountManager : ISmsVerifyIgAccountManager
     {
-        public SmsVerifyIgAccountManager(ILogger logger, 
-            IInstagramApi api, 
-            IIGAccountRepository accountRepository) : base (logger, api, accountRepository)
-        {
+        private ILogger Logger;
+        private IGetStateData GetStateData;
+        private IIGAccountRepository AccountRepository;
+        private IRestoreInstagramSessionManager RestoreInstagramSessionManager;
+        private IVerifyCodeForChallengeRequire VerifyCodeForChallengeRequire;
+        private ProfileCondition ProfileCondition;
 
+        public SmsVerifyIgAccountManager(ILogger logger,
+            IGetStateData getStateData, 
+            IIGAccountRepository accountRepository,
+            IRestoreInstagramSessionManager restoreInstagramSessionManager,
+            ProfileCondition profileCondition,
+            IVerifyCodeForChallengeRequire verifyCodeForChallengeRequire)
+        {
+            Logger = logger;
+            AccountRepository = accountRepository;
+            RestoreInstagramSessionManager = restoreInstagramSessionManager;
+            ProfileCondition = profileCondition;
+            VerifyCodeForChallengeRequire = verifyCodeForChallengeRequire;
+            GetStateData = getStateData;
         }
         public void SmsVerifySession(SmsVefiryIgAccountCommand command)
         {
@@ -27,14 +41,14 @@ namespace UseCases.InstagramAccounts
             {
                 throw new NotFoundException("Сесія Instagram аккаунту не потребує підтвердження аккаунту.");
             }
-            var session = RestoreInstagramSession(account);
-            var loginResult = Api.VerifyCodeForChallengeRequire(command.VerifyCode.ToString(), session);
-            if (loginResult != InstaLoginResult.Success)
+            var session = RestoreInstagramSessionManager.Do(account);
+            var loginResult = VerifyCodeForChallengeRequire.Do(command.VerifyCode.ToString(), account);
+            if (loginResult.State != InstagramLoginState.Success)
             {
                 throw new IgAccountException("Код підвердження Instagram аккаунту не вірний.");
             }
-            var stateData = Api.GetStateDataAsString(session);
-            account.State.SessionSave = ProfileCondition.Encrypt(stateData);
+            var sessionString = GetStateData.AsString(account);
+            account.State.SessionSave = ProfileCondition.Encrypt(sessionString);
             account.State.Usable = true;
             account.State.Relogin = false;
             account.State.Challenger = false;

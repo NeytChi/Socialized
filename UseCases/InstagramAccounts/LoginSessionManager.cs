@@ -1,64 +1,51 @@
 ﻿using Core;
 using Domain.InstagramAccounts;
-using InstagramApiSharp.API;
-using InstagramApiSharp.API.Builder;
-using InstagramApiSharp.Classes;
 using Serilog;
 using UseCases.Exceptions;
+using UseCases.InstagramApi;
 
 namespace UseCases.InstagramAccounts
 {
-    public class IGAccountManager : BaseManager
+    public class LoginSessionManager : BaseManager
     {
-        public IInstagramApi Api;
-        public IIGAccountRepository AccountRepository;
+        private ILoginApi Api;
         public ProfileCondition ProfileCondition = new ProfileCondition();
 
-        public IGAccountManager(ILogger logger, 
-            IInstagramApi api, 
-            IIGAccountRepository accountRepository) : base(logger)
+        public LoginSessionManager(ILogger logger, ILoginApi api) : base(logger)
         {
             Api = api;
-            AccountRepository = accountRepository;
         }
-        public InstaLoginResult LoginSession(Session session)
+        public InstagramLoginResult Do(IGAccount account)
         {
             string message = "";
-            var result = Api.Login(session);
+            var result = Api.Do(account);
             switch (result)
             {
-                case InstaLoginResult.Success:
+                case InstagramLoginState.Success:
                     message = "Сесія Instagram аккаунт був успішно залогінен.";
-                    return result;
-                case InstaLoginResult.ChallengeRequired:
+                    return new InstagramLoginResult { Success = true, State = InstagramLoginState.Success } ;
+                case InstagramLoginState.ChallengeRequired:
                     message = "Сесія Instagram аккаунту потребує підтвердження по коду.";
-                    break;
-                case InstaLoginResult.TwoFactorRequired:
+                    return new InstagramLoginResult { Success = false, State = InstagramLoginState.ChallengeRequired };
+                case InstagramLoginState.TwoFactorRequired:
                     message = "Сесія Instagram аккаунту потребує проходження двох-факторної організації.";
                     break;
-                case InstaLoginResult.InactiveUser:
+                case InstagramLoginState.InactiveUser:
                     message = "Сесія Instagram аккаунту не активна.";
                     break;
-                case InstaLoginResult.InvalidUser:
+                case InstagramLoginState.InvalidUser:
                     message = "Правильно введені данні для входу в аккаунт.";
                     break;
-                case InstaLoginResult.BadPassword:
+                case InstagramLoginState.BadPassword:
                     message = "Неправильний пароль.";
                     break;
-                case InstaLoginResult.LimitError:
-                case InstaLoginResult.Exception:
+                case InstagramLoginState.LimitError:
+                case InstagramLoginState.Exception:
                 default:
                     message = $"Невідома помилка при спробі зайти(логін) в Instagram аккаунт. Виключення:{result.ToString()}.";
                     break;
             }
             throw new IgAccountException(message);
-        }
-        public Session RestoreInstagramSession(IGAccount account)
-        {
-            var decryptedSessionSave = ProfileCondition.Decrypt(account.State.SessionSave);
-            var session = Api.LoadStateDataFromString(decryptedSessionSave);
-            Logger.Information($"Інстаграм сесія була востановлена з тексту, id={account.Id}.");
-            return session;
         }
     }
 }

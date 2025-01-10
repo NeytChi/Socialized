@@ -1,14 +1,11 @@
 ﻿using Domain.InstagramAccounts;
-using InstagramApiSharp.API;
 using Serilog;
 
 namespace UseCases.InstagramAccounts
 {
-    public class IgAccountProfileManager : IGAccountManager
+    public class IgAccountProfileManager
     {
-        public IgAccountProfileManager(ILogger logger,
-            IInstagramApi api,
-            IIGAccountRepository accountRepository) : base(logger, api, accountRepository)
+        public IgAccountProfileManager(ILogger logger, IIGAccountRepository accountRepository)
         {
 
         }

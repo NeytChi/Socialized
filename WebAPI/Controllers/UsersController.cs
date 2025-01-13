@@ -49,7 +49,7 @@ namespace WebAPI.Controllers
         [ActionName("LogOut")]
         public ActionResult<dynamic> LogOut()
         {
-            var token = GetAutorizationToken();
+            var token = GetAuthorizationToken();
 
             UserLoginManager.LogOut(token);
 
@@ -100,7 +100,7 @@ namespace WebAPI.Controllers
         [HttpDelete]
         public ActionResult<dynamic> Delete()
         {
-            var userToken = GetAutorizationToken();
+            var userToken = GetAuthorizationToken();
 
             UserManager.Delete(userToken);
 

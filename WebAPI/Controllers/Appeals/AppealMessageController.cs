@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
 using UseCases.Appeals.Messages.Commands;
 using UseCases.Appeals.Messages;
 using WebAPI.Responses;
@@ -16,9 +15,8 @@ namespace WebAPI.Controllers.Appeals
         }
         [HttpPost]
         [RequestFormLimits(ValueLengthLimit = int.MaxValue, MultipartBodyLengthLimit = int.MaxValue)]
-        public ActionResult<SuccessResponse> Create(List<IFormFile> files, IFormCollection formData)
+        public ActionResult<SuccessResponse> Create([FromForm] ICollection<IFormFile> files, [FromForm] CreateAppealMessageCommand command)
         {
-            var command = JsonSerializer.Deserialize<CreateAppealMessageCommand>(formData["command"]);
             command.Files = files;
 
             AppealMessageManager.Create(command);

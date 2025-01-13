@@ -4,7 +4,7 @@ using UseCases.AutoPosts;
 using UseCases.AutoPosts.Commands;
 using UseCases.AutoPosts.AutoPostFiles.Commands;
 using UseCases.AutoPosts.AutoPostFiles;
-using System.Text.Json;
+// using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -22,15 +22,15 @@ namespace WebAPI.Controllers
         }
         [HttpPost]
         [RequestFormLimits(ValueLengthLimit = int.MaxValue, MultipartBodyLengthLimit = int.MaxValue)]
-        public ActionResult<dynamic> Create(List<IFormFile> files, IFormCollection formData)
+        public ActionResult<dynamic> Create([FromForm] ICollection<IFormFile> files,[FromForm] CreateAutoPostCommand command)
         {
-            var command = JsonSerializer.Deserialize<CreateAutoPostCommand>(formData["command"]);
-            for (int i = 0; i < files.Count; i++)
+            sbyte index = 0;
+            foreach (var file in files) 
             {
                 command.Files.Add(new CreateAutoPostFileCommand
                 {
-                    FormFile = files[i],
-                    Order = (sbyte) i
+                    FormFile = file,
+                    Order = index++
                 });
             }
 
@@ -45,7 +45,7 @@ namespace WebAPI.Controllers
             [FromQuery] int since = 1, 
             [FromQuery] int count = 10)
         {
-            var userToken = GetAutorizationToken();
+            var userToken = GetAuthorizationToken();
             var command = new GetAutoPostsCommand
             {
                 UserToken = userToken, AccountId = accountId,
@@ -69,22 +69,6 @@ namespace WebAPI.Controllers
         {
             AutoPostManager.Delete(command);
 
-            return new SuccessResponse(true);
-        }
-        [HttpPost]
-        [ActionName("AddFiles")]
-        [RequestFormLimits(ValueLengthLimit = int.MaxValue, MultipartBodyLengthLimit = int.MaxValue)]
-        public ActionResult<dynamic> AddFiles(List<IFormFile> files, IFormCollection formData)
-        {
-            var command = JsonSerializer.Deserialize<AddRangeAutoPostFileCommand>(formData["command"]);
-            for (int i = 0; i < files.Count; i++)
-            {
-                command.Files.Add(new CreateAutoPostFileCommand
-                {
-                    FormFile = files[i],
-                    Order = (sbyte)i
-                });
-            }
             return new SuccessResponse(true);
         }
         [HttpDelete]

@@ -1,4 +1,5 @@
 using System.Text;
+using Domain.Admins;
 using Domain.Appeals;
 using Domain.Appeals.Messages;
 using Domain.Appeals.Replies;

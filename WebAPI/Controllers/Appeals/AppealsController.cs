@@ -25,7 +25,7 @@ namespace WebAPI.Controllers.Appeals
         [ActionName("GetAppealsByUser")]
         public ActionResult<DataResponse> GetAppealsByUser([FromQuery] int since = 0, [FromQuery] int count = 10)
         {
-            var userToken = GetAutorizationToken();
+            var userToken = GetAuthorizationToken();
 
             var result = AppealManager.GetAppealsByUser(userToken, since, count);
 

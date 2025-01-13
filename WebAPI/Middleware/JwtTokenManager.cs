@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
+using Domain.Admins;
 
 namespace WebAPI.Middleware
 {
@@ -20,7 +21,8 @@ namespace WebAPI.Middleware
         }
         public string Authenticate(Admin admin)
         {
-            var key = _configuration.GetValue<string>("JwtConfig:Key");
+            var key = _configuration.GetValue<string>("JwtConfig:Key") 
+                ?? throw new InvalidOperationException("Jwt config key - відсутній.");
             var keyBytes = Encoding.UTF8.GetBytes(key);
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenDescriptor = new SecurityTokenDescriptor

@@ -1,5 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
 using WebAPI.response;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
@@ -7,12 +7,11 @@ namespace WebAPI.Controllers
     [ApiController]
     public class ControllerResponseBase : ControllerBase
     {
-        public Serilog.ILogger Logger;
-
-        [NonAction]
-        public string GetAutorizationToken()
-        {
-            return HttpContext?.Request.Headers.Where(h => h.Key == "Authorization").Select(h => h.Value).FirstOrDefault();
+        [NonAction] 
+        public string GetAuthorizationToken() 
+        { 
+            HttpContext.Request.Headers.TryGetValue("Authorization", out var token); 
+            return token.FirstOrDefault() ?? throw new InvalidOperationException("Сервер не зміг дістати authorization jwt token."); 
         }
         [NonAction]
         public string GetCulture()

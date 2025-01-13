@@ -28,7 +28,7 @@ namespace Core.FileControl
             {
                 return relativePath;
             }
-            return null;
+            return string.Empty;
         }
         public bool SaveTo(Stream stream, string relativeFilePath)
         {

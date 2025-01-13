@@ -2,17 +2,13 @@ using Serilog;
 
 namespace Core.FileControl
 {
-    public class FileManager : IFileManager
+    public class FileManager(ILogger logger) : IFileManager
     {
         private readonly string currentDirectory = Directory.GetCurrentDirectory();
-        public readonly ILogger Logger;
+        public readonly ILogger Logger = logger;
         public DateTime currentTime = DateTime.Now;
         public string dailyFolder = "/" + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day + "/";
 
-        public FileManager(ILogger logger)
-        {
-            Logger = logger;
-        }
         public virtual string SaveFile(Stream file, string RelativePath)
         {
             string fileName = Guid.NewGuid().ToString();
@@ -23,7 +19,7 @@ namespace Core.FileControl
             {
                 return fileRelativePath + fileName;
             }
-            return null;
+            return string.Empty;
         }
         public virtual bool SaveTo(Stream file, string relativePath, string fileName)
         {

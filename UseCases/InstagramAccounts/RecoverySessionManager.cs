@@ -10,7 +10,6 @@ namespace UseCases.InstagramAccounts
     {
         private ILogger Logger;
         private IIGAccountRepository AccountRepository;
-        private IRestoreInstagramSessionManager RestoreInstagramSessionManager;
         private ILoginSessionManager LoginSessionManager;
         private IGetStateData GetStateData;
         private ProfileCondition ProfileCondition;
@@ -18,7 +17,6 @@ namespace UseCases.InstagramAccounts
 
         public RecoverySessionManager(ILogger logger, 
             IIGAccountRepository accountRepository, 
-            IRestoreInstagramSessionManager restoreInstagramSessionManager, 
             ILoginSessionManager loginSessionManager, 
             ProfileCondition profileCondition, 
             IChallengeRequiredAccount challengeRequiredAccount,
@@ -26,7 +24,6 @@ namespace UseCases.InstagramAccounts
         {
             Logger = logger;
             AccountRepository = accountRepository;
-            RestoreInstagramSessionManager = restoreInstagramSessionManager;
             LoginSessionManager = loginSessionManager;
             GetStateData = getStateData;
             ProfileCondition = profileCondition;
@@ -36,9 +33,6 @@ namespace UseCases.InstagramAccounts
         public IGAccount Do(IGAccount account, IgAccountRequirements requirements)
         {
             account.State.Relogin = true;
-
-            account = RestoreInstagramSessionManager.Do(account);
-
             account = LoginSessionManager.Do(account, requirements);
             if (account != null && !account.State.Challenger)
             {
@@ -47,9 +41,11 @@ namespace UseCases.InstagramAccounts
                 account.State.Usable = true;
                 account.State.Relogin = false;
                 account.State.Challenger = false;
+                account.IsDeleted = false;
                 AccountRepository.Update(account);
+                Logger.Information($"Сесія була востановлена, id={account.Id}");
             }
-            if (account.State.Challenger)
+            if (account != null && account.State.Challenger)
             {
                 ChallengeRequiredAccount.Do(account, true);
                 var stateData = GetStateData.AsString(account);
@@ -57,14 +53,11 @@ namespace UseCases.InstagramAccounts
                 account.State.Usable = false;
                 account.State.Relogin = false;
                 account.State.Challenger = true;
+                account.IsDeleted = false;
                 AccountRepository.Update(account);
+                Logger.Information($"Сесія потребує відновлення, id={account.Id}");
             }
-
-            account.IsDeleted = false;
-            AccountRepository.Update(account);
-
-            Logger.Information($"Сесія була востановлена, id={account.Id}");
-            return account;
+            return account ?? throw new InvalidOperationException("Операція логіну аккаунту була провалена.");
         }
     }
 }

@@ -14,9 +14,7 @@ namespace UseCases.AutoPosts
         private IAutoPostRepository AutoPostRepository;
         private IAutoPostFileManager AutoPostFileManager;
         private ICategoryRepository CategoryRepository;
-        private IAutoPostFileManager AutoPostFilesManager;
         private AutoPostCondition AutoPostCondition;
-        
         
         public AutoPostManager(ILogger logger, 
             IAutoPostRepository autoPostRepository,
@@ -38,6 +36,8 @@ namespace UseCases.AutoPosts
             {
                 throw new NotFoundException($"Instagram аккаунт не був знайдений по токену користувача={command.UserToken} і id={command.AccountId}.");
             }
+            var postFiles = AutoPostFileManager.Create(command.Files, 1);
+            Save(command, postFiles);
             /*
             if (command.AutoPostType ? !access.PostsIsTrue(account.userId, ref message)
                 : !access.StoriesIsTrue(account.userId, ref message))
@@ -49,8 +49,6 @@ namespace UseCases.AutoPosts
                 return false;
             }
             */
-            var postFiles = AutoPostFileManager.Create(command.Files, 1);
-            Save(command, postFiles);
         }
         private AutoPost Save(AutoPostCommand command, ICollection<AutoPostFile> postFiles)
         {
@@ -63,9 +61,9 @@ namespace UseCases.AutoPosts
                 ExecuteAt = command.ExecuteAt.AddHours(timezone),
                 AutoDelete = command.AutoDelete,
                 DeleteAfter = command.AutoDelete ? command.DeleteAfter.AddHours(timezone) : DateTime.UtcNow,
-                Location = HttpUtility.UrlDecode(command.Location),
-                Description = HttpUtility.UrlDecode(command.Description),
-                Comment = HttpUtility.UrlDecode(command.Comment),
+                Location = HttpUtility.UrlDecode(command.Location ?? ""),
+                Description = HttpUtility.UrlDecode(command.Description ?? ""),
+                Comment = HttpUtility.UrlDecode(command.Comment ?? ""),
                 TimeZone = command.TimeZone,
                 CategoryId = command.CategoryId,
                 files = postFiles
@@ -97,13 +95,16 @@ namespace UseCases.AutoPosts
             int timezoneDelete = command.TimeZone > 0 ? -command.TimeZone : command.TimeZone * -1;
             post.ExecuteAt = command.ExecuteAt.AddHours(timezoneDelete);
             post.TimeZone = command.TimeZone;
-            post.Location = command.Location;
+            post.Location = command.Location ?? "";
             post.AutoDelete = post.AutoDelete;
             post.DeleteAfter = post.AutoDelete ? post.DeleteAfter.AddHours(timezoneDelete) : post.DeleteAfter;
             post.CategoryId = command.CategoryId;
-            post.Description = HttpUtility.UrlDecode(command.Description);
-            post.Comment = HttpUtility.UrlDecode(command.Comment);
-            AutoPostFileManager.Update(command.Files, post.files);
+            post.Description = HttpUtility.UrlDecode(command.Description ?? "");
+            post.Comment = HttpUtility.UrlDecode(command.Comment ?? "");
+            if (command.Files != null)
+            {
+                AutoPostFileManager.Update(command.Files, post.files);
+            }
             AutoPostRepository.Update(post);
         }
         public void Delete(DeleteAutoPostCommand command)

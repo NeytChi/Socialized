@@ -37,7 +37,11 @@ namespace UseCases.Appeals.Messages
             };
             AppealMessageRepository.Create(message);
             Logger.Information($"Створено було повідомлення в зверненні, id={message.Id}.");
-            message.Files = AppealFileManager.Create(command.Files, message.Id);
+
+            if (command.Files != null)
+            {
+                message.Files = AppealFileManager.Create(command.Files, message.Id);
+            }
             return message;
         }
         public void Update(UpdateAppealMessageCommand command)

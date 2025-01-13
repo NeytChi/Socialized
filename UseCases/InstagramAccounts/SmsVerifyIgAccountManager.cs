@@ -12,20 +12,17 @@ namespace UseCases.InstagramAccounts
         private ILogger Logger;
         private IGetStateData GetStateData;
         private IIGAccountRepository AccountRepository;
-        private IRestoreInstagramSessionManager RestoreInstagramSessionManager;
         private IVerifyCodeForChallengeRequire VerifyCodeForChallengeRequire;
         private ProfileCondition ProfileCondition;
 
         public SmsVerifyIgAccountManager(ILogger logger,
             IGetStateData getStateData, 
             IIGAccountRepository accountRepository,
-            IRestoreInstagramSessionManager restoreInstagramSessionManager,
             ProfileCondition profileCondition,
             IVerifyCodeForChallengeRequire verifyCodeForChallengeRequire)
         {
             Logger = logger;
             AccountRepository = accountRepository;
-            RestoreInstagramSessionManager = restoreInstagramSessionManager;
             ProfileCondition = profileCondition;
             VerifyCodeForChallengeRequire = verifyCodeForChallengeRequire;
             GetStateData = getStateData;
@@ -41,7 +38,6 @@ namespace UseCases.InstagramAccounts
             {
                 throw new NotFoundException("Сесія Instagram аккаунту не потребує підтвердження аккаунту.");
             }
-            var session = RestoreInstagramSessionManager.Do(account);
             var loginResult = VerifyCodeForChallengeRequire.Do(command.VerifyCode.ToString(), account);
             if (loginResult.State != InstagramLoginState.Success)
             {

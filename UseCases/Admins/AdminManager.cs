@@ -50,7 +50,7 @@ namespace UseCases.Admins
                 throw new NotFoundException("Не було знайдено адміна по токену для зміни паролю.");
             }   
             admin.Password = ProfileCondition.HashPassword(command.Password);
-            admin.TokenForStart = null;
+            admin.TokenForStart = "";
             AdminRepository.Update(admin);
             Logger.Information($"Був налаштован пароль для адміна id={admin.Id}.");
         }

@@ -3,6 +3,6 @@
     public class CreateAppealMessageReplyCommand
     {
         public long AppealMessageId { get; set; }
-        public string Reply { get; set; }
+        public required string Reply { get; set; }
     }
 }

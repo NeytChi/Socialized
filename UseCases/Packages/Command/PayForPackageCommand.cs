@@ -2,8 +2,8 @@
 {
     public class PayForPackageCommand
     {
-        public string UserToken { get; set; }
-        public string NonceToken { get; set; }
+        public required string UserToken { get; set; }
+        public required string NonceToken { get; set; }
         public long PackageId { get; set; }
         public int MonthCount { get; set; }
     }

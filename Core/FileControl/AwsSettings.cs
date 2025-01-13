@@ -1,10 +1,10 @@
 ﻿namespace Core.FileControl
 {
-    public struct AwsSettings
+    public class AwsSettings
     {
-        public string AwsBucketRegion { get; set; }
-        public string AwsBucketName { get; set; }
-        public string AwsAccessKeyId { get; set; }
-        public string AwsSecretKeyId { get; set; }
+        public required string AwsBucketRegion { get; set; }
+        public required string AwsBucketName { get; set; }
+        public required string AwsAccessKeyId { get; set; }
+        public required string AwsSecretKeyId { get; set; }
     }
 }

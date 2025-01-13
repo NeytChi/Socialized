@@ -2,7 +2,7 @@
 {
     public class DeleteAutoPostCommand
     {
-        public string UserToken { get; set; }
+        public required string UserToken { get; set; }
         public long AutoPostId { get; set; }
     }
 }

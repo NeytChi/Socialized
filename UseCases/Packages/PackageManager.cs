@@ -89,7 +89,7 @@ namespace UseCases.Packages
             }
             return true;
         }
-        public ServiceAccess GetWorkingServiceAccess(long userId)
+        public ServiceAccess? GetWorkingServiceAccess(long userId)
         {
             var access = ServiceAccessRepository.GetByUser(userId);
             if (access == null)

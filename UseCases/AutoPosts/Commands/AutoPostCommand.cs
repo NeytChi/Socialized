@@ -8,9 +8,9 @@
         public bool Stopped { get; set; }
         public DateTime ExecuteAt { get; set; }
         public DateTime DeleteAfter { get; set; }
-        public string Location { get; set; }
-        public string Comment { get; set; }
-        public string Description { get; set; }
+        public string? Location { get; set; }
+        public string? Comment { get; set; }
+        public string? Description { get; set; }
         public long CategoryId { get; set; }
         public int TimeZone { get; set; }
     }

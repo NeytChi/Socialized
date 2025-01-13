@@ -92,7 +92,7 @@ namespace UseCases.Users
                 throw new NotFoundException("Сервер не визначив користувача по його токену для видалення аккаунту.");                
             }
             user.IsDeleted = true;
-            user.TokenForUse = null;
+            user.TokenForUse = "";
             UserRepository.Update(user);
             Logger.Information($"Користувач був видалений, id={user.Id}.");
         }

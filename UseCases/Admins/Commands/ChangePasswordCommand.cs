@@ -3,6 +3,6 @@
     public class ChangePasswordCommand
     {
         public int RecoveryCode { get; set; }
-        public string Password { get; set; }
+        public required string Password { get; set; }
     }
 }

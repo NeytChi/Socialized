@@ -4,6 +4,6 @@ namespace UseCases.AutoPosts.AutoPostFiles.Commands
 {
     public class CreateAutoPostFileCommand : AutoPostFileCommand
     {
-        public IFormFile FormFile { get; set; }
+        public required IFormFile FormFile { get; set; }
     }
 }

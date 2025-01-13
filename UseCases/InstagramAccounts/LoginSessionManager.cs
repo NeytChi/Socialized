@@ -3,10 +3,11 @@ using Domain.InstagramAccounts;
 using Serilog;
 using UseCases.Exceptions;
 using UseCases.InstagramApi;
+using UseCases.InstagramAccounts.Commands;
 
 namespace UseCases.InstagramAccounts
 {
-    public class LoginSessionManager : BaseManager
+    public class LoginSessionManager : BaseManager, ILoginSessionManager
     {
         private ILoginApi Api;
         public ProfileCondition ProfileCondition = new ProfileCondition();
@@ -15,18 +16,19 @@ namespace UseCases.InstagramAccounts
         {
             Api = api;
         }
-        public InstagramLoginResult Do(IGAccount account)
+        public IGAccount Do(IgAccountRequirements accountRequirements)
         {
             string message = "";
-            var result = Api.Do(account);
+            var account = new IGAccount();
+            var result = Api.Do(ref account, accountRequirements);
             switch (result)
             {
                 case InstagramLoginState.Success:
                     message = "Сесія Instagram аккаунт був успішно залогінен.";
-                    return new InstagramLoginResult { Success = true, State = InstagramLoginState.Success } ;
+                    return account;
                 case InstagramLoginState.ChallengeRequired:
                     message = "Сесія Instagram аккаунту потребує підтвердження по коду.";
-                    return new InstagramLoginResult { Success = false, State = InstagramLoginState.ChallengeRequired };
+                    return account;
                 case InstagramLoginState.TwoFactorRequired:
                     message = "Сесія Instagram аккаунту потребує проходження двох-факторної організації.";
                     break;
@@ -46,6 +48,10 @@ namespace UseCases.InstagramAccounts
                     break;
             }
             throw new IgAccountException(message);
+        }
+        public IGAccount Do(IGAccount account, IgAccountRequirements accountRequirements)
+        {
+            return Do(accountRequirements);
         }
     }
 }

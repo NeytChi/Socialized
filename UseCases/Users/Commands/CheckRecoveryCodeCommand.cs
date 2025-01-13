@@ -2,7 +2,7 @@
 {
     public class CheckRecoveryCodeCommand
     {
-        public string UserEmail { get; set; }
+        public required string UserEmail { get; set; }
         public int RecoveryCode { get; set; }
     }
 }

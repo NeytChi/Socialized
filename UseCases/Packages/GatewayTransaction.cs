@@ -5,13 +5,13 @@ namespace UseCases.Packages
 {
     public class GatewayTransaction : IGatewayTransaction
     {
-        private readonly ILogger _logger;
-        public static BraintreeGateway gateway;
+        private readonly ILogger Logger;
+        private BraintreeGateway Gateway;
 
         public GatewayTransaction(ILogger logger, BrainTreeSettings treeSettings) 
         {
-            _logger = logger;
-            gateway = new BraintreeGateway
+            Logger = logger;
+            Gateway = new BraintreeGateway
             {
                 Environment = treeSettings.BraintreeEnvironment == 0 ?
                     Braintree.Environment.SANDBOX : Braintree.Environment.PRODUCTION,
@@ -22,11 +22,11 @@ namespace UseCases.Packages
         }
         public bool Sale(TransactionRequest request)
         {
-            var responce = gateway.Transaction.Sale(request);
+            var responce = Gateway.Transaction.Sale(request);
 
             if (!responce.IsSuccess())
             {
-                _logger.Error("Помилка={result.Message}.");
+                Logger.Error("Помилка={result.Message}.");
             }
             return responce.IsSuccess();
         }

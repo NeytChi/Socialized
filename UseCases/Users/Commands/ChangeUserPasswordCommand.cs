@@ -2,8 +2,8 @@
 {
     public class ChangeUserPasswordCommand
     {
-        public string RecoveryToken { get; set; }
-        public string UserPassword { get; set; } 
-        public string UserConfirmPassword { get; set; } 
+        public required string RecoveryToken { get; set; }
+        public required string UserPassword { get; set; } 
+        public required string UserConfirmPassword { get; set; } 
     }
 }

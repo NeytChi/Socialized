@@ -2,6 +2,6 @@
 {
     public class CreateIgAccountCommand : IgAccountRequirements
     {
-        public string UserToken { get; set; }
+        public required string UserToken { get; set; }
     }
 }

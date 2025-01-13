@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace UseCases.InstagramAccounts.Commands
+﻿namespace UseCases.InstagramAccounts.Commands
 {
     public class IgAccountRequirements
     {
-        public string InstagramUserName { get; set; }
-        public string InstagramPassword { get; set; }
+        public required string InstagramUserName { get; set; }
+        public required string InstagramPassword { get; set; }
     }
 }

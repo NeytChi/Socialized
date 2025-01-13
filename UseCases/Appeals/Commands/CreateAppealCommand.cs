@@ -2,7 +2,7 @@
 {
     public class CreateAppealCommand
     {
-        public string UserToken { get; set; }
-        public string Subject { get; set; }
+        public required string UserToken { get; set; }
+        public required string Subject { get; set; }
     }
 }

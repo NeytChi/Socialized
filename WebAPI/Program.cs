@@ -2,14 +2,12 @@ using System.Text;
 using Core;
 using Core.FileControl;
 using Domain.Admins;
-using Domain.Appeals;
-using Domain.Appeals.Messages;
-using Domain.Appeals.Replies;
 using Domain.AutoPosting;
 using Domain.GettingSubscribes;
 using Domain.InstagramAccounts;
 using Domain.Packages;
 using Domain.Users;
+using FfmpegConverter;
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -29,9 +27,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddDbContext<Context>(options =>
-        options.UseMySql(connectionString,
-            new MySqlServerVersion(new Version(8, 0, 36))));
+builder.Services.AddDbContext<Context>(options => options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 36))));
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -44,61 +40,53 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IAdminManager, AdminManager>();
-builder.Services.AddSingleton<IJwtTokenManager, JwtTokenManager>();
-builder.Services.AddSingleton<IAdminRepository, AdminRepository>();
-builder.Services.AddSingleton<IAdminEmailManager, AdminEmailManager>();
-builder.Services.AddSingleton<ISmtpSender, SmtpSender>(); 
+builder.Services.AddScoped<IAdminManager, AdminManager>();
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+builder.Services.AddScoped<IJwtTokenManager, JwtTokenManager>();
+builder.Services.AddScoped<IAdminRepository, AdminRepository>();
+builder.Services.AddScoped<IAdminEmailManager, AdminEmailManager>();
+builder.Services.AddScoped<ISmtpSender, SmtpSender>(); 
 
-builder.Services.AddSingleton<IPackageManager, PackageManager>();
-builder.Services.AddTransient<IServiceAccessRepository, ServiceAccessRepository>();
-builder.Services.AddTransient<IPackageAccessRepository, PackageAccessRepository>();
-builder.Services.AddTransient<IDiscountRepository, DiscountRepository>();
-builder.Services.AddTransient<IForServerAccessCountingRepository, IGAccountRepository>();
+builder.Services.AddScoped<IPackageManager, PackageManager>();
+builder.Services.AddScoped<IServiceAccessRepository, ServiceAccessRepository>();
+builder.Services.AddScoped<IPackageAccessRepository, PackageAccessRepository>();
+builder.Services.AddScoped<IDiscountRepository, DiscountRepository>();
+builder.Services.AddScoped<IForServerAccessCountingRepository, IGAccountRepository>();
 
-builder.Services.AddSingleton<IAutoPostManager, AutoPostManager>();
-builder.Services.AddTransient<IAutoPostRepository, AutoPostRepository>();
-builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
-builder.Services.AddTransient<IIGAccountRepository, IGAccountRepository>();
-builder.Services.AddSingleton<IAutoPostFileManager, AutoPostFileManager>();
-builder.Services.AddTransient<IFileManager, AwsUploader>();
+builder.Services.AddScoped<IAutoPostManager, AutoPostManager>();
+builder.Services.AddScoped<IAutoPostRepository, AutoPostRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IIGAccountRepository, IGAccountRepository>();
+builder.Services.AddScoped<IAutoPostFileManager, AutoPostFileManager>();
 builder.Services.Configure<AwsSettings>(builder.Configuration.GetSection("AwsSettings"));
-builder.Services.AddTransient<IAutoPostFileRepository, AutoPostFileRepository>();
-builder.Services.AddTransient<IAutoPostFileSave, AutoPostFileSave>();
+builder.Services.AddScoped<IFileManager, AwsUploader>();
+builder.Services.AddScoped<IAutoPostFileRepository, AutoPostFileRepository>();
+builder.Services.AddScoped<IAutoPostFileSave, AutoPostFileSave>();
+builder.Services.AddScoped<IFileConverter, FileConverterMocking>();
+builder.Services.AddScoped<IFileMover, FileMover>();
 
+// IFileConverter fileConverter, IFileManager fileManager, IFileMover fileMover);
 
+builder.Services.AddScoped<IIGAccountManager, CreateIGAccountManager>();
+builder.Services.AddScoped<ILoginApi, LoginApi>();
+builder.Services.AddScoped<IChallengeRequiredAccount, ChallengeRequiredAccount>();
+builder.Services.AddScoped<IGetChallengeRequireVerifyMethod, GetChallengeRequireVerifyMethod>();
+builder.Services.AddScoped<IVerifyCodeForChallengeRequire, VerifyCodeForChallengeRequire>();
+builder.Services.AddScoped<ILoginSessionManager, LoginSessionManager>();
+builder.Services.AddScoped<IRecoverySessionManager, RecoverySessionManager>();
+builder.Services.AddScoped<ProfileCondition>();
+builder.Services.AddScoped<IGetChallengeRequireVerifyMethod, GetChallengeRequireVerifyMethod>();
+builder.Services.AddScoped<IGetStateData, GetStateData>();
+builder.Services.AddScoped<ISaveSessionManager, SaveSessionManager>();
+builder.Services.AddScoped<IDeleteIgAccountManager, DeleteIgAccountManager>();
+builder.Services.AddScoped<ITaskGettingSubscribesRepository, TaskGsRepository>();
+builder.Services.AddScoped<ISmsVerifyIgAccountManager, SmsVerifyIgAccountManager>();
 
-builder.Services.AddSingleton<IIGAccountManager, CreateIGAccountManager>();
-builder.Services.AddTransient<ILoginApi, LoginApi>();
-builder.Services.AddTransient<IChallengeRequiredAccount, ChallengeRequiredAccount>();
-builder.Services.AddTransient<IGetChallengeRequireVerifyMethod, GetChallengeRequireVerifyMethod>();
-builder.Services.AddTransient<IVerifyCodeForChallengeRequire, VerifyCodeForChallengeRequire>();
-builder.Services.AddTransient<ILoginSessionManager, LoginSessionManager>();
-builder.Services.AddTransient<IRecoverySessionManager, RecoverySessionManager>();
-builder.Services.AddSingleton<ProfileCondition>();
-builder.Services.AddTransient<IGetChallengeRequireVerifyMethod, GetChallengeRequireVerifyMethod>();
-builder.Services.AddTransient<IGetStateData, GetStateData>();
-builder.Services.AddTransient<ISaveSessionManager, SaveSessionManager>();
-
-/// TODO: Write all dependencies for each controller
-
-builder.Services.AddTransient<IPackageAccessRepository, PackageAccessRepository>();
-builder.Services.AddTransient<IUsersManager, UsersManager>();
-builder.Services.AddTransient<IUserLoginManager, UserLoginManager>();
-builder.Services.AddTransient<IUserPasswordRecoveryManager, UserPasswordRecoveryManager>();
-
-
-builder.Services.AddTransient<IAppealFileRepository, AppealFileRepository>();
-builder.Services.AddTransient<IAppealMessageReplyRepository, AppealMessageReplyRepository>();
-builder.Services.AddTransient<IAppealMessageRepository, AppealMessageRepository>();
-builder.Services.AddTransient<IAppealRepository, AppealRepository>();
-builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
-builder.Services.AddTransient<IIGAccountRepository, IGAccountRepository>();
-builder.Services.AddTransient<ITaskDataRepository, TaskDataRepository>();
-builder.Services.AddTransient<ITaskGsRepository, TaskGsRepository>();
-builder.Services.AddTransient<ITaskGettingSubscribesRepository, TaskGsRepository>();
-builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUsersManager, UsersManager>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IEmailMessanger, EmailMessanger>();
+builder.Services.AddScoped<IUserLoginManager, UserLoginManager>();
+builder.Services.AddScoped<IUserPasswordRecoveryManager, UserPasswordRecoveryManager>();
 
 builder.Services.AddAuthentication(option =>
 {

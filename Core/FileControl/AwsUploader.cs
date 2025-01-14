@@ -2,6 +2,7 @@ using Serilog;
 using Amazon;
 using Amazon.S3;
 using Amazon.S3.Transfer;
+using Microsoft.Extensions.Options;
 
 namespace Core.FileControl
 {
@@ -12,9 +13,9 @@ namespace Core.FileControl
         private readonly IAmazonS3 S3Client;
         private readonly TransferUtility FileTransferUtility;
 
-        public AwsUploader(ILogger logger, AwsSettings settings) : base(logger)
+        public AwsUploader(ILogger logger, IOptions<AwsSettings> settings) : base(logger)
         {
-            Settings = settings;
+            Settings = settings.Value;
             Region = RegionEndpoint.GetBySystemName(Settings.AwsBucketRegion);
             S3Client = new AmazonS3Client(Settings.AwsAccessKeyId, Settings.AwsSecretKeyId, Region);
             FileTransferUtility = new TransferUtility(S3Client);

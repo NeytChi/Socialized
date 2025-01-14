@@ -1,4 +1,5 @@
-﻿using Serilog;
+﻿using Microsoft.Extensions.Options;
+using Serilog;
 using System.Net;
 using System.Net.Mail;
 
@@ -11,10 +12,10 @@ namespace Core
         private readonly MailAddress From;
         private readonly SmtpClient Smtp;
 
-        public SmtpSender(ILogger logger, MailSettings mailSettings)
+        public SmtpSender(ILogger logger, IOptions<MailSettings> mailSettings)
         {
             Logger = logger;
-            Settings = mailSettings;
+            Settings = mailSettings.Value;
             Smtp = new SmtpClient(Settings.SmtpAddress, Settings.SmtpPort)
             {
                 Credentials = new NetworkCredential(Settings.MailAddress, Settings.MailPassword)

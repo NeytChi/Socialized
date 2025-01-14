@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\Infrastructure\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|d:\\vs projects\\socialized\\infrastructure\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|solutionrelative:userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|d:\\vs projects\\socialized\\infrastructure\\taskgsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|solutionrelative:taskgsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|d:\\vs projects\\socialized\\infrastructure\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|solutionrelative:adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|d:\\vs projects\\socialized\\infrastructure\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|solutionrelative:userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|d:\\vs projects\\socialized\\infrastructure\\taskdatarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,11 +62,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "AdminRepository.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\AdminRepository.cs",
+              "RelativeDocumentMoniker": "AdminRepository.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Infrastructure\\AdminRepository.cs",
+              "RelativeToolTip": "AdminRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T12:11:33.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\UserRepository.cs",
               "RelativeDocumentMoniker": "UserRepository.cs",
@@ -70,25 +91,24 @@
               "RelativeToolTip": "UserRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T20:40:02.821Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T20:40:02.821Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TaskGsRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\TaskGsRepository.cs",
               "RelativeDocumentMoniker": "TaskGsRepository.cs",
               "ToolTip": "D:\\VS Projects\\Socialized\\Infrastructure\\TaskGsRepository.cs",
               "RelativeToolTip": "TaskGsRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-28T20:39:31.435Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "TaskDataRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\TaskDataRepository.cs",
               "RelativeDocumentMoniker": "TaskDataRepository.cs",
@@ -96,12 +116,11 @@
               "RelativeToolTip": "TaskDataRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T20:39:20.362Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T20:39:20.362Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ServiceAccessRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\ServiceAccessRepository.cs",
               "RelativeDocumentMoniker": "ServiceAccessRepository.cs",
@@ -109,12 +128,11 @@
               "RelativeToolTip": "ServiceAccessRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T20:38:56.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T20:38:56.005Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PackageAccessRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\PackageAccessRepository.cs",
               "RelativeDocumentMoniker": "PackageAccessRepository.cs",
@@ -122,12 +140,11 @@
               "RelativeToolTip": "PackageAccessRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T20:38:42.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T20:38:42.031Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "IGAccountRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\IGAccountRepository.cs",
               "RelativeDocumentMoniker": "IGAccountRepository.cs",
@@ -135,16 +152,11 @@
               "RelativeToolTip": "IGAccountRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T20:38:03.786Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "WhenOpened": "2024-12-28T20:38:03.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "BlogPostRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\BlogPostRepository.cs",
               "RelativeDocumentMoniker": "BlogPostRepository.cs",
@@ -152,12 +164,11 @@
               "RelativeToolTip": "BlogPostRepository.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T20:37:00.344Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T20:37:00.344Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "AutoPostRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\AutoPostRepository.cs",
               "RelativeDocumentMoniker": "AutoPostRepository.cs",
@@ -165,12 +176,11 @@
               "RelativeToolTip": "AutoPostRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T20:36:31.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T20:36:31.983Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AutoPostFileRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\AutoPostFileRepository.cs",
               "RelativeDocumentMoniker": "AutoPostFileRepository.cs",
@@ -178,12 +188,11 @@
               "RelativeToolTip": "AutoPostFileRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T20:35:34.83Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T20:35:34.83Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "AppealRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\AppealRepository.cs",
               "RelativeDocumentMoniker": "AppealRepository.cs",
@@ -191,12 +200,11 @@
               "RelativeToolTip": "AppealRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T20:34:59.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T20:34:59.47Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AppealMessageReplyRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\AppealMessageReplyRepository.cs",
               "RelativeDocumentMoniker": "AppealMessageReplyRepository.cs",
@@ -204,12 +212,11 @@
               "RelativeToolTip": "AppealMessageReplyRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T20:33:57.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T20:33:57.525Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "AppealFileRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\AppealFileRepository.cs",
               "RelativeDocumentMoniker": "AppealFileRepository.cs",
@@ -217,8 +224,7 @@
               "RelativeToolTip": "AppealFileRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T20:31:50.137Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T20:31:50.137Z"
             }
           ]
         }

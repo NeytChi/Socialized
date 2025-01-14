@@ -3,12 +3,96 @@
   "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\Domain\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\iappealfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\iappealfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\admins\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:admins\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\appealmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\appealmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\appealfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\appealfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\appeal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\appeal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\autoposting\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:autoposting\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\autoposting\\autopostfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:autoposting\\autopostfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\autoposting\\autopost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:autoposting\\autopost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\gettingsubscribes\\taskgs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:gettingsubscribes\\taskgs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\instagramaccounts\\timeaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:instagramaccounts\\timeaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\instagramaccounts\\sessionstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:instagramaccounts\\sessionstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\instagramaccounts\\igaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:instagramaccounts\\igaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\instagramaccounts\\businessaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:instagramaccounts\\businessaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\instagramaccounts\\accountprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:instagramaccounts\\accountprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\packages\\serviceaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:packages\\serviceaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\statistics\\commentstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:statistics\\commentstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\statistics\\daystatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:statistics\\daystatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\statistics\\onlinefollowers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:statistics\\onlinefollowers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\statistics\\poststatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:statistics\\poststatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\statistics\\storystatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:statistics\\storystatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\users\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:users\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\users\\culture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:users\\culture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,36 +102,309 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 20,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppealMessage.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\AppealMessage.cs",
+              "RelativeDocumentMoniker": "Appeals\\AppealMessage.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\AppealMessage.cs",
+              "RelativeToolTip": "Appeals\\AppealMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:20:05.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppealFile.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\AppealFile.cs",
+              "RelativeDocumentMoniker": "Appeals\\AppealFile.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\AppealFile.cs",
+              "RelativeToolTip": "Appeals\\AppealFile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:19:49.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Appeal.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\Appeal.cs",
+              "RelativeDocumentMoniker": "Appeals\\Appeal.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\Appeal.cs",
+              "RelativeToolTip": "Appeals\\Appeal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:19:31.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\Category.cs",
+              "RelativeDocumentMoniker": "AutoPosting\\Category.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\Category.cs",
+              "RelativeToolTip": "AutoPosting\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:19:12.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AutoPostFile.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\AutoPostFile.cs",
+              "RelativeDocumentMoniker": "AutoPosting\\AutoPostFile.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\AutoPostFile.cs",
+              "RelativeToolTip": "AutoPosting\\AutoPostFile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:18:58.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AutoPost.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\AutoPost.cs",
+              "RelativeDocumentMoniker": "AutoPosting\\AutoPost.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\AutoPosting\\AutoPost.cs",
+              "RelativeToolTip": "AutoPosting\\AutoPost.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAmwB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:18:39.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TaskGS.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\GettingSubscribes\\TaskGS.cs",
+              "RelativeDocumentMoniker": "GettingSubscribes\\TaskGS.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\GettingSubscribes\\TaskGS.cs",
+              "RelativeToolTip": "GettingSubscribes\\TaskGS.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:18:02.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TimeAction.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\TimeAction.cs",
+              "RelativeDocumentMoniker": "InstagramAccounts\\TimeAction.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\TimeAction.cs",
+              "RelativeToolTip": "InstagramAccounts\\TimeAction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:17:45.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SessionState.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\SessionState.cs",
+              "RelativeDocumentMoniker": "InstagramAccounts\\SessionState.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\SessionState.cs",
+              "RelativeToolTip": "InstagramAccounts\\SessionState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:17:34.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IGAccount.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\IGAccount.cs",
+              "RelativeDocumentMoniker": "InstagramAccounts\\IGAccount.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\IGAccount.cs",
+              "RelativeToolTip": "InstagramAccounts\\IGAccount.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:17:05.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BusinessAccount.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\BusinessAccount.cs",
+              "RelativeDocumentMoniker": "InstagramAccounts\\BusinessAccount.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\BusinessAccount.cs",
+              "RelativeToolTip": "InstagramAccounts\\BusinessAccount.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:16:51.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AccountProfile.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\AccountProfile.cs",
+              "RelativeDocumentMoniker": "InstagramAccounts\\AccountProfile.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\AccountProfile.cs",
+              "RelativeToolTip": "InstagramAccounts\\AccountProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:16:40.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ServiceAccess.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Packages\\ServiceAccess.cs",
+              "RelativeDocumentMoniker": "Packages\\ServiceAccess.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Packages\\ServiceAccess.cs",
+              "RelativeToolTip": "Packages\\ServiceAccess.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:16:21.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DayStatistics.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Statistics\\DayStatistics.cs",
+              "RelativeDocumentMoniker": "Statistics\\DayStatistics.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Statistics\\DayStatistics.cs",
+              "RelativeToolTip": "Statistics\\DayStatistics.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:15:49.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OnlineFollowers.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Statistics\\OnlineFollowers.cs",
+              "RelativeDocumentMoniker": "Statistics\\OnlineFollowers.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Statistics\\OnlineFollowers.cs",
+              "RelativeToolTip": "Statistics\\OnlineFollowers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:15:32.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PostStatistics.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Statistics\\PostStatistics.cs",
+              "RelativeDocumentMoniker": "Statistics\\PostStatistics.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Statistics\\PostStatistics.cs",
+              "RelativeToolTip": "Statistics\\PostStatistics.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:15:08.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "StoryStatistics.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Statistics\\StoryStatistics.cs",
+              "RelativeDocumentMoniker": "Statistics\\StoryStatistics.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Statistics\\StoryStatistics.cs",
+              "RelativeToolTip": "Statistics\\StoryStatistics.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:14:33.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CommentStatistics.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Statistics\\CommentStatistics.cs",
+              "RelativeDocumentMoniker": "Statistics\\CommentStatistics.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Statistics\\CommentStatistics.cs",
+              "RelativeToolTip": "Statistics\\CommentStatistics.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:14:19.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Culture.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Users\\Culture.cs",
+              "RelativeDocumentMoniker": "Users\\Culture.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Users\\Culture.cs",
+              "RelativeToolTip": "Users\\Culture.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:13:36.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Profile.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Users\\Profile.cs",
+              "RelativeDocumentMoniker": "Users\\Profile.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Users\\Profile.cs",
+              "RelativeToolTip": "Users\\Profile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:12:47.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Users\\User.cs",
+              "RelativeDocumentMoniker": "Users\\User.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Users\\User.cs",
+              "RelativeToolTip": "Users\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:11:27.693Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IAppealFileRepository.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAppealFileRepository.cs",
-              "RelativeDocumentMoniker": "Appeals\\IAppealFileRepository.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAppealFileRepository.cs",
-              "RelativeToolTip": "Appeals\\IAppealFileRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 22,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "BaseEntity.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\BaseEntity.cs",
+              "RelativeToolTip": "BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T20:33:09.455Z",
+              "WhenOpened": "2025-01-09T14:10:32.48Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IAdminRepository.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAdminRepository.cs",
-              "RelativeDocumentMoniker": "Appeals\\IAdminRepository.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAdminRepository.cs",
-              "RelativeToolTip": "Appeals\\IAdminRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
+              "Title": "Admin.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Admins\\Admin.cs",
+              "RelativeDocumentMoniker": "Admins\\Admin.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Admins\\Admin.cs",
+              "RelativeToolTip": "Admins\\Admin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T21:25:37.836Z",
+              "WhenOpened": "2025-01-09T14:10:27.399Z",
               "EditorCaption": ""
             }
           ]

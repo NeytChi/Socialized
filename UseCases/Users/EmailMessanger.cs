@@ -4,9 +4,9 @@ namespace UseCases.Users
 {
     public class EmailMessanger : IEmailMessanger
     {
-        private SmtpSender SmtpSender;
+        private ISmtpSender SmtpSender;
 
-        public EmailMessanger(SmtpSender smtpSender) 
+        public EmailMessanger(ISmtpSender smtpSender) 
         {
             SmtpSender = smtpSender;
         }

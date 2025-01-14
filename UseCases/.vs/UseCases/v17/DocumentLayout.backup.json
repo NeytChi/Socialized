@@ -3,28 +3,100 @@
   "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\UseCases\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\users\\usersmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:users\\usersmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\autoposts\\autopostfiles\\fileconvertermocking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:autoposts\\autopostfiles\\fileconvertermocking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\users\\iuserpasswordrecoverymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:users\\iuserpasswordrecoverymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\autoposts\\autopostfiles\\autopostfilesave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:autoposts\\autopostfiles\\autopostfilesave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\users\\iuserloginmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:users\\iuserloginmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\autoposts\\autopostfiles\\filemover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:autoposts\\autopostfiles\\filemover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\users\\iemailmessanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:users\\iemailmessanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\autoposts\\autopostfiles\\autopostfilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:autoposts\\autopostfiles\\autopostfilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\autoposts\\autopostfiles\\iautopostfilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:autoposts\\autopostfiles\\iautopostfilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\autoposts\\autopostmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:autoposts\\autopostmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\users\\emailmessanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:users\\emailmessanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\basemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:basemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\instagramapi\\mockingapi\\getstatedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:instagramapi\\mockingapi\\getstatedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\instagramaccounts\\recoverysessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:instagramaccounts\\recoverysessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\instagramapi\\igetstatedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:instagramapi\\igetstatedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\instagramaccounts\\smsverifyigaccountmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:instagramaccounts\\smsverifyigaccountmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\instagramaccounts\\createigaccountmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:instagramaccounts\\createigaccountmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\instagramaccounts\\irecoverysessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:instagramaccounts\\irecoverysessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\instagramapi\\iloginapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:instagramapi\\iloginapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\instagramapi\\igetchallengerequireverifymethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:instagramapi\\igetchallengerequireverifymethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\autoposts\\autopostfiles\\commands\\addrangeautopostfilecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:autoposts\\autopostfiles\\commands\\addrangeautopostfilecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\appeals\\replies\\commands\\createappealmessagereplycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:appeals\\replies\\commands\\createappealmessagereplycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\appeals\\messages\\commands\\updateappealmessagecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:appeals\\messages\\commands\\updateappealmessagecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\appeals\\messages\\commands\\createappealmessagecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:appeals\\messages\\commands\\createappealmessagecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\admins\\commands\\setuppasswordcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:admins\\commands\\setuppasswordcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\admins\\commands\\createadmincommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:admins\\commands\\createadmincommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\admins\\commands\\changepasswordcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:admins\\commands\\changepasswordcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\admins\\commands\\authenticationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:admins\\commands\\authenticationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|d:\\vs projects\\socialized\\usecases\\admins\\adminmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{852F7E72-BE83-4267-9C3E-46B3C6343664}|UseCases.csproj|solutionrelative:admins\\adminmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,71 +106,162 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IUserPasswordRecoveryManager.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Users\\IUserPasswordRecoveryManager.cs",
-              "RelativeDocumentMoniker": "Users\\IUserPasswordRecoveryManager.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Users\\IUserPasswordRecoveryManager.cs",
-              "RelativeToolTip": "Users\\IUserPasswordRecoveryManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "FileConverterMocking.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostFiles\\FileConverterMocking.cs",
+              "RelativeDocumentMoniker": "AutoPosts\\AutoPostFiles\\FileConverterMocking.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostFiles\\FileConverterMocking.cs",
+              "RelativeToolTip": "AutoPosts\\AutoPostFiles\\FileConverterMocking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T08:39:04.292Z",
+              "WhenOpened": "2025-01-14T12:24:14.109Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IUserLoginManager.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Users\\IUserLoginManager.cs",
-              "RelativeDocumentMoniker": "Users\\IUserLoginManager.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Users\\IUserLoginManager.cs",
-              "RelativeToolTip": "Users\\IUserLoginManager.cs",
+              "Title": "FileMover.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostFiles\\FileMover.cs",
+              "RelativeDocumentMoniker": "AutoPosts\\AutoPostFiles\\FileMover.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostFiles\\FileMover.cs",
+              "RelativeToolTip": "AutoPosts\\AutoPostFiles\\FileMover.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T08:39:02.748Z",
+              "WhenOpened": "2025-01-14T12:20:36.248Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IEmailMessanger.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Users\\IEmailMessanger.cs",
-              "RelativeDocumentMoniker": "Users\\IEmailMessanger.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Users\\IEmailMessanger.cs",
-              "RelativeToolTip": "Users\\IEmailMessanger.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "AutoPostFileSave.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostFiles\\AutoPostFileSave.cs",
+              "RelativeDocumentMoniker": "AutoPosts\\AutoPostFiles\\AutoPostFileSave.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostFiles\\AutoPostFileSave.cs",
+              "RelativeToolTip": "AutoPosts\\AutoPostFiles\\AutoPostFileSave.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T08:39:01.787Z",
+              "WhenOpened": "2025-01-14T12:20:27.512Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "EmailMessanger.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Users\\EmailMessanger.cs",
               "RelativeDocumentMoniker": "Users\\EmailMessanger.cs",
               "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Users\\EmailMessanger.cs",
               "RelativeToolTip": "Users\\EmailMessanger.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T08:38:58.682Z",
+              "WhenOpened": "2025-01-14T11:57:11.088Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BaseManager.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\BaseManager.cs",
-              "RelativeDocumentMoniker": "BaseManager.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\BaseManager.cs",
-              "RelativeToolTip": "BaseManager.cs",
+              "DocumentIndex": 7,
+              "Title": "GetStateData.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\InstagramApi\\MockingApi\\GetStateData.cs",
+              "RelativeDocumentMoniker": "InstagramApi\\MockingApi\\GetStateData.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\InstagramApi\\MockingApi\\GetStateData.cs",
+              "RelativeToolTip": "InstagramApi\\MockingApi\\GetStateData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T14:14:09.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SmsVerifyIgAccountManager.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\InstagramAccounts\\SmsVerifyIgAccountManager.cs",
+              "RelativeDocumentMoniker": "InstagramAccounts\\SmsVerifyIgAccountManager.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\InstagramAccounts\\SmsVerifyIgAccountManager.cs",
+              "RelativeToolTip": "InstagramAccounts\\SmsVerifyIgAccountManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T14:03:37.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RecoverySessionManager.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\InstagramAccounts\\RecoverySessionManager.cs",
+              "RelativeDocumentMoniker": "InstagramAccounts\\RecoverySessionManager.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\InstagramAccounts\\RecoverySessionManager.cs",
+              "RelativeToolTip": "InstagramAccounts\\RecoverySessionManager.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T14:02:36.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CreateIgAccountManager.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\InstagramAccounts\\CreateIgAccountManager.cs",
+              "RelativeDocumentMoniker": "InstagramAccounts\\CreateIgAccountManager.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\InstagramAccounts\\CreateIgAccountManager.cs",
+              "RelativeToolTip": "InstagramAccounts\\CreateIgAccountManager.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAawBMAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T14:02:09.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IGetStateData.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\InstagramApi\\IGetStateData.cs",
+              "RelativeDocumentMoniker": "InstagramApi\\IGetStateData.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\InstagramApi\\IGetStateData.cs",
+              "RelativeToolTip": "InstagramApi\\IGetStateData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T14:01:23.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IRecoverySessionManager.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\InstagramAccounts\\IRecoverySessionManager.cs",
+              "RelativeDocumentMoniker": "InstagramAccounts\\IRecoverySessionManager.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\InstagramAccounts\\IRecoverySessionManager.cs",
+              "RelativeToolTip": "InstagramAccounts\\IRecoverySessionManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T08:38:45.015Z",
+              "WhenOpened": "2025-01-13T14:01:52.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ILoginApi.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\InstagramApi\\ILoginApi.cs",
+              "RelativeDocumentMoniker": "InstagramApi\\ILoginApi.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\InstagramApi\\ILoginApi.cs",
+              "RelativeToolTip": "InstagramApi\\ILoginApi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T14:01:24.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IGetChallengeRequireVerifyMethod.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\InstagramApi\\IGetChallengeRequireVerifyMethod.cs",
+              "RelativeDocumentMoniker": "InstagramApi\\IGetChallengeRequireVerifyMethod.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\InstagramApi\\IGetChallengeRequireVerifyMethod.cs",
+              "RelativeToolTip": "InstagramApi\\IGetChallengeRequireVerifyMethod.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T14:01:21.995Z",
               "EditorCaption": ""
             },
             {
@@ -107,16 +270,150 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsersManager.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Users\\UsersManager.cs",
-              "RelativeDocumentMoniker": "Users\\UsersManager.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Users\\UsersManager.cs",
-              "RelativeToolTip": "Users\\UsersManager.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAAwFkAAAAUAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "AutoPostManager.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostManager.cs",
+              "RelativeDocumentMoniker": "AutoPosts\\AutoPostManager.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostManager.cs",
+              "RelativeToolTip": "AutoPosts\\AutoPostManager.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T16:10:10.383Z",
+              "WhenOpened": "2025-01-13T13:49:11.493Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AutoPostFileManager.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostFiles\\AutoPostFileManager.cs",
+              "RelativeDocumentMoniker": "AutoPosts\\AutoPostFiles\\AutoPostFileManager.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostFiles\\AutoPostFileManager.cs",
+              "RelativeToolTip": "AutoPosts\\AutoPostFiles\\AutoPostFileManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T13:48:37.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IAutoPostFileManager.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostFiles\\IAutoPostFileManager.cs",
+              "RelativeDocumentMoniker": "AutoPosts\\AutoPostFiles\\IAutoPostFileManager.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostFiles\\IAutoPostFileManager.cs",
+              "RelativeToolTip": "AutoPosts\\AutoPostFiles\\IAutoPostFileManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T13:47:18.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AddRangeAutoPostFileCommand.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostFiles\\Commands\\AddRangeAutoPostFileCommand.cs",
+              "RelativeDocumentMoniker": "AutoPosts\\AutoPostFiles\\Commands\\AddRangeAutoPostFileCommand.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\AutoPosts\\AutoPostFiles\\Commands\\AddRangeAutoPostFileCommand.cs",
+              "RelativeToolTip": "AutoPosts\\AutoPostFiles\\Commands\\AddRangeAutoPostFileCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T13:33:02.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CreateAppealMessageReplyCommand.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Appeals\\Replies\\Commands\\CreateAppealMessageReplyCommand.cs",
+              "RelativeDocumentMoniker": "Appeals\\Replies\\Commands\\CreateAppealMessageReplyCommand.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Appeals\\Replies\\Commands\\CreateAppealMessageReplyCommand.cs",
+              "RelativeToolTip": "Appeals\\Replies\\Commands\\CreateAppealMessageReplyCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T13:32:56.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UpdateAppealMessageCommand.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Appeals\\Messages\\Commands\\UpdateAppealMessageCommand.cs",
+              "RelativeDocumentMoniker": "Appeals\\Messages\\Commands\\UpdateAppealMessageCommand.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Appeals\\Messages\\Commands\\UpdateAppealMessageCommand.cs",
+              "RelativeToolTip": "Appeals\\Messages\\Commands\\UpdateAppealMessageCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T13:32:51.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CreateAppealMessageCommand.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Appeals\\Messages\\Commands\\CreateAppealMessageCommand.cs",
+              "RelativeDocumentMoniker": "Appeals\\Messages\\Commands\\CreateAppealMessageCommand.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Appeals\\Messages\\Commands\\CreateAppealMessageCommand.cs",
+              "RelativeToolTip": "Appeals\\Messages\\Commands\\CreateAppealMessageCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T13:32:50.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "SetupPasswordCommand.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Admins\\Commands\\SetupPasswordCommand.cs",
+              "RelativeDocumentMoniker": "Admins\\Commands\\SetupPasswordCommand.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Admins\\Commands\\SetupPasswordCommand.cs",
+              "RelativeToolTip": "Admins\\Commands\\SetupPasswordCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T13:32:01.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CreateAdminCommand.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Admins\\Commands\\CreateAdminCommand.cs",
+              "RelativeDocumentMoniker": "Admins\\Commands\\CreateAdminCommand.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Admins\\Commands\\CreateAdminCommand.cs",
+              "RelativeToolTip": "Admins\\Commands\\CreateAdminCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T13:31:48.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ChangePasswordCommand.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Admins\\Commands\\ChangePasswordCommand.cs",
+              "RelativeDocumentMoniker": "Admins\\Commands\\ChangePasswordCommand.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Admins\\Commands\\ChangePasswordCommand.cs",
+              "RelativeToolTip": "Admins\\Commands\\ChangePasswordCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T13:31:39.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AuthenticationCommand.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Admins\\Commands\\AuthenticationCommand.cs",
+              "RelativeDocumentMoniker": "Admins\\Commands\\AuthenticationCommand.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Admins\\Commands\\AuthenticationCommand.cs",
+              "RelativeToolTip": "Admins\\Commands\\AuthenticationCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T13:31:37.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AdminManager.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Admins\\AdminManager.cs",
+              "RelativeDocumentMoniker": "Admins\\AdminManager.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Admins\\AdminManager.cs",
+              "RelativeToolTip": "Admins\\AdminManager.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAQwDQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T13:30:53.066Z"
             }
           ]
         }

@@ -34,13 +34,11 @@ D:\VS Projects\Socialized\WebAPI\bin\Debug\net8.0\System.Xml.XPath.XmlDocument.d
 D:\VS Projects\Socialized\WebAPI\bin\Debug\net8.0\Core.dll
 D:\VS Projects\Socialized\WebAPI\bin\Debug\net8.0\Domain.dll
 D:\VS Projects\Socialized\WebAPI\bin\Debug\net8.0\FfmpegConverter.dll
-D:\VS Projects\Socialized\WebAPI\bin\Debug\net8.0\InstagramSessionApi.dll
 D:\VS Projects\Socialized\WebAPI\bin\Debug\net8.0\UseCases.dll
 D:\VS Projects\Socialized\WebAPI\bin\Debug\net8.0\Domain.pdb
 D:\VS Projects\Socialized\WebAPI\bin\Debug\net8.0\UseCases.pdb
 D:\VS Projects\Socialized\WebAPI\bin\Debug\net8.0\Core.pdb
 D:\VS Projects\Socialized\WebAPI\bin\Debug\net8.0\FfmpegConverter.pdb
-D:\VS Projects\Socialized\WebAPI\bin\Debug\net8.0\InstagramSessionApi.pdb
 D:\VS Projects\Socialized\WebAPI\obj\Debug\net8.0\staticwebassets.build.json
 D:\VS Projects\Socialized\WebAPI\obj\Debug\net8.0\staticwebassets.development.json
 D:\VS Projects\Socialized\WebAPI\obj\Debug\net8.0\staticwebassets\msbuild.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props

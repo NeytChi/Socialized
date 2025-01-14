@@ -96,13 +96,11 @@ D:\VS Projects\Socialized\UseCasesTests\bin\Debug\net8.0\zh-Hant\Microsoft.Visua
 D:\VS Projects\Socialized\UseCasesTests\bin\Debug\net8.0\Core.dll
 D:\VS Projects\Socialized\UseCasesTests\bin\Debug\net8.0\Domain.dll
 D:\VS Projects\Socialized\UseCasesTests\bin\Debug\net8.0\FfmpegConverter.dll
-D:\VS Projects\Socialized\UseCasesTests\bin\Debug\net8.0\InstagramSessionApi.dll
 D:\VS Projects\Socialized\UseCasesTests\bin\Debug\net8.0\UseCases.dll
 D:\VS Projects\Socialized\UseCasesTests\bin\Debug\net8.0\UseCases.pdb
 D:\VS Projects\Socialized\UseCasesTests\bin\Debug\net8.0\Core.pdb
 D:\VS Projects\Socialized\UseCasesTests\bin\Debug\net8.0\Domain.pdb
 D:\VS Projects\Socialized\UseCasesTests\bin\Debug\net8.0\FfmpegConverter.pdb
-D:\VS Projects\Socialized\UseCasesTests\bin\Debug\net8.0\InstagramSessionApi.pdb
 D:\VS Projects\Socialized\UseCasesTests\obj\Debug\net8.0\UseCasesTests.csproj.AssemblyReference.cache
 D:\VS Projects\Socialized\UseCasesTests\obj\Debug\net8.0\UseCasesTests.GeneratedMSBuildEditorConfig.editorconfig
 D:\VS Projects\Socialized\UseCasesTests\obj\Debug\net8.0\UseCasesTests.AssemblyInfoInputs.cache

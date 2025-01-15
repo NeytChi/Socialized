@@ -30,3 +30,10 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "WebAPI.dll"]
+
+FROM mysql:8.0
+ENV MYSQL_DATABASE=socialized
+ENV MYSQL_ROOT_PASSWORD=Pass1234!
+ENV MYSQL_USER=mykyta
+ENV MYSQL_PASSWORD=Pass1234!
+EXPOSE 3307

@@ -33,7 +33,7 @@ namespace UseCasesTests.AutoPosts
         public void Create_WhenAccountIsNotFound_ThrowsNotFoundException()
         {
             // Arrange
-            var command = new CreateAutoPostCommand { UserToken = "token", AccountId = 1 };
+            var command = new CreateAutoPostCommand { UserToken = "token", AccountId = 1, Files = new List<CreateAutoPostFileCommand> { } };
             iGAccountRepository.Get(command.UserToken, command.AccountId).Returns((IGAccount)null);
 
             // Act & Assert

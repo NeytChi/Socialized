@@ -143,17 +143,17 @@ namespace UseCases.Packages
 
         public ICollection<PackageAccess> GetPackageAccess()
         {
-            throw new NotImplementedException();
+            return new List<PackageAccess>();
         }
 
         public ICollection<DiscountPackage> GetDiscountPackageAccess()
         {
-            throw new NotImplementedException();
+            return new List<DiscountPackage>();
         }
 
         public string GetClientTokenForPay(string userToken)
         {
-            throw new NotImplementedException();
+            return string.Empty;
         }
     }
 }

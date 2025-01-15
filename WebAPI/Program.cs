@@ -65,8 +65,6 @@ builder.Services.AddScoped<IAutoPostFileSave, AutoPostFileSave>();
 builder.Services.AddScoped<IFileConverter, FileConverterMocking>();
 builder.Services.AddScoped<IFileMover, FileMover>();
 
-// IFileConverter fileConverter, IFileManager fileManager, IFileMover fileMover);
-
 builder.Services.AddScoped<IIGAccountManager, CreateIGAccountManager>();
 builder.Services.AddScoped<ILoginApi, LoginApi>();
 builder.Services.AddScoped<IChallengeRequiredAccount, ChallengeRequiredAccount>();

@@ -1,5 +1,4 @@
-﻿using Xunit;
-using NSubstitute;
+﻿using NSubstitute;
 using Serilog;
 using Domain.InstagramAccounts;
 using UseCases.InstagramApi;

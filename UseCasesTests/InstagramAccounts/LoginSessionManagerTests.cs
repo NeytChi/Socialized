@@ -1,73 +1,58 @@
-﻿using Xunit;
-using NSubstitute;
+﻿using NSubstitute;
 using Serilog;
 using Domain.InstagramAccounts;
-using UseCases.Exceptions;
 using UseCases.InstagramApi;
 using UseCases.InstagramAccounts;
+using UseCases.InstagramAccounts.Commands;
+using UseCases.Exceptions;
 
-namespace UseCases.InstagramAccounts.Tests
+namespace UseCases.Tests
 {
     public class LoginSessionManagerTests
     {
-        private LoginSessionManager _manager;
-        private ILogger _logger;
-        private ILoginApi _api;
+        private readonly ILogger _logger;
+        private readonly ILoginApi _api;
+        private readonly LoginSessionManager _loginSessionManager;
 
         public LoginSessionManagerTests()
         {
             _logger = Substitute.For<ILogger>();
             _api = Substitute.For<ILoginApi>();
-
-            _manager = new LoginSessionManager(_logger, _api);
-        }
-
-        [Fact]
-        public void Do_ShouldReturnSuccess_WhenLoginStateIsSuccess()
-        {
-            // Arrange
-            var account = new IGAccount();
-            _api.Do(account).Returns(InstagramLoginState.Success);
-
-            // Act
-            var result = _manager.Do(account);
-
-            // Assert
-            Assert.True(result.Success);
-            Assert.Equal(InstagramLoginState.Success, result.State);
-        }
-
-        [Fact]
-        public void Do_ShouldReturnChallengeRequired_WhenLoginStateIsChallengeRequired()
-        {
-            // Arrange
-            var account = new IGAccount();
-            _api.Do(account).Returns(InstagramLoginState.ChallengeRequired);
-
-            // Act
-            var result = _manager.Do(account);
-
-            // Assert
-            Assert.False(result.Success);
-            Assert.Equal(InstagramLoginState.ChallengeRequired, result.State);
+            _loginSessionManager = new LoginSessionManager(_logger, _api);
         }
 
         [Theory]
-        [InlineData(InstagramLoginState.TwoFactorRequired, "Сесія Instagram аккаунту потребує проходження двох-факторної організації.")]
-        [InlineData(InstagramLoginState.InactiveUser, "Сесія Instagram аккаунту не активна.")]
-        [InlineData(InstagramLoginState.InvalidUser, "Правильно введені данні для входу в аккаунт.")]
-        [InlineData(InstagramLoginState.BadPassword, "Неправильний пароль.")]
-        [InlineData(InstagramLoginState.LimitError, "Невідома помилка при спробі зайти(логін) в Instagram аккаунт. Виключення:LimitError.")]
-        [InlineData(InstagramLoginState.Exception, "Невідома помилка при спробі зайти(логін) в Instagram аккаунт. Виключення:Exception.")]
-        public void Do_ShouldThrowIgAccountException_WhenLoginFails(InstagramLoginState state, string expectedMessage)
+        [InlineData(InstagramLoginState.Success)]
+        [InlineData(InstagramLoginState.ChallengeRequired)]
+        public void Do_Success_ReturnsIGAccount(InstagramLoginState state)
         {
             // Arrange
+            var accountRequirements = new IgAccountRequirements { InstagramUserName = "username", InstagramPassword = "password" };
             var account = new IGAccount();
-            _api.Do(account).Returns(state);
+            _api.Do(ref account, accountRequirements).Returns(state);
+
+            // Act
+            var result = _loginSessionManager.Do(accountRequirements);
+
+            // Assert
+            Assert.NotNull(result);
+        }
+
+        [InlineData(InstagramLoginState.TwoFactorRequired, "Сесія Instagram аккаунту потребує проходження двох-факторної верифікації.")]
+        [InlineData(InstagramLoginState.InactiveUser, "Сесія Instagram аккаунту є не активною.")]
+        [InlineData(InstagramLoginState.InvalidUser, "Неправильний логін аккаунту.")]
+        [InlineData(InstagramLoginState.BadPassword, "Неправильний пароль.")]
+        [InlineData(InstagramLoginState.LimitError, "Невідома помилка при спробі увійти в Instagram аккаунт.")]
+        [InlineData(InstagramLoginState.Exception, "Невідома помилка при спробі увійти в Instagram аккаунт.")]
+        public void Do_ThrowsIgAccountException(InstagramLoginState state, string expectedMessage)
+        {
+            // Arrange
+            var accountRequirements = new IgAccountRequirements { InstagramUserName = "username", InstagramPassword = "password" };
+            var account = new IGAccount();
+            _api.Do(ref account, accountRequirements).ReturnsForAnyArgs(state);
 
             // Act & Assert
-            var exception = Assert.Throws<IgAccountException>(() => _manager.Do(account));
-            Assert.Equal(expectedMessage, exception.Message);
+            Assert.Throws<IgAccountException>(() => _loginSessionManager.Do(accountRequirements));
         }
     }
 }

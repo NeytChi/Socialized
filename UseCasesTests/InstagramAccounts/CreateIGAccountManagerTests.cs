@@ -1,22 +1,20 @@
 ﻿using NSubstitute;
 using Serilog;
 using Domain.InstagramAccounts;
+using UseCases.InstagramAccounts;
 using UseCases.InstagramAccounts.Commands;
-using UseCases.InstagramApi;
 
-namespace UseCases.InstagramAccounts.Tests
+namespace UseCases.Tests
 {
     public class CreateIGAccountManagerTests
     {
-        private CreateIGAccountManager _manager;
-        private ILogger _logger;
-        private IIGAccountRepository _accountRepository;
-        private IChallengeRequiredAccount _challengeRequiredAccount;
-        private ILoginSessionManager _loginSessionManager;
-        private IRestoreInstagramSessionManager _restoreInstagramSessionManager;
-        private IRecoverySessionManager _recoverySessionManager;
-        private ILoginApi _loginApi;
-        private ISaveSessionManager _saveSessionManager;
+        private readonly ILogger _logger;
+        private readonly IIGAccountRepository _accountRepository;
+        private readonly IChallengeRequiredAccount _challengeRequiredAccount;
+        private readonly ILoginSessionManager _loginSessionManager;
+        private readonly IRecoverySessionManager _recoverySessionManager;
+        private readonly ISaveSessionManager _saveSessionManager;
+        private readonly CreateIGAccountManager _createIGAccountManager;
 
         public CreateIGAccountManagerTests()
         {
@@ -24,65 +22,103 @@ namespace UseCases.InstagramAccounts.Tests
             _accountRepository = Substitute.For<IIGAccountRepository>();
             _challengeRequiredAccount = Substitute.For<IChallengeRequiredAccount>();
             _loginSessionManager = Substitute.For<ILoginSessionManager>();
-            _restoreInstagramSessionManager = Substitute.For<IRestoreInstagramSessionManager>();
             _recoverySessionManager = Substitute.For<IRecoverySessionManager>();
-            _loginApi = Substitute.For<ILoginApi>();
             _saveSessionManager = Substitute.For<ISaveSessionManager>();
 
-            _manager = new CreateIGAccountManager(_logger, _accountRepository, _loginApi,
-                _challengeRequiredAccount, _loginSessionManager, _restoreInstagramSessionManager,
-                _recoverySessionManager, _saveSessionManager);
+            _createIGAccountManager = new CreateIGAccountManager(
+                _logger,
+                _accountRepository,
+                _challengeRequiredAccount,
+                _loginSessionManager,
+                _recoverySessionManager,
+                _saveSessionManager);
         }
 
         [Fact]
-        public void Create_ShouldReturnRecoveredAccount_WhenAccountExists()
+        public void Create_AccountExists_ReturnsRecoveredAccount()
         {
             // Arrange
-            var command = new CreateIgAccountCommand { UserToken = "user123", InstagramUserName = "existinguser" };
-            var existingAccount = new IGAccount { UserId = 1, Username = "existinguser", State = new SessionState { Challenger = false } };
-
+            var command = new CreateIgAccountCommand
+            {
+                UserToken = "userToken",
+                InstagramUserName = "existingUser",
+                InstagramPassword = "password"
+            };
+            var existingAccount = new IGAccount();
             _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).Returns(existingAccount);
             _recoverySessionManager.Do(existingAccount, command).Returns(existingAccount);
 
             // Act
-            var result = _manager.Create(command);
+            var result = _createIGAccountManager.Create(command);
 
             // Assert
             Assert.Equal(existingAccount, result);
         }
 
         [Fact]
-        public void Create_ShouldCallChallengeRequiredAccount_WhenAccountInChallengeState()
+        public void Create_NewAccount_CallsLoginSessionManager()
         {
             // Arrange
-            var command = new CreateIgAccountCommand { UserToken = "user123", InstagramUserName = "newuser" };
-            var newAccount = new IGAccount { UserId = 1, Username = "newuser", State = new SessionState { Challenger = true } };
-
+            var command = new CreateIgAccountCommand
+            {
+                UserToken = "userToken",
+                InstagramUserName = "newUser",
+                InstagramPassword = "password"
+            };
+            var newAccount = new IGAccount { State = new SessionState() };
             _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).Returns((IGAccount)null);
-            _loginSessionManager.Do(null, command).Returns(newAccount);
+            _loginSessionManager.Do(command).ReturnsForAnyArgs(newAccount);
 
             // Act
-            var result = _manager.Create(command);
+            var result = _createIGAccountManager.Create(command);
 
             // Assert
-            _challengeRequiredAccount.Received().Do(newAccount, false);
+            _loginSessionManager.Received(1).Do(command);
         }
 
         [Fact]
-        public void Create_ShouldSaveSession_WhenAccountIsNotInChallengeState()
+        public void Create_NewAccountWithoutChallenge_CallsSaveSessionManager()
         {
             // Arrange
-            var command = new CreateIgAccountCommand { UserToken = "user123", InstagramUserName = "newuser" };
-            var newAccount = new IGAccount { UserId = 1, Username = "newuser", State = new SessionState { Challenger = false } };
-
+            var command = new CreateIgAccountCommand
+            {
+                UserToken = "userToken",
+                InstagramUserName = "newUser",
+                InstagramPassword = "password"
+            };
+            var newAccount = new IGAccount();
             _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).Returns((IGAccount)null);
-            _loginSessionManager.Do(null, command).Returns(newAccount);
+            _loginSessionManager.Do(command).Returns(newAccount);
+            newAccount.State = new SessionState { Challenger = false };
 
             // Act
-            var result = _manager.Create(command);
+            var result = _createIGAccountManager.Create(command);
 
             // Assert
-            _saveSessionManager.Received().Do(newAccount.UserId, newAccount.Username, false);
+            _saveSessionManager.Received(1).Do(newAccount.UserId, newAccount.Username, false);
+        }
+
+        [Fact]
+        public void Create_NewAccountWithChallenge_CallsChallengeRequiredAccountAndSaveSessionManager()
+        {
+            // Arrange
+            var command = new CreateIgAccountCommand
+            {
+                UserToken = "userToken",
+                InstagramUserName = "newUser",
+                InstagramPassword = "password"
+            };
+            var newAccount = new IGAccount();
+            _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).Returns((IGAccount)null);
+            _loginSessionManager.Do(command).Returns(newAccount);
+            newAccount.State = new SessionState { Challenger = true };
+
+            // Act
+            var result = _createIGAccountManager.Create(command);
+
+            // Assert
+            _challengeRequiredAccount.Received(1).Do(newAccount, false);
+            _saveSessionManager.Received(1).Do(newAccount.UserId, newAccount.Username, true);
         }
     }
 }

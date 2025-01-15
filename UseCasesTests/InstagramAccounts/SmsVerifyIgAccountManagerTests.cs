@@ -16,7 +16,6 @@ namespace UseCases.InstagramAccounts.Tests
         private ILogger _logger;
         private IGetStateData _getStateData;
         private IIGAccountRepository _accountRepository;
-        private IRestoreInstagramSessionManager _restoreInstagramSessionManager;
         private IVerifyCodeForChallengeRequire _verifyCodeForChallengeRequire;
         private ProfileCondition _profileCondition;
 
@@ -25,13 +24,11 @@ namespace UseCases.InstagramAccounts.Tests
             _logger = Substitute.For<ILogger>();
             _getStateData = Substitute.For<IGetStateData>();
             _accountRepository = Substitute.For<IIGAccountRepository>();
-            _restoreInstagramSessionManager = Substitute.For<IRestoreInstagramSessionManager>();
             _verifyCodeForChallengeRequire = Substitute.For<IVerifyCodeForChallengeRequire>();
             _profileCondition = new ProfileCondition();
 
             _manager = new SmsVerifyIgAccountManager(_logger, _getStateData, _accountRepository,
-                                                     _restoreInstagramSessionManager, _profileCondition,
-                                                     _verifyCodeForChallengeRequire);
+                                                     _profileCondition, _verifyCodeForChallengeRequire);
         }
 
         [Fact]
@@ -69,7 +66,6 @@ namespace UseCases.InstagramAccounts.Tests
             var account = new IGAccount { State = new SessionState { Challenger = true } };
 
             _accountRepository.Get(command.UserToken, command.AccountId).Returns(account);
-            _restoreInstagramSessionManager.Do(account).Returns(account);
             _verifyCodeForChallengeRequire.Do(command.VerifyCode.ToString(), account).Returns(new InstagramLoginResult { State = InstagramLoginState.Exception });
 
             // Act & Assert
@@ -85,7 +81,6 @@ namespace UseCases.InstagramAccounts.Tests
             var account = new IGAccount { Id = 123, State = new SessionState { Challenger = true } };
 
             _accountRepository.Get(command.UserToken, command.AccountId).Returns(account);
-            _restoreInstagramSessionManager.Do(account).Returns(account);
             _verifyCodeForChallengeRequire.Do(command.VerifyCode.ToString(), account).Returns(new InstagramLoginResult { State = InstagramLoginState.Success });
             _getStateData.AsString(account).Returns("sessionData");
 

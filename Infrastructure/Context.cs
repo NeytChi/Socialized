@@ -68,5 +68,31 @@ namespace Infrastructure
         {
             optionsBuilder.EnableSensitiveDataLogging();
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<PackageAccess>().HasData(
+                new PackageAccess 
+                { 
+                    Id = 1, 
+                    Name = "default", 
+                    Price = 250, 
+                    IGAccounts = 3, 
+                    Posts = 10, 
+                    Stories = 10, 
+                    AnalyticsDays = 30 
+                }
+            );
+            modelBuilder.Entity<DiscountPackage>().HasData(
+                new DiscountPackage
+                {
+                    Id = 1,
+                    Percent = 50,
+                    Day = 10,
+                    Month = 1,
+                }
+            );
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

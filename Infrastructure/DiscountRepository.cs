@@ -11,6 +11,10 @@ namespace Infrastructure
             _context = context;
         }
 
+        public ICollection<DiscountPackage> GetAll()
+        {
+            return _context.DiscountPackages.ToArray();
+        }
         public DiscountPackage GetBy(int month)
         {
             return _context.DiscountPackages

@@ -10,6 +10,12 @@ namespace Infrastructure
         {
             context = _context;
         }
+
+        public ICollection<PackageAccess> GetAll()
+        {
+            return context.PackageAccess.ToArray();
+        }
+
         public PackageAccess GetBy(long packageId)
         {
             return context.PackageAccess.Where(pa => pa.Id == packageId).FirstOrDefault();

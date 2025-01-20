@@ -4,5 +4,6 @@
     {
         PackageAccess GetFirst();
         PackageAccess GetBy(long packageId);
+        ICollection<PackageAccess> GetAll();
     }
 }

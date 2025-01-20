@@ -51,6 +51,7 @@ namespace UseCases.Users
                 CreatedAt = DateTime.UtcNow,
                 LastLoginAt = DateTime.UtcNow,
                 TokenForUse = ProfileCondition.CreateHash(40),
+                RecoveryToken = "",
                 profile = new Profile
                 {
                     CountryName = HttpUtility.UrlDecode(command.CountryName),

@@ -143,15 +143,15 @@ namespace UseCases.Packages
 
         public ICollection<PackageAccess> GetPackageAccess()
         {
-            return new List<PackageAccess>();
+            return PackageAccessRepository.GetAll();
         }
 
         public ICollection<DiscountPackage> GetDiscountPackageAccess()
         {
-            return new List<DiscountPackage>();
+            return DiscountRepository.GetAll();
         }
 
-        public string GetClientTokenForPay(string userToken)
+        public string GetClientTokenForPay(GetClientTokenForPayCommand command)
         {
             return string.Empty;
         }

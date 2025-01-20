@@ -8,7 +8,7 @@ namespace UseCases.Packages
         ServiceAccess CreateDefaultServiceAccess(long userId);
         ICollection<PackageAccess> GetPackageAccess();
         ICollection<DiscountPackage> GetDiscountPackageAccess();
-        string GetClientTokenForPay(string userToken);
+        string GetClientTokenForPay(GetClientTokenForPayCommand command);
         void PayForPackage(PayForPackageCommand command);
     }
 }

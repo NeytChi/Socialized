@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.InstagramAccounts
 {
+    [Table("TimeActions")]
     public partial class TimeAction : BaseEntity
     {
         [ForeignKey("Account")]
@@ -25,6 +26,6 @@ namespace Domain.InstagramAccounts
         public DateTime PublicationLastAt { get; set; }
         public DateTime MessageDirectLastAt { get; set; }
         public DateTime WatchingStoriesLastAt { get; set; }
-        public virtual IGAccount Account { get; set; }   
+        public virtual required IGAccount Account { get; set; }   
     }
 }

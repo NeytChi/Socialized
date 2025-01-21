@@ -1,5 +1,8 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Domain.GettingSubscribes
 {
+    [Table("TaskOptions")]
     public partial class TaskOption : BaseEntity
     {
         public long TaskId { get; set; }
@@ -10,6 +13,6 @@ namespace Domain.GettingSubscribes
         public bool UnfollowNonReciprocal { get; set; }
         public bool NextUnlocking { get; set; }
         public int LikesOnUser { get; set; }
-        public virtual TaskGS Task { get; set; }
+        public virtual required TaskGS Task { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class GetAutoPostsCommand
     {
-        public string UserToken { get; set; }
+        public required string UserToken { get; set; }
         public long AccountId { get; set; }
         public bool PostExecuted { get; set; }
         public bool PostDeleted { get; set; }

@@ -1,10 +1,13 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Domain.GettingSubscribes
 {
+    [Table("TaskFilters")]
     public partial class TaskFilter : BaseEntity
     {
         public TaskFilter()
         {
-            words = new HashSet<FilterWord>();
+            words = new HashSet<WordFilter>();
         }
         public long TaskId { get; set; }
         public int RangeSubscribersFrom { get; set; }
@@ -20,6 +23,6 @@ namespace Domain.GettingSubscribes
         public bool Russian { get; set; }
         public bool Arabian { get; set; }
         public virtual TaskGS Task { get; set; }
-        public ICollection<FilterWord> words { get; set; }
+        public ICollection<WordFilter> words { get; set; }
     };
 }

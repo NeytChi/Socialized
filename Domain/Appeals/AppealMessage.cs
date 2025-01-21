@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Admins
 {
+    [Table("AppealMessages")]
     public partial class AppealMessage : BaseEntity
     {
         public AppealMessage()

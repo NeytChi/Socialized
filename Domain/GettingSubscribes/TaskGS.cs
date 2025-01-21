@@ -1,5 +1,4 @@
-﻿using Domain.Users;
-using Domain.InstagramAccounts;
+﻿using Domain.InstagramAccounts;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.GettingSubscribes
@@ -24,6 +23,5 @@ namespace Domain.GettingSubscribes
         public virtual TaskFilter Filter { get; set; }
         public virtual TaskOption Option { get; set; }
         public virtual ICollection<TaskData>  Data { get; set; }
-        public virtual ICollection<HistoryGS> Histories { get; set; }
     }
 }

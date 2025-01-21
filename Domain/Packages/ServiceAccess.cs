@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Packages
 {
+    [Table("ServiceAccesses")]
     public partial class ServiceAccess : BaseEntity
     {
         [ForeignKey("User")]
@@ -12,6 +13,6 @@ namespace Domain.Packages
         public bool Paid { get; set; }
         public DateTime PaidAt { get; set; }
         public DateTime DisableAt { get; set; }
-        public virtual User User { get; set; }
+        public virtual required User User { get; set; }
     }
 }

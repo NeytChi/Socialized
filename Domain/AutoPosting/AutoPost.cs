@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.AutoPosting
 {
+    [Table("AutoPosts")]
     public partial class AutoPost : BaseEntity
     {
         public AutoPost()

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.InstagramAccounts
 {
+    [Table("IgAccounts")]
     public partial class IGAccount : BaseEntity
     {
         [ForeignKey("User")]

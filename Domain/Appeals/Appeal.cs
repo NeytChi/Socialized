@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Admins
 {
+    [Table("Appeals")]
     public partial class Appeal : BaseEntity
     {
         public Appeal()

@@ -2,9 +2,11 @@
 using Domain.Admins;
 using Domain.Packages;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Users
 {
+    [Table("Users")]
     public partial class User : BaseEntity
     {
         public User()

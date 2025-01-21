@@ -54,10 +54,6 @@
               "target": "Package",
               "version": "[3.7.407, )"
             },
-            "Microsoft.Extensions.Options": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
             "Serilog": {
               "target": "Package",
               "version": "[4.1.0, )"

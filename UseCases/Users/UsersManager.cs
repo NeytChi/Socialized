@@ -5,7 +5,6 @@ using Domain.Users;
 using UseCases.Packages;
 using UseCases.Users.Commands;
 using UseCases.Exceptions;
-using Domain.Packages;
 
 namespace UseCases.Users
 {
@@ -51,16 +50,10 @@ namespace UseCases.Users
                 CreatedAt = DateTime.UtcNow,
                 LastLoginAt = DateTime.UtcNow,
                 TokenForUse = ProfileCondition.CreateHash(40),
-                RecoveryToken = "",
-                profile = new Profile
-                {
-                    CountryName = HttpUtility.UrlDecode(command.CountryName),
-                    TimeZone = command.TimeZone
-                },
-                access = new ServiceAccess()
+                RecoveryToken = ""
             };            
             UserRepository.Create(user);
-            PackageCondition.CreateDefaultServiceAccess(user.Id);
+            PackageCondition.CreateDefaultServiceAccess(user);
             EmailMessanger.SendConfirmEmail(user.Email, command.Culture, user.HashForActivate);
             Logger.Information($"Новий користувач був створений, id={user.Id}.");
         }

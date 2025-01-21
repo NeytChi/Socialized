@@ -18,7 +18,7 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
         private readonly IAutoPostFileSave autoPostFileSave;
         private readonly IFileManager fileManager;
         private readonly AutoPostFileManager autoPostFileManager;
-
+        private readonly AutoPost autoPost = new AutoPost();
         public AutoPostFileManagerTests()
         {
             logger = Substitute.For<ILogger>();
@@ -33,6 +33,7 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
         public void Create_WhenFilesAreValid_CreatesAutoPostFiles()
         {
             // Arrange
+            
             var files = new List<CreateAutoPostFileCommand>
             {
                 new CreateAutoPostFileCommand { FormFile = new FormFileTest() { } },
@@ -43,7 +44,7 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
             autoPostFileSave.CreateVideoFile(Arg.Any<AutoPostFile>(), Arg.Any<IFormFile>()).Returns(true);
 
             // Act
-            var result = autoPostFileManager.Create(files, 1);
+            var result = autoPostFileManager.Create(files, autoPost, 1);
 
             // Assert
             Assert.Equal(2, result.Count);
@@ -61,7 +62,7 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
             autoPostFileSave.CreateImageFile(Arg.Any<AutoPostFile>(), Arg.Any<IFormFile>()).Returns(false);
 
             // Act & Assert
-            Assert.Throws<IgAccountException>(() => autoPostFileManager.Create(files, 1));
+            Assert.Throws<IgAccountException>(() => autoPostFileManager.Create(files, autoPost, 1));
         }
 
         [Fact]
@@ -76,7 +77,7 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
             autoPostFileSave.CreateVideoFile(Arg.Any<AutoPostFile>(), Arg.Any<IFormFile>()).Returns(false);
 
             // Act & Assert
-            Assert.Throws<IgAccountException>(() => autoPostFileManager.Create(files, 1));
+            Assert.Throws<IgAccountException>(() => autoPostFileManager.Create(files, autoPost, 1));
         }
     }
 }

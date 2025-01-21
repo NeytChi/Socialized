@@ -1,0 +1,15 @@
+﻿services:
+  db:
+    image: mysql/mysql-server:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Pass1234!
+      MYSQL_DATABASE: socialized
+      MYSQL_USER: mykyta
+      MYSQL_PASSWORD: Pass1234!
+    ports:
+      - "3307:3307"
+    volumes:
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:

@@ -29,6 +29,9 @@ namespace UseCases.InstagramAccounts
                 CreatedAt = DateTime.UtcNow,
                 State = new SessionState
                 {
+                    SessionSave = "",
+                    Account = new IGAccount(),
+                    TimeAction = new TimeAction { Account = new IGAccount() },
                     Challenger = challengeRequired,
                     Usable = challengeRequired ? false : true
                 }

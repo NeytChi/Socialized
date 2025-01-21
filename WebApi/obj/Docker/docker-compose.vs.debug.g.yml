@@ -1,0 +1,34 @@
+services:
+  webapi:
+    image: webapi:dev
+    container_name: "WebApi_1"
+    build:
+      args:
+        LAUNCHING_FROM_VS: true
+        BUILD_CONFIGURATION: Debug
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "WebApi"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - NUGET_PACKAGES=C:\.nuget\packages
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=c:\.nuget\fallbackpackages
+    volumes:
+      - D:\VS Projects\Socialized\WebApi\WebApi:c:\app:rw
+      - D:\VS Projects\Socialized\WebApi:c:\src:rw
+      - C:\Users\neyto\onecoremsvsmon\17.11.10906.3428:c:\remote_debugger:ro
+      - C:\Users\neyto\.nuget\packages:c:\.nuget\packages:ro
+      - D:\Visual Studio SDK\NuGetPackages:c:\.nuget\fallbackpackages:ro
+      - C:\Users\neyto\AppData\Roaming\ASP.NET\Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+      - C:\Users\neyto\AppData\Roaming\Microsoft\UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+      - D:\Microsoft Visual Studio\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\win-x64\net8.0:C:\VSTools:ro
+      - D:\Microsoft Visual Studio\Common7\IDE\CommonExtensions\Microsoft\HotReload:C:\HotReloadAgent:ro
+
+    entrypoint: C:\\remote_debugger\\x64\\msvsmon.exe /noauth /anyuser /silent /nostatus /noclrwarn /nosecuritywarn /nofirewallwarn /nowowwarn /timeout:2147483646 /LogDebuggeeOutputToStdOut
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "\"C:\\Program Files\\dotnet\\dotnet.exe\""
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath c:\\.nuget\\packages --additionalProbingPath c:\\.nuget\\fallbackpackages  \"C:\\app\\bin\\Debug\\net8.0\\WebApi.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "C:\\app"
+      com.microsoft.visualstudio.debuggee.killprogram: "dotnet --roll-forward Major C:\\VSTools\\DistrolessHelper\\DistrolessHelper.dll --stop dotnet"

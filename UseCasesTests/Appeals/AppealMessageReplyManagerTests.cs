@@ -5,9 +5,9 @@ using UseCases.Exceptions;
 using UseCases.Appeals.Replies.Commands;
 using Domain.Appeals;
 using Domain.Appeals.Replies;
-using Xunit;
 using UseCases.Appeals.Replies;
 using UseCases.Appeals;
+using NSubstitute.ReturnsExtensions;
 
 namespace UseCasesTests.Appeals.Replies
 {
@@ -28,7 +28,7 @@ namespace UseCasesTests.Appeals.Replies
         public void Create_WhenMessageIsNotFound_ThrowsNotFoundException()
         {
             var command = new CreateAppealMessageReplyCommand { AppealMessageId = 1, Reply = "Test Reply" };
-            messageRepository.GetBy(command.AppealMessageId).Returns((AppealMessage)null);
+            messageRepository.GetBy(command.AppealMessageId).ReturnsNull();
 
             Assert.Throws<NotFoundException>(() => manager.Create(command));
         }
@@ -47,14 +47,13 @@ namespace UseCasesTests.Appeals.Replies
             logger.Received().Information(Arg.Is<string>(str => str.Contains("Було створенно відповідь на повідомлення")));
             Assert.Equal(message.Id, reply.AppealMessageId);
             Assert.Equal(command.Reply, reply.Reply);
-            Assert.NotNull(reply.CreatedAt);
         }
 
         [Fact]
         public void Update_WhenReplyIsNotFound_ThrowsNotFoundException()
         {
             var command = new UpdateAppealMessageReplyCommand { ReplyId = 1, Reply = "Updated Reply" };
-            replyRepository.Get(command.ReplyId).Returns((AppealMessageReply)null);
+            replyRepository.Get(command.ReplyId).ReturnsNull();
 
             Assert.Throws<NotFoundException>(() => manager.Update(command));
         }
@@ -63,7 +62,7 @@ namespace UseCasesTests.Appeals.Replies
         public void Update_WhenReplyIsFound_UpdatesReply()
         {
             var command = new UpdateAppealMessageReplyCommand { ReplyId = 1, Reply = "Updated Reply" };
-            var reply = new AppealMessageReply { Id = 1, Reply = "Old Reply" };
+            var reply = new AppealMessageReply { Id = 1, Reply = "Old Reply", Message = new AppealMessage() };
             replyRepository.Get(command.ReplyId).Returns(reply);
 
             manager.Update(command);
@@ -77,7 +76,7 @@ namespace UseCasesTests.Appeals.Replies
         public void Delete_WhenReplyIsNotFound_ThrowsNotFoundException()
         {
             var command = new DeleteAppealMessageReplyCommand { ReplyId = 1 };
-            replyRepository.Get(command.ReplyId).Returns((AppealMessageReply)null);
+            replyRepository.Get(command.ReplyId).ReturnsNull();
 
             Assert.Throws<NotFoundException>(() => manager.Delete(command));
         }
@@ -86,7 +85,7 @@ namespace UseCasesTests.Appeals.Replies
         public void Delete_WhenReplyIsFound_DeletesReply()
         {
             var command = new DeleteAppealMessageReplyCommand { ReplyId = 1 };
-            var reply = new AppealMessageReply { Id = 1, IsDeleted = false };
+            var reply = new AppealMessageReply { Id = 1, Reply = "", IsDeleted = false, Message = new AppealMessage() };
             replyRepository.Get(command.ReplyId).Returns(reply);
 
             manager.Delete(command);

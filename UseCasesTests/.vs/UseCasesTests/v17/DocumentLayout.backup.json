@@ -3,12 +3,43 @@
   "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\UseCasesTests\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|d:\\vs projects\\socialized\\usecasestests\\instagramaccounts\\createigaccountmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|solutionrelative:instagramaccounts\\createigaccountmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VS Projects\\Socialized\\UseCases\\Users\\UserPasswordRecoveryManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|d:\\vs projects\\socialized\\usecasestests\\instagramaccounts\\recoverysessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|solutionrelative:instagramaccounts\\recoverysessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|d:\\vs projects\\socialized\\usecasestests\\packages\\packagemanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|solutionrelative:packages\\packagemanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|d:\\vs projects\\socialized\\usecasestests\\appeals\\appealfilemanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|solutionrelative:appeals\\appealfilemanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|d:\\vs projects\\socialized\\usecasestests\\autoposts\\autopostmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|solutionrelative:autoposts\\autopostmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|d:\\vs projects\\socialized\\usecasestests\\instagramaccounts\\loginsessionmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|solutionrelative:instagramaccounts\\loginsessionmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|d:\\vs projects\\socialized\\usecasestests\\packages\\brainetreepayertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|solutionrelative:packages\\brainetreepayertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|d:\\vs projects\\socialized\\usecasestests\\admins\\adminmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|solutionrelative:admins\\adminmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|d:\\vs projects\\socialized\\usecasestests\\autoposts\\autopostfilesavetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|solutionrelative:autoposts\\autopostfilesavetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|d:\\vs projects\\socialized\\usecasestests\\appeals\\formfiletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|solutionrelative:appeals\\formfiletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|d:\\vs projects\\socialized\\usecasestests\\appeals\\appealmessagereplymanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4014F9-2706-4C16-9363-FDFE40827A49}|UseCasesTests.csproj|solutionrelative:appeals\\appealmessagereplymanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +49,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +57,132 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RecoverySessionManager.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCasesTests\\InstagramAccounts\\RecoverySessionManager.cs",
-              "RelativeDocumentMoniker": "InstagramAccounts\\RecoverySessionManager.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\UseCasesTests\\InstagramAccounts\\RecoverySessionManager.cs",
-              "RelativeToolTip": "InstagramAccounts\\RecoverySessionManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "UserPasswordRecoveryManager.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCases\\Users\\UserPasswordRecoveryManager.cs",
+              "RelativeDocumentMoniker": "..\\UseCases\\Users\\UserPasswordRecoveryManager.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCases\\Users\\UserPasswordRecoveryManager.cs",
+              "RelativeToolTip": "..\\UseCases\\Users\\UserPasswordRecoveryManager.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAADwvycAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T13:10:24.424Z",
+              "WhenOpened": "2025-01-21T13:43:54.837Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CreateIGAccountManagerTests.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCasesTests\\InstagramAccounts\\CreateIGAccountManagerTests.cs",
-              "RelativeDocumentMoniker": "InstagramAccounts\\CreateIGAccountManagerTests.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\UseCasesTests\\InstagramAccounts\\CreateIGAccountManagerTests.cs",
-              "RelativeToolTip": "InstagramAccounts\\CreateIGAccountManagerTests.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAawD4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AppealFileManagerTests.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCasesTests\\Appeals\\AppealFileManagerTests.cs",
+              "RelativeDocumentMoniker": "Appeals\\AppealFileManagerTests.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCasesTests\\Appeals\\AppealFileManagerTests.cs",
+              "RelativeToolTip": "Appeals\\AppealFileManagerTests.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC4AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T13:07:25.726Z",
+              "WhenOpened": "2025-01-21T12:57:10.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PackageManagerTests.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCasesTests\\Packages\\PackageManagerTests.cs",
+              "RelativeDocumentMoniker": "Packages\\PackageManagerTests.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCasesTests\\Packages\\PackageManagerTests.cs",
+              "RelativeToolTip": "Packages\\PackageManagerTests.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAnwEIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T12:58:44.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BraineTreePayerTests.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCasesTests\\Packages\\BraineTreePayerTests.cs",
+              "RelativeDocumentMoniker": "Packages\\BraineTreePayerTests.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCasesTests\\Packages\\BraineTreePayerTests.cs",
+              "RelativeToolTip": "Packages\\BraineTreePayerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T13:00:07.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AutoPostManagerTests.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCasesTests\\AutoPosts\\AutoPostManagerTests.cs",
+              "RelativeDocumentMoniker": "AutoPosts\\AutoPostManagerTests.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCasesTests\\AutoPosts\\AutoPostManagerTests.cs",
+              "RelativeToolTip": "AutoPosts\\AutoPostManagerTests.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAADwvzcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T12:57:33.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginSessionManagerTests.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCasesTests\\InstagramAccounts\\LoginSessionManagerTests.cs",
+              "RelativeDocumentMoniker": "InstagramAccounts\\LoginSessionManagerTests.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCasesTests\\InstagramAccounts\\LoginSessionManagerTests.cs",
+              "RelativeToolTip": "InstagramAccounts\\LoginSessionManagerTests.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwC4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T12:58:25.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdminManagerTests.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCasesTests\\Admins\\AdminManagerTests.cs",
+              "RelativeDocumentMoniker": "Admins\\AdminManagerTests.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCasesTests\\Admins\\AdminManagerTests.cs",
+              "RelativeToolTip": "Admins\\AdminManagerTests.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAIwDAAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T13:01:23.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AutoPostFileSaveTests.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCasesTests\\AutoPosts\\AutoPostFileSaveTests.cs",
+              "RelativeDocumentMoniker": "AutoPosts\\AutoPostFileSaveTests.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCasesTests\\AutoPosts\\AutoPostFileSaveTests.cs",
+              "RelativeToolTip": "AutoPosts\\AutoPostFileSaveTests.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAIwFkAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T12:57:29.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AppealMessageReplyManagerTests.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCasesTests\\Appeals\\AppealMessageReplyManagerTests.cs",
+              "RelativeDocumentMoniker": "Appeals\\AppealMessageReplyManagerTests.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCasesTests\\Appeals\\AppealMessageReplyManagerTests.cs",
+              "RelativeToolTip": "Appeals\\AppealMessageReplyManagerTests.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAIwE4AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T12:55:34.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FormFileTest.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\UseCasesTests\\Appeals\\FormFileTest.cs",
+              "RelativeDocumentMoniker": "Appeals\\FormFileTest.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\UseCasesTests\\Appeals\\FormFileTest.cs",
+              "RelativeToolTip": "Appeals\\FormFileTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T12:55:42.142Z",
               "EditorCaption": ""
             }
           ]

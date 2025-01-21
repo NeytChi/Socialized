@@ -11,10 +11,11 @@ namespace UseCasesTests.Admins
 {
     public class AdminManagerTests
     {
-        ILogger logger = Substitute.For<ILogger>();
-        IAdminRepository repository = Substitute.For<IAdminRepository>();
-        IAdminEmailManager emailManager = Substitute.For<IAdminEmailManager>();
-        ProfileCondition profileCondition = new ProfileCondition();
+        private readonly ILogger logger = Substitute.For<ILogger>();
+        private readonly IAdminRepository repository = Substitute.For<IAdminRepository>();
+        private readonly IAdminEmailManager emailManager = Substitute.For<IAdminEmailManager>();
+        private readonly ProfileCondition profileCondition = new ProfileCondition();
+        private readonly Admin admin = new Admin { Email = "", FirstName = "", LastName = "", Password = "", Role = "", TokenForStart = "" };
 
         [Fact]
         public void Create_WhenSameEmailIsNotFound_ReturnNewAdmin()
@@ -45,7 +46,7 @@ namespace UseCasesTests.Admins
                 LastName = "Dolton",
                 Password = "password"
             };
-            repository.GetByEmail(command.Email, false).Returns(new Admin());
+            repository.GetByEmail(command.Email, false).Returns(admin);
             var adminManager = new AdminManager(logger, repository, emailManager);
 
             Assert.Throws<NotFoundException>(() => adminManager.Create(command));
@@ -54,7 +55,7 @@ namespace UseCasesTests.Admins
         public void SetupPassword_WhenAdminTokenIsFound_Return()
         {
             var command = new SetupPasswordCommand { Token = "1234567890", Password = "password" };
-            repository.GetByPasswordToken(command.Token, false).Returns(new Admin { });
+            repository.GetByPasswordToken(command.Token, false).Returns(admin);
             var adminManager = new AdminManager(logger, repository, emailManager);
             
             adminManager.SetupPassword(command);
@@ -77,13 +78,13 @@ namespace UseCasesTests.Admins
                 Password = "password"
             };
             var hashedPassword = profileCondition.HashPassword(command.Password);
-            var admin = new Admin { Id = 1, Email = command.Email, Password = hashedPassword };
-            repository.GetByEmail(command.Email).Returns(admin);
+            var adminHashed = new Admin { Id = 1, FirstName = "", LastName = "", Role = "", TokenForStart = "", Email = command.Email, Password = hashedPassword };
+            repository.GetByEmail(command.Email).Returns(adminHashed);
             var adminManager = new AdminManager(logger, repository, emailManager);
 
             var result = adminManager.Authentication(command);
 
-            Assert.Equal(admin.Id, result.Id);
+            Assert.Equal(adminHashed.Id, result.Id);
             Assert.Equal(command.Email, result.Email);
         }
         [Fact]
@@ -108,7 +109,7 @@ namespace UseCasesTests.Admins
                 Password = "password"
             };
             var hashedPassword = profileCondition.HashPassword("different_password");
-            var admin = new Admin { Id = 1, Email = command.Email, Password = hashedPassword };
+            var admin = new Admin { Id = 1, FirstName = "", LastName = "", Role = "", TokenForStart = "", Email = command.Email, Password = hashedPassword };
             repository.GetByEmail(command.Email).Returns(admin);
             var adminManager = new AdminManager(logger, repository, emailManager);
 
@@ -118,7 +119,7 @@ namespace UseCasesTests.Admins
         public void Delete_WhenIdIsFound_Return()
         {
             var command = new DeleteAdminCommand { AdminId = 1 };
-            repository.GetByAdminId(command.AdminId, false).Returns(new Admin { Id = 1 });
+            repository.GetByAdminId(command.AdminId, false).Returns(admin);
             var adminManager = new AdminManager(logger, repository, emailManager);
 
             adminManager.Delete(command);
@@ -136,7 +137,8 @@ namespace UseCasesTests.Admins
         public void CreateCodeForRecoveryPassword_WhenEmailIsFound_Return()
         {
             var email = "test@test.com";
-            repository.GetByEmail(email, false).Returns(new Admin { Email = email });
+            admin.Email = email;
+            repository.GetByEmail(email, false).Returns(admin);
             var adminManager = new AdminManager(logger, repository, emailManager);
 
             adminManager.CreateCodeForRecoveryPassword(email);

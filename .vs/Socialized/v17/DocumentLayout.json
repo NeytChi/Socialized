@@ -3,36 +3,16 @@
   "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\StatisticsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebAPI\\Controllers\\StatisticsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VS Projects\\Socialized\\WebApiOLD\\WebApi\\Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebApiOLD\\WebApi\\Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\IGAccountsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebAPI\\Controllers\\IGAccountsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VS Projects\\Socialized\\WebApiOLD\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebApiOLD\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\ControllerResponseBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebAPI\\Controllers\\ControllerResponseBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\CategoryController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebAPI\\Controllers\\CategoryController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\AutoPostController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebAPI\\Controllers\\AutoPostController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\AppealsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebAPI\\Controllers\\AppealsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\AdminsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebAPI\\Controllers\\AdminsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\AccessController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebAPI\\Controllers\\AccessController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VS Projects\\Socialized\\WebApiSocialized\\WebApiSocialized\\WebApiSocialized.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebApiSocialized\\WebApiSocialized\\WebApiSocialized.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,105 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StatisticsController.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\StatisticsController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\StatisticsController.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\StatisticsController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\StatisticsController.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T22:03:29.29Z",
+              "Title": "Dockerfile",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebApiOLD\\WebApi\\Dockerfile",
+              "RelativeDocumentMoniker": "WebApiOLD\\WebApi\\Dockerfile",
+              "ToolTip": "D:\\VS Projects\\Socialized\\WebApiOLD\\WebApi\\Dockerfile",
+              "RelativeToolTip": "WebApiOLD\\WebApi\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-21T08:28:25.812Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IGAccountsController.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\IGAccountsController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\IGAccountsController.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\IGAccountsController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\IGAccountsController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABEAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T22:03:25.622Z",
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebApiOLD\\docker-compose.yml",
+              "RelativeDocumentMoniker": "WebApiOLD\\docker-compose.yml",
+              "ToolTip": "D:\\VS Projects\\Socialized\\WebApiOLD\\docker-compose.yml",
+              "RelativeToolTip": "WebApiOLD\\docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-01-21T08:28:18.303Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ControllerResponseBase.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\ControllerResponseBase.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\ControllerResponseBase.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\ControllerResponseBase.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\ControllerResponseBase.cs",
+              "Title": "WebApiSocialized.http",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebApiSocialized\\WebApiSocialized\\WebApiSocialized.http",
+              "RelativeDocumentMoniker": "WebApiSocialized\\WebApiSocialized\\WebApiSocialized.http",
+              "ToolTip": "D:\\VS Projects\\Socialized\\WebApiSocialized\\WebApiSocialized\\WebApiSocialized.http",
+              "RelativeToolTip": "WebApiSocialized\\WebApiSocialized\\WebApiSocialized.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T22:03:23.891Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\CategoryController.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T22:03:20.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AutoPostController.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\AutoPostController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AutoPostController.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\AutoPostController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\AutoPostController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T22:03:16.689Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AppealsController.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\AppealsController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AppealsController.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\AppealsController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\AppealsController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T22:03:09.729Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AdminsController.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\AdminsController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AdminsController.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\AdminsController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\AdminsController.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T22:03:02.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AccessController.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\AccessController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AccessController.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebAPI\\Controllers\\AccessController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\AccessController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T22:02:59.477Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-01-21T08:25:51.728Z",
               "EditorCaption": ""
             }
           ]

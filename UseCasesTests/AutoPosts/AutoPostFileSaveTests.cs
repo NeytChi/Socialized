@@ -5,6 +5,7 @@ using Core.FileControl;
 using Domain.AutoPosting;
 using Microsoft.AspNetCore.Http;
 using UseCases.AutoPosts.AutoPostFiles;
+using NSubstitute.ReturnsExtensions;
 
 namespace UseCasesTests.AutoPosts.AutoPostFiles
 {
@@ -29,9 +30,9 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
         public void CreateImageFile_WhenConvertImageReturnsNull_LogsErrorAndReturnsFalse()
         {
             // Arrange
-            var post = new AutoPostFile();
+            var post = new AutoPostFile { Path = "", MediaId = "", VideoThumbnail = "", post = new AutoPost() };
             var file = Substitute.For<IFormFile>();
-            fileConverter.ConvertImage(file.OpenReadStream(), file.ContentType).Returns((Stream)null);
+            fileConverter.ConvertImage(file.OpenReadStream(), file.ContentType).ReturnsNull();
 
             // Act
             var result = autoPostFileSave.CreateImageFile(post, file);
@@ -45,7 +46,7 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
         public void CreateImageFile_WhenConvertImageSucceeds_SavesFileAndReturnsTrue()
         {
             // Arrange
-            var post = new AutoPostFile();
+            var post = new AutoPostFile { Path = "", MediaId = "", VideoThumbnail = "", post = new AutoPost() };
             var file = Substitute.For<IFormFile>();
             var stream = new MemoryStream();
             fileConverter.ConvertImage(file.OpenReadStream(), file.ContentType).Returns(stream);
@@ -63,9 +64,9 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
         public void CreateVideoFile_WhenConvertVideoReturnsNull_LogsErrorAndReturnsFalse()
         {
             // Arrange
-            var post = new AutoPostFile();
+            var post = new AutoPostFile { Path = "", MediaId = "", VideoThumbnail = "", post = new AutoPost() };
             var file = Substitute.For<IFormFile>();
-            fileConverter.ConvertVideo(file.OpenReadStream(), file.ContentType).Returns((string)null);
+            fileConverter.ConvertVideo(file.OpenReadStream(), file.ContentType).ReturnsNull();
 
             // Act
             var result = autoPostFileSave.CreateVideoFile(post, file);
@@ -79,7 +80,7 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
         public void CreateVideoFile_WhenConvertVideoSucceeds_SavesFileAndThumbnailAndReturnsTrue()
         {
             // Arrange
-            var post = new AutoPostFile();
+            var post = new AutoPostFile { Path = "", MediaId = "", VideoThumbnail = "", post = new AutoPost() };
             var file = Substitute.For<IFormFile>();
             var videoPath = "video/path";
             FileStream videoStream = null;

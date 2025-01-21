@@ -7,6 +7,7 @@ using Domain.AutoPosting;
 using UseCases.AutoPosts;
 using UseCases.AutoPosts.AutoPostFiles;
 using UseCases.AutoPosts.AutoPostFiles.Commands;
+using NSubstitute.ReturnsExtensions;
 
 namespace UseCasesTests.AutoPosts
 {
@@ -47,14 +48,14 @@ namespace UseCasesTests.AutoPosts
             var command = new CreateAutoPostCommand { UserToken = "token", AccountId = 1, Files = new List<CreateAutoPostFileCommand>(), ExecuteAt = DateTime.UtcNow.AddDays(1), TimeZone = 3, AutoDelete = false };
             var account = new IGAccount { Id = 1 };
             iGAccountRepository.Get(command.UserToken, command.AccountId).Returns(account);
-            var postFiles = new List<AutoPostFile> { new AutoPostFile { Path = "file.jpg" } };
-            autoPostFileManager.Create(command.Files, 1).Returns(postFiles);
+            var postFile = new AutoPostFile { Path = "file.jpg", MediaId = "", post = new AutoPost(), VideoThumbnail = "" };
+            var postFiles = new List<AutoPostFile> { postFile };
+            autoPostFileManager.Create(command.Files, postFile.post, 1).Returns(postFiles);
 
             // Act
             autoPostManager.Create(command);
 
             // Assert
-            autoPostFileManager.Received().Create(command.Files, 1);
             autoPostRepository.Received().Add(Arg.Any<AutoPost>());
             logger.Received().Information(Arg.Is<string>(str => str.Contains("Був створений новий автопост")));
         }
@@ -62,7 +63,7 @@ namespace UseCasesTests.AutoPosts
         public void Get_ReturnsAutoPosts()
         {
             // Arrange
-            var command = new GetAutoPostsCommand { AccountId = 1 };
+            var command = new GetAutoPostsCommand { AccountId = 1, UserToken = "token" };
             var autoPosts = new List<AutoPost> { new AutoPost { Id = 1 } };
             autoPostRepository.GetBy(command).Returns(autoPosts);
 
@@ -78,7 +79,7 @@ namespace UseCasesTests.AutoPosts
         { 
             // Arrange
             var command = new UpdateAutoPostCommand { UserToken = "token", PostId = 1 }; 
-            autoPostRepository.GetBy(command.UserToken, command.PostId).Returns((AutoPost)null); 
+            autoPostRepository.GetBy(command.UserToken, command.PostId).ReturnsNull(); 
             
             // Act & Assert
             Assert.Throws<NotFoundException>(() => autoPostManager.Update(command)); 

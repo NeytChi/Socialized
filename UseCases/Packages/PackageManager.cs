@@ -1,6 +1,8 @@
 using Serilog;
 using Domain.Packages;
 using UseCases.Packages.Command;
+using Domain.Users;
+using UseCases.Exceptions;
 
 namespace UseCases.Packages
 {
@@ -10,27 +12,39 @@ namespace UseCases.Packages
         private IPackageAccessRepository PackageAccessRepository;
         private IDiscountRepository DiscountRepository;
         private IForServerAccessCountingRepository CounterRepository;
+        private IUserRepository UserRepository;
 
         public PackageManager(ILogger logger,
             IServiceAccessRepository serviceAccessRepository,
             IPackageAccessRepository packageAccessRepository,
             IDiscountRepository discountRepository,
-            IForServerAccessCountingRepository autoPostCounterRepository) : base(logger)
+            IForServerAccessCountingRepository autoPostCounterRepository,
+            IUserRepository userRepository) : base(logger)
         {
             ServiceAccessRepository = serviceAccessRepository;
             PackageAccessRepository = packageAccessRepository;
             DiscountRepository = discountRepository;
             CounterRepository = autoPostCounterRepository;
+            UserRepository = userRepository;
         }
         public ServiceAccess CreateDefaultServiceAccess(long userId)
+        {
+            var user = UserRepository.GetBy(userId);
+
+            return user == null 
+                ? throw new NotFoundException($"Сервер не визначив користувача по id={userId}.") 
+                : CreateDefaultServiceAccess(user);
+        }
+        public ServiceAccess CreateDefaultServiceAccess(User user)
         {
             var package = PackageAccessRepository.GetFirst();
             var access = new ServiceAccess()
             {
-                UserId = userId,
+                UserId = user.Id,
                 Available = true,
                 Type = package.Id,
-                Paid = false
+                Paid = false,
+                User = user
             };
             ServiceAccessRepository.Create(access);
             Logger.Information($"Був створений безкоштовний доступ до сервісу для користувача, id={access.Id}.");

@@ -1,0 +1,24 @@
+services:
+  webapp:
+    image: ${DOCKER_REGISTRY-}webapi
+    build:
+      context: .
+      dockerfile: WebApi\Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Database=yourdatabase;User=root;Password=rootpassword;
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: Pass1234!
+      MYSQL_DATABASE: socialized
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata:

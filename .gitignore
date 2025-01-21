@@ -37,3 +37,5 @@ Domain/.vs/
 Core/bin/
 Core/obj/
 Domain/.vs/
+/.vs
+/UseCases/bin

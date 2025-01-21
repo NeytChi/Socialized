@@ -1,12 +1,10 @@
-﻿using Xunit;
+﻿using Core;
 using NSubstitute;
 using Serilog;
 using Domain.InstagramAccounts;
 using UseCases.Exceptions;
 using UseCases.InstagramApi;
-using UseCases.InstagramAccounts;
 using UseCases.InstagramAccounts.Commands;
-using Core;
 
 namespace UseCases.InstagramAccounts.Tests
 {
@@ -49,7 +47,15 @@ namespace UseCases.InstagramAccounts.Tests
         {
             // Arrange
             var command = new SmsVefiryIgAccountCommand { UserToken = "user123", AccountId = 123 };
-            var account = new IGAccount { State = new SessionState { Challenger = false } };
+            var account = new IGAccount { Id = 1 };
+            account.State = new SessionState
+            {
+                Challenger = false,
+                Account = account,
+                SessionSave = "",
+                TimeAction = new TimeAction { Account = account }
+            };
+
 
             _accountRepository.Get(command.UserToken, command.AccountId).Returns(account);
 
@@ -63,8 +69,14 @@ namespace UseCases.InstagramAccounts.Tests
         {
             // Arrange
             var command = new SmsVefiryIgAccountCommand { UserToken = "user123", AccountId = 123, VerifyCode = 12345 };
-            var account = new IGAccount { State = new SessionState { Challenger = true } };
-
+            var account = new IGAccount { Id = 1 };
+            account.State = new SessionState
+            {
+                Challenger = true,
+                Account = account,
+                SessionSave = "",
+                TimeAction = new TimeAction { Account = account }
+            };
             _accountRepository.Get(command.UserToken, command.AccountId).Returns(account);
             _verifyCodeForChallengeRequire.Do(command.VerifyCode.ToString(), account).Returns(new InstagramLoginResult { State = InstagramLoginState.Exception });
 
@@ -78,7 +90,14 @@ namespace UseCases.InstagramAccounts.Tests
         {
             // Arrange
             var command = new SmsVefiryIgAccountCommand { UserToken = "user123", AccountId = 123, VerifyCode = 12345 };
-            var account = new IGAccount { Id = 123, State = new SessionState { Challenger = true } };
+            var account = new IGAccount { Id = 1 };
+            account.State = new SessionState
+            {
+                Challenger = true,
+                Account = account,
+                SessionSave = "",
+                TimeAction = new TimeAction { Account = account }
+            };
 
             _accountRepository.Get(command.UserToken, command.AccountId).Returns(account);
             _verifyCodeForChallengeRequire.Do(command.VerifyCode.ToString(), account).Returns(new InstagramLoginResult { State = InstagramLoginState.Success });

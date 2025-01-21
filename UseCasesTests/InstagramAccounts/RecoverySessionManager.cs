@@ -1,10 +1,10 @@
-﻿using NSubstitute;
+﻿using Core;
 using Serilog;
-using Core;
+using NSubstitute;
 using Domain.InstagramAccounts;
+using UseCases.InstagramApi;
 using UseCases.InstagramAccounts;
 using UseCases.InstagramAccounts.Commands;
-using UseCases.InstagramApi;
 
 namespace UseCases.Tests
 {
@@ -40,7 +40,14 @@ namespace UseCases.Tests
         public void Do_ReloginAndSuccess_SaveSessionState()
         {
             // Arrange
-            var account = new IGAccount { Id = 1, State = new SessionState { Challenger = false } };
+            var account = new IGAccount { Id = 1 };
+            account.State = new SessionState
+            {
+                Challenger = false,
+                Account = account,
+                SessionSave = "",
+                TimeAction = new TimeAction { Account = account }
+            };
             var requirements = new IgAccountRequirements { InstagramUserName = "username", InstagramPassword = "password" }; 
             var sessionState = "sessionState";
 
@@ -63,7 +70,15 @@ namespace UseCases.Tests
         public void Do_ChallengerAccount_SaveSessionStateNotUsable()
         {
             // Arrange
-            var account = new IGAccount { Id = 1, State = new SessionState { Challenger = true } };
+            var account = new IGAccount { Id = 1 };
+            account.State = new SessionState
+            {
+                Challenger = true,
+                Account = account,
+                SessionSave = "",
+                TimeAction = new TimeAction { Account = account }
+            };
+
             var requirements = new IgAccountRequirements { InstagramUserName = "username", InstagramPassword = "password" }; var sessionState = "sessionState";
 
             _loginSessionManager.Do(account, requirements).Returns(account);
@@ -86,7 +101,14 @@ namespace UseCases.Tests
         public void Do_LoginFail_ThrowsException()
         {
             // Arrange
-            var account = new IGAccount { Id = 1, State = new SessionState { Challenger = false } };
+            var account = new IGAccount { Id = 1 };
+            account.State = new SessionState
+            {
+                Challenger = false,
+                Account = account,
+                SessionSave = "",
+                TimeAction = new TimeAction { Account = account }
+            };
             var requirements = new IgAccountRequirements { InstagramUserName = "username", InstagramPassword = "password" };
 
             _loginSessionManager.Do(account, requirements).Returns((IGAccount)null);

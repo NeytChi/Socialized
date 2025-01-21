@@ -4,6 +4,8 @@ using Domain.Packages;
 using UseCases.Packages;
 using Domain.AutoPosting;
 using Domain.InstagramAccounts;
+using Domain.Users;
+using NSubstitute.ReturnsExtensions;
 
 namespace UseCasesTests.Packages
 {
@@ -14,6 +16,7 @@ namespace UseCasesTests.Packages
         private readonly IPackageAccessRepository packageAccessRepository;
         private readonly IDiscountRepository discountRepository;
         private readonly IForServerAccessCountingRepository counterRepository;
+        private readonly IUserRepository userRepository;
         private readonly PackageManager packageManager;
 
         public PackageManagerTests()
@@ -23,7 +26,8 @@ namespace UseCasesTests.Packages
             packageAccessRepository = Substitute.For<IPackageAccessRepository>();
             discountRepository = Substitute.For<IDiscountRepository>();
             counterRepository = Substitute.For<IForServerAccessCountingRepository>();
-            packageManager = new PackageManager(logger, serviceAccessRepository, packageAccessRepository, discountRepository, counterRepository);
+            userRepository = Substitute.For<IUserRepository>();
+            packageManager = new PackageManager(logger, serviceAccessRepository, packageAccessRepository, discountRepository, counterRepository, userRepository);
         }
 
         [Fact]
@@ -31,10 +35,10 @@ namespace UseCasesTests.Packages
         {
             // Arrange
             var userId = 1;
-            var package = new PackageAccess { Id = 1 };
+            var package = new PackageAccess { Id = 1, Name = "" };
             packageAccessRepository.GetFirst().Returns(package);
             serviceAccessRepository.When(x => x.Create(Arg.Any<ServiceAccess>())).Do(x => { });
-
+            userRepository.GetBy(userId).Returns(new User { Id = userId });
             // Act
             var result = packageManager.CreateDefaultServiceAccess(userId);
 
@@ -54,10 +58,11 @@ namespace UseCasesTests.Packages
             var userId = 1;
             var packageId = 1;
             var monthCount = 3;
-            var package = new PackageAccess { Id = packageId };
-            serviceAccessRepository.GetBy(userId).Returns((ServiceAccess)null);
+            var package = new PackageAccess { Id = packageId, Name = "" };
+            serviceAccessRepository.GetBy(userId).ReturnsNull();
             packageAccessRepository.GetBy(packageId).Returns(package);
             packageAccessRepository.GetFirst().Returns(package);
+            userRepository.GetBy(userId).Returns(new User { Id = userId });
             // Act
             packageManager.SetPackage(userId, packageId, monthCount);
 
@@ -73,8 +78,8 @@ namespace UseCasesTests.Packages
             var userId = 1;
             var packageId = 1;
             var monthCount = 3;
-            var package = new PackageAccess { Id = packageId };
-            var access = new ServiceAccess { UserId = userId, Type = 2 };
+            var package = new PackageAccess { Id = packageId, Name = "" };
+            var access = new ServiceAccess { UserId = userId, Type = 2, User = new User() };
             serviceAccessRepository.GetBy(userId).Returns(access);
             packageAccessRepository.GetBy(packageId).Returns(package);
 
@@ -93,7 +98,7 @@ namespace UseCasesTests.Packages
         {
             // Arrange
             var userId = 1;
-            serviceAccessRepository.GetByUser(userId).Returns((ServiceAccess)null);
+            serviceAccessRepository.GetByUser(userId).ReturnsNull();
 
             // Act
             var result = packageManager.IsServicePackagePersonalize(userId);
@@ -107,8 +112,8 @@ namespace UseCasesTests.Packages
         {
             // Arrange
             var userId = 1;
-            var access = new ServiceAccess { Type = 1 };
-            var package = new PackageAccess { IGAccounts = -1, Posts = -1, Stories = -1 };
+            var access = new ServiceAccess { Type = 1, User = new User() };
+            var package = new PackageAccess { IGAccounts = -1, Posts = -1, Stories = -1, Name = "" };
             serviceAccessRepository.GetByUser(userId).Returns(access);
             packageAccessRepository.GetBy(access.Type).Returns(package);
 
@@ -124,8 +129,8 @@ namespace UseCasesTests.Packages
         {
             // Arrange
             var userId = 1;
-            var access = new ServiceAccess { Type = 1 };
-            var package = new PackageAccess { IGAccounts = 1, Posts = 5, Stories = 5 };
+            var access = new ServiceAccess { Type = 1, User = new User() };
+            var package = new PackageAccess { IGAccounts = 1, Posts = 5, Stories = 5 , Name = "" };
             var accounts = new List<IGAccount> { new IGAccount(), new IGAccount() };
             serviceAccessRepository.GetByUser(userId).Returns(access);
             packageAccessRepository.GetBy(access.Type).Returns(package);
@@ -144,8 +149,8 @@ namespace UseCasesTests.Packages
         {
             // Arrange
             var userId = 1;
-            var access = new ServiceAccess { Type = 1 };
-            var package = new PackageAccess { IGAccounts = 1, Posts = 1, Stories = 5 };
+            var access = new ServiceAccess { Type = 1, User = new User() };
+            var package = new PackageAccess { IGAccounts = 1, Posts = 1, Stories = 5, Name = "" };
             var accounts = new List<IGAccount> { new IGAccount() };
             var posts = new List<AutoPost> { new AutoPost(), new AutoPost() };
             serviceAccessRepository.GetByUser(userId).Returns(access);
@@ -166,8 +171,8 @@ namespace UseCasesTests.Packages
         {
             // Arrange
             var userId = 1;
-            var access = new ServiceAccess { Type = 1 };
-            var package = new PackageAccess { IGAccounts = 1, Posts = 5, Stories = 1 };
+            var access = new ServiceAccess { Type = 1, User = new User() };
+            var package = new PackageAccess { IGAccounts = 1, Posts = 5, Stories = 1, Name = "" };
             var accounts = new List<IGAccount> { new IGAccount() };
             var storyPosts = new List<AutoPost> { new AutoPost(), new AutoPost() };
             serviceAccessRepository.GetByUser(userId).Returns(access);

@@ -3,6 +3,7 @@ using Serilog;
 using Domain.InstagramAccounts;
 using UseCases.InstagramAccounts;
 using UseCases.InstagramAccounts.Commands;
+using NSubstitute.ReturnsExtensions;
 
 namespace UseCases.Tests
 {
@@ -65,7 +66,14 @@ namespace UseCases.Tests
                 InstagramUserName = "newUser",
                 InstagramPassword = "password"
             };
-            var newAccount = new IGAccount { State = new SessionState() };
+            var newAccount = new IGAccount();
+            var state = new SessionState 
+            { 
+                Account = newAccount, 
+                SessionSave = "", 
+                TimeAction = new TimeAction { Account = newAccount }
+            };
+            newAccount.State = state;
             _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).Returns((IGAccount)null);
             _loginSessionManager.Do(command).ReturnsForAnyArgs(newAccount);
 
@@ -89,7 +97,13 @@ namespace UseCases.Tests
             var newAccount = new IGAccount();
             _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).Returns((IGAccount)null);
             _loginSessionManager.Do(command).Returns(newAccount);
-            newAccount.State = new SessionState { Challenger = false };
+            newAccount.State = new SessionState 
+            { 
+                Challenger = false, 
+                Account = newAccount, 
+                SessionSave = "", 
+                TimeAction = new TimeAction { Account = newAccount } 
+            };
 
             // Act
             var result = _createIGAccountManager.Create(command);
@@ -109,9 +123,15 @@ namespace UseCases.Tests
                 InstagramPassword = "password"
             };
             var newAccount = new IGAccount();
-            _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).Returns((IGAccount)null);
+            _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).ReturnsNull();
             _loginSessionManager.Do(command).Returns(newAccount);
-            newAccount.State = new SessionState { Challenger = true };
+            newAccount.State = new SessionState
+            {
+                Challenger = true,
+                Account = newAccount,
+                SessionSave = "",
+                TimeAction = new TimeAction { Account = newAccount }
+            };
 
             // Act
             var result = _createIGAccountManager.Create(command);

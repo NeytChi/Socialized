@@ -3,6 +3,7 @@ using Core.FileControl;
 using Domain.Admins;
 using Microsoft.AspNetCore.Http;
 using Domain.Appeals.Messages;
+using UseCases.Exceptions;
 
 namespace UseCases.Appeals.Messages
 {
@@ -20,15 +21,25 @@ namespace UseCases.Appeals.Messages
         }
         public HashSet<AppealFile> Create(ICollection<IFormFile> upload, long messageId)
         {
+            var message = AppealFilesRepository.GetById(messageId);
+
+            return message == null ? 
+                throw new NotFoundException($"Сервер не визначив звернення по id={messageId}.") : 
+                Create(upload, message);
+        }
+        public HashSet<AppealFile> Create(ICollection<IFormFile> upload, AppealMessage message)
+        {
             var files = new HashSet<AppealFile>();
             if (upload != null)
             {
                 foreach (var file in upload)
                 {
-                    var saved = new AppealFile();
-                    saved.Id = messageId;
-                    saved.RelativePath = FileManager.SaveFile(
-                        file.OpenReadStream(), "AppealFiles");
+                    var saved = new AppealFile
+                    {
+                        MessageId = message.Id,
+                        RelativePath = FileManager.SaveFile(file.OpenReadStream(), "AppealFiles"),
+                        Message = message
+                    };
                     files.Add(saved);
                 }
                 AppealFilesRepository.Create(files);

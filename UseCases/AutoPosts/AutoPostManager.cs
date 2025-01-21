@@ -36,8 +36,7 @@ namespace UseCases.AutoPosts
             {
                 throw new NotFoundException($"Instagram аккаунт не був знайдений по токену користувача={command.UserToken} і id={command.AccountId}.");
             }
-            var postFiles = AutoPostFileManager.Create(command.Files, 1);
-            Save(command, postFiles);
+            Save(command);
             /*
             if (command.AutoPostType ? !access.PostsIsTrue(account.userId, ref message)
                 : !access.StoriesIsTrue(account.userId, ref message))
@@ -50,7 +49,7 @@ namespace UseCases.AutoPosts
             }
             */
         }
-        private AutoPost Save(AutoPostCommand command, ICollection<AutoPostFile> postFiles)
+        private AutoPost Save(CreateAutoPostCommand command)
         {
             int timezone = command.TimeZone > 0 ? -command.TimeZone : command.TimeZone * (-1);
             var post = new AutoPost
@@ -65,9 +64,9 @@ namespace UseCases.AutoPosts
                 Description = HttpUtility.UrlDecode(command.Description ?? ""),
                 Comment = HttpUtility.UrlDecode(command.Comment ?? ""),
                 TimeZone = command.TimeZone,
-                CategoryId = command.CategoryId,
-                files = postFiles
+                CategoryId = command.CategoryId
             };
+            post.files = AutoPostFileManager.Create(command.Files, post, 1);
             AutoPostRepository.Add(post);
             Logger.Information($"Був створений новий автопост, id={post.Id}.");
             return post;

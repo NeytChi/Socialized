@@ -35,9 +35,9 @@ namespace UseCases.AutoPosts.AutoPostFiles
             }
             if ((post.files.Count() + command.Files.Count) > 10)
             {
-                throw new SystemException("Для автопосту дозволено лише 10 файлів.");
+                throw new ValidationException("Для автопосту дозволено лише 10 файлів.");
             }
-            var postFiles = Create(command.Files, (sbyte)(post.files.Count() + 1));
+            var postFiles = Create(command.Files, post, (sbyte)(post.files.Count() + 1));
             foreach (var file in postFiles)
             {
                 file.PostId = post.Id;
@@ -72,50 +72,52 @@ namespace UseCases.AutoPosts.AutoPostFiles
                 post.Deleted = true;
                 AutoPostRepository.Update(post);
                 Logger.Information($"Авто пост був видалений id={post.Id}, тому що були видалені всі файли.");
+                return;
             }
-            else
+            var file = post.files.Where(f => f.Id == command.AutoPostId).First();
+            file.IsDeleted = true;
+            foreach (var oldFile in post.files)
             {
-                var file = post.files.Where(f => f.Id == command.AutoPostId).First();
-                file.IsDeleted = true;
-                foreach (var oldFile in post.files)
+                if (oldFile.Order > file.Order)
                 {
-                    if (oldFile.Order > file.Order)
-                    {
-                        --oldFile.Order;
-                    }
+                    --oldFile.Order;
                 }
-                AutoPostFileRepository.Update(file);
-                AutoPostFileRepository.Update(post.files);
-                Logger.Information($"Файл був видалений з автопосту, файл id={file.Id}.");
             }
+            AutoPostFileRepository.Update(file);
+            AutoPostFileRepository.Update(post.files);
+            Logger.Information($"Файл був видалений з автопосту, файл id={file.Id}.");
         }
-        public ICollection<AutoPostFile> Create(ICollection<CreateAutoPostFileCommand> files, sbyte startOrder)
+        public ICollection<AutoPostFile> Create(ICollection<CreateAutoPostFileCommand> files, AutoPost post , sbyte startOrder)
         {
             var postFiles = new List<AutoPostFile>();
 
             foreach (var file in files)
             {
-                var post = new AutoPostFile
+                var autoPostFile = new AutoPostFile
                 {
+                    Path = "",
+                    MediaId = "",
+                    VideoThumbnail = "",
+                    post = post,
                     Type = file.FormFile.ContentType.Contains("video"),
                     Order = startOrder++,
                     CreatedAt = DateTime.UtcNow
                 };
-                if (post.Type)
+                if (autoPostFile.Type)
                 {
-                    if (!AutoPostFileSave.CreateVideoFile(post, file.FormFile))
+                    if (!AutoPostFileSave.CreateVideoFile(autoPostFile, file.FormFile))
                     {
                         throw new IgAccountException("Сервер не зміг зберегти відео файл.");
                     }
                 }
                 else
                 {
-                    if (!AutoPostFileSave.CreateImageFile(post, file.FormFile))
+                    if (!AutoPostFileSave.CreateImageFile(autoPostFile, file.FormFile))
                     {
                         throw new IgAccountException("Сервер не зміг зберегти зображення.");
                     }
                 }
-                postFiles.Add(post);
+                postFiles.Add(autoPostFile);
             }
             return postFiles;
         }

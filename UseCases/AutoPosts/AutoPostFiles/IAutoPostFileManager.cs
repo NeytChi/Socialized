@@ -5,7 +5,7 @@ namespace UseCases.AutoPosts.AutoPostFiles
 {
     public interface IAutoPostFileManager
     {
-        ICollection<AutoPostFile> Create(ICollection<CreateAutoPostFileCommand> files, sbyte startOrder);
+        ICollection<AutoPostFile> Create(ICollection<CreateAutoPostFileCommand> files, AutoPost post, sbyte startOrder);
         void Update(ICollection<UpdateAutoPostFileCommand> commandFiles, ICollection<AutoPostFile> autoPost);
         void Delete(DeleteAutoPostFileCommand command);
     }

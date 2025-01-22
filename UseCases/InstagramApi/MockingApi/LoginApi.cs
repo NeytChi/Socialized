@@ -7,6 +7,7 @@ namespace UseCases.InstagramApi.MockingApi
     {
         public InstagramLoginState Do(ref IGAccount iGAccount, IgAccountRequirements accountRequirements)
         {
+            iGAccount.Username = accountRequirements.InstagramUserName;
             return InstagramLoginState.Success;
         }
     }

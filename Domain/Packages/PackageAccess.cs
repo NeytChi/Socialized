@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Packages
 {
-    [Table("PackageAccesses")]
+    [Table("PackageAccess")]
     public class PackageAccess : BaseEntity
     {
         public required string Name { get; set; }

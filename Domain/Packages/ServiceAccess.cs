@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Packages
 {
-    [Table("ServiceAccesses")]
+    [Table("ServiceAccess")]
     public partial class ServiceAccess : BaseEntity
     {
         [ForeignKey("User")]

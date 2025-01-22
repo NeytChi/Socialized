@@ -2,6 +2,7 @@
 using Serilog;
 using Domain.InstagramAccounts;
 using UseCases.InstagramApi;
+using Domain.Users;
 
 namespace UseCases.InstagramAccounts
 {
@@ -20,21 +21,22 @@ namespace UseCases.InstagramAccounts
             ProfileCondition = profileCondition;
         }
 
-        public IGAccount Do(long userId, string userName, bool challengeRequired)
+        public IGAccount Do(User user, string userName, bool challengeRequired)
         {
             var account = new IGAccount()
             {
-                UserId = userId,
+                UserId = user.Id,
                 Username = userName,
                 CreatedAt = DateTime.UtcNow,
-                State = new SessionState
-                {
-                    SessionSave = "",
-                    Account = new IGAccount(),
-                    TimeAction = new TimeAction { Account = new IGAccount() },
-                    Challenger = challengeRequired,
-                    Usable = challengeRequired ? false : true
-                }
+                User = user
+            };
+            account.State = new SessionState
+            {
+                SessionSave = "",
+                Account = account,
+                TimeAction = new TimeAction { Account = account },
+                Challenger = challengeRequired,
+                Usable = challengeRequired ? false : true
             };
             AccountRepository.Create(account);
             var stateData = Api.AsString(account);

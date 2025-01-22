@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.InstagramAccounts
 {
-    [Table("SessionStates")]
+    [Table("States")]
     public partial class SessionState : BaseEntity
     {
         [ForeignKey("Account")]

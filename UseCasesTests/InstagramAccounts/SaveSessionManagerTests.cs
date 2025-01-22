@@ -3,6 +3,7 @@ using Serilog;
 using Domain.InstagramAccounts;
 using UseCases.InstagramApi;
 using Core;
+using Domain.Users;
 
 namespace UseCases.InstagramAccounts.Tests
 {
@@ -28,7 +29,7 @@ namespace UseCases.InstagramAccounts.Tests
         public void Do_ShouldCreateAndSaveSession_WhenCalled()
         {
             // Arrange
-            long userId = 12345;
+            var user = new User { Id = 12345 };
             string userName = "testuser";
             bool challengeRequired = false;
 
@@ -39,10 +40,10 @@ namespace UseCases.InstagramAccounts.Tests
             });
 
             // Act
-            var result = _manager.Do(userId, userName, challengeRequired);
+            var result = _manager.Do(user, userName, challengeRequired);
 
             // Assert
-            Assert.Equal(userId, result.UserId);
+            Assert.Equal(user.Id, result.UserId);
             Assert.Equal(userName, result.Username);
             Assert.True(result.State.Usable);
             Assert.False(result.State.Challenger);
@@ -56,7 +57,7 @@ namespace UseCases.InstagramAccounts.Tests
         public void Do_ShouldHandleChallengeRequired_WhenCalled()
         {
             // Arrange
-            long userId = 12345;
+            var user = new User { Id = 12345 };
             string userName = "testuser";
             bool challengeRequired = true;
 
@@ -67,10 +68,10 @@ namespace UseCases.InstagramAccounts.Tests
             });
 
             // Act
-            var result = _manager.Do(userId, userName, challengeRequired);
+            var result = _manager.Do(user, userName, challengeRequired);
 
             // Assert
-            Assert.Equal(userId, result.UserId);
+            Assert.Equal(user.Id, result.UserId);
             Assert.Equal(userName, result.Username);
             Assert.False(result.State.Usable);
             Assert.True(result.State.Challenger);

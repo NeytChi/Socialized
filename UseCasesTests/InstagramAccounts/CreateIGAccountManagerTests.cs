@@ -4,6 +4,8 @@ using Domain.InstagramAccounts;
 using UseCases.InstagramAccounts;
 using UseCases.InstagramAccounts.Commands;
 using NSubstitute.ReturnsExtensions;
+using Domain.Users;
+using UseCases.Exceptions;
 
 namespace UseCases.Tests
 {
@@ -16,6 +18,7 @@ namespace UseCases.Tests
         private readonly IRecoverySessionManager _recoverySessionManager;
         private readonly ISaveSessionManager _saveSessionManager;
         private readonly CreateIGAccountManager _createIGAccountManager;
+        private readonly IUserRepository _userRepository;
 
         public CreateIGAccountManagerTests()
         {
@@ -25,16 +28,36 @@ namespace UseCases.Tests
             _loginSessionManager = Substitute.For<ILoginSessionManager>();
             _recoverySessionManager = Substitute.For<IRecoverySessionManager>();
             _saveSessionManager = Substitute.For<ISaveSessionManager>();
-
+            _userRepository = Substitute.For<IUserRepository>();
             _createIGAccountManager = new CreateIGAccountManager(
                 _logger,
                 _accountRepository,
                 _challengeRequiredAccount,
                 _loginSessionManager,
                 _recoverySessionManager,
-                _saveSessionManager);
+                _saveSessionManager,
+                _userRepository);
         }
+        [Fact]
+        public void Create_WhenUserIsNotFound_ThrowNotFoundException()
+        {
+            // Arrange
+            var command = new CreateIgAccountCommand
+            {
+                UserToken = "userToken",
+                InstagramUserName = "existingUser",
+                InstagramPassword = "password"
+            };
+            var existingAccount = new IGAccount();
+            var user = new User();
+            _userRepository.GetByUserTokenNotDeleted(command.UserToken).ReturnsNull();
+            _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).Returns(existingAccount);
+            _recoverySessionManager.Do(existingAccount, command).Returns(existingAccount);
 
+            // Act
+            // Assert
+            Assert.Throws<NotFoundException>(() => _createIGAccountManager.Create(command));
+        }
         [Fact]
         public void Create_AccountExists_ReturnsRecoveredAccount()
         {
@@ -46,6 +69,8 @@ namespace UseCases.Tests
                 InstagramPassword = "password"
             };
             var existingAccount = new IGAccount();
+            var user = new User();
+            _userRepository.GetByUserTokenNotDeleted(command.UserToken).Returns(user);
             _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).Returns(existingAccount);
             _recoverySessionManager.Do(existingAccount, command).Returns(existingAccount);
 
@@ -74,7 +99,9 @@ namespace UseCases.Tests
                 TimeAction = new TimeAction { Account = newAccount }
             };
             newAccount.State = state;
-            _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).Returns((IGAccount)null);
+            var user = new User();
+            _userRepository.GetByUserTokenNotDeleted(command.UserToken).Returns(user);
+            _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).ReturnsNull();
             _loginSessionManager.Do(command).ReturnsForAnyArgs(newAccount);
 
             // Act
@@ -95,7 +122,9 @@ namespace UseCases.Tests
                 InstagramPassword = "password"
             };
             var newAccount = new IGAccount();
-            _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).Returns((IGAccount)null);
+            var user = new User();
+            _userRepository.GetByUserTokenNotDeleted(command.UserToken).Returns(user);
+            _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).ReturnsNull();
             _loginSessionManager.Do(command).Returns(newAccount);
             newAccount.State = new SessionState 
             { 
@@ -109,7 +138,7 @@ namespace UseCases.Tests
             var result = _createIGAccountManager.Create(command);
 
             // Assert
-            _saveSessionManager.Received(1).Do(newAccount.UserId, newAccount.Username, false);
+            _saveSessionManager.Received(1).Do(user, newAccount.Username, false);
         }
 
         [Fact]
@@ -123,6 +152,8 @@ namespace UseCases.Tests
                 InstagramPassword = "password"
             };
             var newAccount = new IGAccount();
+            var user = new User();
+            _userRepository.GetByUserTokenNotDeleted(command.UserToken).Returns(user);
             _accountRepository.GetByWithState(command.UserToken, command.InstagramUserName).ReturnsNull();
             _loginSessionManager.Do(command).Returns(newAccount);
             newAccount.State = new SessionState
@@ -138,7 +169,7 @@ namespace UseCases.Tests
 
             // Assert
             _challengeRequiredAccount.Received(1).Do(newAccount, false);
-            _saveSessionManager.Received(1).Do(newAccount.UserId, newAccount.Username, true);
+            _saveSessionManager.Received(1).Do(user, newAccount.Username, true);
         }
     }
 }

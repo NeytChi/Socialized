@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\Domain\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\users\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:users\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\instagramaccounts\\sessionstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:instagramaccounts\\sessionstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\instagramaccounts\\timeaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:instagramaccounts\\timeaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\iappealfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\iappealfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\packages\\packageaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:packages\\packageaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\packages\\serviceaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:packages\\serviceaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,34 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Users\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "Users\\IUserRepository.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Users\\IUserRepository.cs",
-              "RelativeToolTip": "Users\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-21T11:40:40.787Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IAppealFileRepository.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAppealFileRepository.cs",
-              "RelativeDocumentMoniker": "Appeals\\IAppealFileRepository.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\IAppealFileRepository.cs",
-              "RelativeToolTip": "Appeals\\IAppealFileRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-21T11:15:58.62Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -57,15 +35,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Users\\User.cs",
-              "RelativeDocumentMoniker": "Users\\User.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Users\\User.cs",
-              "RelativeToolTip": "Users\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Title": "TimeAction.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\TimeAction.cs",
+              "RelativeDocumentMoniker": "InstagramAccounts\\TimeAction.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\TimeAction.cs",
+              "RelativeToolTip": "InstagramAccounts\\TimeAction.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-21T10:31:17.57Z",
+              "WhenOpened": "2025-01-22T13:27:00.486Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SessionState.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\SessionState.cs",
+              "RelativeDocumentMoniker": "InstagramAccounts\\SessionState.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\SessionState.cs",
+              "RelativeToolTip": "InstagramAccounts\\SessionState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T12:36:10.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServiceAccess.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Packages\\ServiceAccess.cs",
+              "RelativeDocumentMoniker": "Packages\\ServiceAccess.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Packages\\ServiceAccess.cs",
+              "RelativeToolTip": "Packages\\ServiceAccess.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T12:27:22.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PackageAccess.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Packages\\PackageAccess.cs",
+              "RelativeDocumentMoniker": "Packages\\PackageAccess.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Packages\\PackageAccess.cs",
+              "RelativeToolTip": "Packages\\PackageAccess.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T12:27:18.964Z"
             }
           ]
         }

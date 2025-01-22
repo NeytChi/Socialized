@@ -406,7 +406,7 @@
         "projectName": "WebApi",
         "projectPath": "D:\\VS Projects\\Socialized\\WebApi\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\neyto\\.nuget\\packages\\",
-        "outputPath": "D:\\VS Projects\\Socialized\\WebApi\\WebApi\\obj\\",
+        "outputPath": "D:\\VS Projects\\Socialized\\WebAPI\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Visual Studio SDK\\NuGetPackages"

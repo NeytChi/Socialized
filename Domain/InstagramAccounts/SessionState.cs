@@ -14,7 +14,7 @@ namespace Domain.InstagramAccounts
         public bool Spammed { get; set; }
         public DateTime SpammedStarted { get; set; }
         public DateTime SpammedEnd { get; set; }
-        public virtual required IGAccount Account { get; set; }
-        public virtual required TimeAction TimeAction { get; set; }
+        public virtual IGAccount Account { get; set; }
+        public virtual TimeAction TimeAction { get; set; }
     }
 }

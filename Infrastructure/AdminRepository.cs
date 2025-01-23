@@ -47,13 +47,8 @@ namespace Infrastructure
         public ICollection<User> GetUsers(int since, int count, bool isDeleted = false, bool activate = true)
         {
             var users = _context.Users
-                .Join(_context.UserProfile,
-                      user => user.Id,
-                      profile => profile.UserId,
-                      (user, profile) => new { user, profile })
-                .Where(up => up.user.IsDeleted == isDeleted && up.user.Activate == activate)
-                .OrderByDescending(up => up.user.Id)
-                .Select(up => up.user)
+                .Where(u => u.IsDeleted == isDeleted && u.Activate == activate)
+                .OrderByDescending(u => u.Id)
                 .Skip(since * count)
                 .Take(count)
                 .ToArray();

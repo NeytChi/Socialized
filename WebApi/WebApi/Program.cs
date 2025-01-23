@@ -2,6 +2,9 @@ using System.Text;
 using Core;
 using Core.FileControl;
 using Domain.Admins;
+using Domain.Appeals;
+using Domain.Appeals.Messages;
+using Domain.Appeals.Replies;
 using Domain.AutoPosting;
 using Domain.GettingSubscribes;
 using Domain.InstagramAccounts;
@@ -15,6 +18,9 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using UseCases.Admins;
+using UseCases.Appeals;
+using UseCases.Appeals.Messages;
+using UseCases.Appeals.Replies;
 using UseCases.AutoPosts;
 using UseCases.AutoPosts.AutoPostFiles;
 using UseCases.InstagramAccounts;
@@ -86,6 +92,18 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IEmailMessanger, EmailMessanger>();
 builder.Services.AddScoped<IUserLoginManager, UserLoginManager>();
 builder.Services.AddScoped<IUserPasswordRecoveryManager, UserPasswordRecoveryManager>();
+
+builder.Services.AddScoped<IAppealManager, AppealManager>();
+builder.Services.AddScoped<IAppealRepository, AppealRepository>();
+builder.Services.AddScoped<IAppealMessageRepository, AppealMessageRepository>();
+
+builder.Services.AddScoped<IAppealFileManager, AppealFileManager>();
+builder.Services.AddScoped<IAppealFileRepository, AppealFileRepository>();
+
+builder.Services.AddScoped<IAppealMessageManager, AppealMessageManager>();
+
+builder.Services.AddScoped<IAppealMessageReplyManager, AppealMessageReplyManager>();
+builder.Services.AddScoped<IAppealMessageReplyRepository, AppealMessageReplyRepository>();
 
 builder.Services.AddAuthentication(option =>
 {

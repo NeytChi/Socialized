@@ -23,7 +23,7 @@ namespace WebAPI.Controllers.Appeals
         }
         [HttpGet]
         [ActionName("GetAppealsByUser")]
-        public ActionResult<DataResponse> GetAppealsByUser([FromBody] string userToken, 
+        public ActionResult<DataResponse> GetAppealsByUser([FromQuery] string userToken, 
             [FromQuery] int since = 0, [FromQuery] int count = 10)
         {
             var result = AppealManager.GetAppealsByUser(userToken, since, count);

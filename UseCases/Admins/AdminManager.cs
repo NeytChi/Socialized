@@ -38,6 +38,7 @@ namespace UseCases.Admins
                 CreatedAt = DateTime.UtcNow,
                 LastLoginAt = DateTime.UtcNow
             };
+            AdminRepository.Create(admin);
             AdminEmailManager.SetupPassword(admin.TokenForStart, admin.Email);
             Logger.Information($"Був створений новий адмін, id={admin.Id}.");
             return admin;

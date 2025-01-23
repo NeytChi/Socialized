@@ -12,6 +12,7 @@ using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Serilog;
 using UseCases.Admins;
 using UseCases.AutoPosts;
@@ -93,23 +94,60 @@ builder.Services.AddAuthentication(option =>
 })
 .AddJwtBearer(jwtOption =>
 {
-    var key = "config.GetValue<string>(\"JwtConfig:Key\")";
+    var key = builder.Configuration.GetValue<string>("JwtConfig:Key");
     var keyBytes = Encoding.ASCII.GetBytes(key);
     jwtOption.SaveToken = true;
     jwtOption.TokenValidationParameters = new TokenValidationParameters
     {
         IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
         ValidateLifetime = true,
-        ValidateAudience = true,
-        ValidateIssuer = true
+        ValidateAudience = false,
+        ValidateIssuer = false
     };
 });
 
+builder.Services.AddSwaggerGen(opt =>
+{
+    opt.SwaggerDoc("v1", new OpenApiInfo { Title = "SocializedAPI", Version = "v1" });
+    opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "bearer"
+    });
 
+    opt.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            new string[]{}
+        }
+    });
+});
 
 var app = builder.Build();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+using (var scopeDatabase  = app.Services.CreateScope())
+{
+    var dbContext = scopeDatabase.ServiceProvider.GetRequiredService<Context>();
+
+    dbContext.Database.EnsureCreated();
+}
+
+app.MapSwagger().RequireAuthorization();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

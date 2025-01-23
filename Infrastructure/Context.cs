@@ -5,6 +5,7 @@ using Domain.AutoPosting;
 using Domain.GettingSubscribes;
 using Domain.Packages;
 using Domain.InstagramAccounts;
+using Core;
 
 namespace Infrastructure
 {
@@ -57,6 +58,7 @@ namespace Infrastructure
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            var profileCondition = new ProfileCondition();
             modelBuilder.Entity<PackageAccess>().HasData(
                 new PackageAccess 
                 { 
@@ -76,6 +78,19 @@ namespace Infrastructure
                     Percent = 50,
                     Day = 10,
                     Month = 1,
+                }
+            );
+            modelBuilder.Entity<Admin>().HasData(
+                new Admin
+                {
+                    Id = 1,
+                    Email = "user@example.com",
+                    FirstName = "default",
+                    LastName = "default",
+                    Role = "default",
+                    Password = profileCondition.HashPassword("Pass1234!"),
+                    CreatedAt = DateTime.Now,
+                    TokenForStart = ""
                 }
             );
 

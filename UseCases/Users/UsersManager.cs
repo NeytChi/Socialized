@@ -27,6 +27,7 @@ namespace UseCases.Users
         }
         public void Create(CreateUserCommand command)
         {
+            Logger.Information("Початок створення нового користувача.");
             var user = UserRepository.GetByEmail(command.Email);
             if (user != null && user.IsDeleted)
             {
@@ -59,6 +60,7 @@ namespace UseCases.Users
         }
         public void RegistrationEmail(string userEmail, string culture)
         {
+            Logger.Information($"Початок відправлення листа на підтвердження реєстрації користувача, email={userEmail}.");
             var user = UserRepository.GetByEmail(userEmail);
             if (user == null)
             {
@@ -69,6 +71,7 @@ namespace UseCases.Users
         }
         public void Activate(string hash)
         {
+            Logger.Information("Початок активації аккаунту користувача за допомогою хешу.");
             var user = UserRepository.GetByHash(hash, false, false);
             if (user == null)
             {
@@ -80,6 +83,7 @@ namespace UseCases.Users
         }
         public void Delete(string userToken)
         {
+            Logger.Information("Початок видалення користувача по його токену.");
             var user = UserRepository.GetByUserTokenNotDeleted(userToken);
             if (user == null)
             {

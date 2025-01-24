@@ -18,6 +18,7 @@ namespace UseCases.Users
         }
         public User Login(LoginUserCommand command)
         {
+            Logger.Information($"Початок входу(логіну) користувача, email={command.Email}.");
             var user = UserRepository.GetByEmail(command.Email);
             if (user == null)
             {
@@ -34,6 +35,7 @@ namespace UseCases.Users
         }
         public void LogOut(string userToken)
         {
+            Logger.Information($"Початок виходу(logout) користувача.");
             var user = UserRepository.GetByUserTokenNotDeleted(userToken);
 
             if (user == null)

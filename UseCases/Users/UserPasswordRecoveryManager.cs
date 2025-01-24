@@ -21,6 +21,7 @@ namespace UseCases.Users
         }
         public void RecoveryPassword(string userEmail, string culture)
         {
+            Logger.Information($"Початок відновлення паролю, email={userEmail}.");
             var user = UserRepository.GetByEmail(userEmail, false, true);
 
             if (user == null)
@@ -34,6 +35,7 @@ namespace UseCases.Users
         }
         public string CheckRecoveryCode(CheckRecoveryCodeCommand command)
         {
+            Logger.Information($"Початок перевірки коду для зміни паролю, email={command.UserEmail}.");
             var user = UserRepository.GetByEmail(command.UserEmail);
             if (user == null)
             {
@@ -50,7 +52,8 @@ namespace UseCases.Users
             return user.RecoveryToken;
         }
         public void ChangePassword(ChangeUserPasswordCommand command)
-        {            
+        {
+            Logger.Information($"Початок зміни паролю для користувача.");
             var user = UserRepository.GetByRecoveryToken(command.RecoveryToken, false);
             if (user == null)
             {
@@ -67,6 +70,7 @@ namespace UseCases.Users
         }
         public void ChangeOldPassword(ChangeOldPasswordCommand command)
         {
+            Logger.Information($"Початок зміни старого паролю на новий для користувача.");
             var user = UserRepository.GetByUserTokenNotDeleted(command.UserToken);
             if (user == null)
             {

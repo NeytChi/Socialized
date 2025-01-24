@@ -28,7 +28,7 @@ namespace Domain.Users
         public int? RecoveryCode { get; set; }
         public string RecoveryToken { get; set; }
         public virtual ServiceAccess access { get; set; }
-        public virtual Profile profile { get; set; }
+        public virtual UserProfile profile { get; set; }
         public virtual ICollection<IGAccount> IGAccounts { get; set; }
         public virtual ICollection<Appeal> Appeals { get; set; }
     }

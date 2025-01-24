@@ -1,22 +1,27 @@
-﻿using Core;
+﻿using AutoMapper;
+using Core;
 using Domain.Users;
 using Serilog;
 using UseCases.Exceptions;
 using UseCases.Users.Commands;
+using UseCases.Users.Response;
 
 namespace UseCases.Users
 {
     public class UserLoginManager : BaseManager, IUserLoginManager
     {
+        private IMapper Mapper;
         private IUserRepository UserRepository;
         private ProfileCondition ProfileCondition = new ProfileCondition();
 
         public UserLoginManager(ILogger logger,
-            IUserRepository userRepository) : base(logger) 
+            IUserRepository userRepository,
+            IMapper mapper) : base(logger) 
         {
             UserRepository = userRepository;
+            Mapper = mapper;
         }
-        public User Login(LoginUserCommand command)
+        public UserResponse Login(LoginUserCommand command)
         {
             Logger.Information($"Початок входу(логіну) користувача, email={command.Email}.");
             var user = UserRepository.GetByEmail(command.Email);
@@ -31,7 +36,7 @@ namespace UseCases.Users
             user.LastLoginAt = DateTime.UtcNow;
             UserRepository.Update(user);
             Logger.Information($"Користувач був залогінен, id={user.Id}.");
-            return user;
+            return Mapper.Map<UserResponse>(user);
         }
         public void LogOut(string userToken)
         {

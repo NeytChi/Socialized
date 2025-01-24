@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Http;
+using UseCases.Base;
 
 namespace UseCases.AutoPosts.AutoPostFiles.Commands
 {
     public class CreateAutoPostFileCommand : AutoPostFileCommand
     {
         [Required(ErrorMessage = "Form file is required")]
-        public required IFormFile FormFile { get; set; }
+        public required FileDto FormFile { get; set; }
     }
 }

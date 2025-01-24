@@ -1,11 +1,11 @@
 ﻿using Domain.AutoPosting;
-using Microsoft.AspNetCore.Http;
+using UseCases.Base;
 
 namespace UseCases.AutoPosts.AutoPostFiles
 {
     public interface IAutoPostFileSave
     {
-        public bool CreateVideoFile(AutoPostFile post, IFormFile file);
-        public bool CreateImageFile(AutoPostFile post, IFormFile file);
+        public bool CreateVideoFile(AutoPostFile post, FileDto file);
+        public bool CreateImageFile(AutoPostFile post, FileDto file);
     }
 }

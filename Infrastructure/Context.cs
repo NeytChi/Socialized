@@ -36,7 +36,7 @@ namespace Infrastructure
         public virtual DbSet<TaskGS> TaskGS { get; set; }
         public virtual DbSet<TaskOption> TaskOptions { get; set; }
         public virtual DbSet<TimeAction> TimeAction { get; set; }
-        public virtual DbSet<Profile> UserProfile { get; set; }
+        public virtual DbSet<UserProfile> UserProfile { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         public Context()

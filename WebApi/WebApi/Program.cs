@@ -30,6 +30,7 @@ using UseCases.Packages;
 using UseCases.Users;
 using WebAPI.Middleware;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -104,6 +105,9 @@ builder.Services.AddScoped<IAppealMessageManager, AppealMessageManager>();
 
 builder.Services.AddScoped<IAppealMessageReplyManager, AppealMessageReplyManager>();
 builder.Services.AddScoped<IAppealMessageReplyRepository, AppealMessageReplyRepository>();
+
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
 
 builder.Services.AddAuthentication(option =>
 {

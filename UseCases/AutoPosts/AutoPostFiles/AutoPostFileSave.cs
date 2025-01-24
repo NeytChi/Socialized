@@ -2,7 +2,7 @@
 using FfmpegConverter;
 using Core.FileControl;
 using Domain.AutoPosting;
-using Microsoft.AspNetCore.Http;
+using UseCases.Base;
 
 namespace UseCases.AutoPosts.AutoPostFiles
 {
@@ -21,7 +21,7 @@ namespace UseCases.AutoPosts.AutoPostFiles
             FileManager = fileManager;
             FileMover = fileMover;
         }
-        public bool CreateImageFile(AutoPostFile post, IFormFile file)
+        public bool CreateImageFile(AutoPostFile post, FileDto file)
         {
             var stream = FileConverter.ConvertImage(file.OpenReadStream(), file.ContentType);
 
@@ -33,7 +33,7 @@ namespace UseCases.AutoPosts.AutoPostFiles
             post.Path = FileManager.SaveFile(stream, "auto-posts");
             return true;
         }
-        public bool CreateVideoFile(AutoPostFile post, IFormFile file)
+        public bool CreateVideoFile(AutoPostFile post, FileDto file)
         {
             string pathFile = FileConverter.ConvertVideo(file.OpenReadStream(), file.ContentType);
 

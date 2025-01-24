@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <PackageReference Include="Braintree" Version="5.28.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Braintree" Version="5.29.0" />
     <PackageReference Include="Serilog" Version="4.2.0" />
   </ItemGroup>
 

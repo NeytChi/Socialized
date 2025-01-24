@@ -17,7 +17,7 @@ namespace WebAPI.Controllers.Appeals
         [RequestFormLimits(ValueLengthLimit = int.MaxValue, MultipartBodyLengthLimit = int.MaxValue)]
         public ActionResult<SuccessResponse> Create([FromForm] ICollection<IFormFile> files, [FromForm] CreateAppealMessageCommand command)
         {
-            command.Files = files;
+            command.Files = Map(files);
 
             AppealMessageManager.Create(command);
 

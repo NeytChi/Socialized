@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using UseCases.Base;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Http;
 
 namespace UseCases.Appeals.Messages.Commands
 {
@@ -16,6 +15,6 @@ namespace UseCases.Appeals.Messages.Commands
         [Required(ErrorMessage = "User token is required")]
         public required string UserToken { get; set; }
 
-        public ICollection<IFormFile>? Files { get; set; }
+        public ICollection<FileDto>? Files { get; set; }
     }
 }

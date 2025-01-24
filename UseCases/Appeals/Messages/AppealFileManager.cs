@@ -1,9 +1,9 @@
 ﻿using Serilog;
 using Core.FileControl;
 using Domain.Admins;
-using Microsoft.AspNetCore.Http;
 using Domain.Appeals.Messages;
 using UseCases.Exceptions;
+using UseCases.Base;
 
 namespace UseCases.Appeals.Messages
 {
@@ -19,7 +19,7 @@ namespace UseCases.Appeals.Messages
             FileManager = fileManager;
             AppealFilesRepository = appealFilesRepository;
         }
-        public HashSet<AppealFile> Create(ICollection<IFormFile> upload, long messageId)
+        public HashSet<AppealFile> Create(ICollection<FileDto> upload, long messageId)
         {
             var message = AppealFilesRepository.GetById(messageId);
 
@@ -27,7 +27,7 @@ namespace UseCases.Appeals.Messages
                 throw new NotFoundException($"Сервер не визначив звернення по id={messageId}.") : 
                 Create(upload, message);
         }
-        public HashSet<AppealFile> Create(ICollection<IFormFile> upload, AppealMessage message)
+        public HashSet<AppealFile> Create(ICollection<FileDto> upload, AppealMessage message)
         {
             var files = new HashSet<AppealFile>();
             if (upload != null)

@@ -1,11 +1,11 @@
 ﻿using Domain.Admins;
-using Microsoft.AspNetCore.Http;
+using UseCases.Base;
 
 namespace UseCases.Appeals.Messages
 {
     public interface IAppealFileManager
     {
-        HashSet<AppealFile> Create(ICollection<IFormFile> upload, AppealMessage message);
-        HashSet<AppealFile> Create(ICollection<IFormFile> upload, long messageId);
+        HashSet<AppealFile> Create(ICollection<FileDto> upload, AppealMessage message);
+        HashSet<AppealFile> Create(ICollection<FileDto> upload, long messageId);
     }
 }

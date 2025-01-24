@@ -16,8 +16,10 @@ namespace WebAPI.Controllers.Appeals
         [RequestFormLimits(ValueLengthLimit = int.MaxValue, MultipartBodyLengthLimit = int.MaxValue)]
         public ActionResult<DataResponse> Create([FromQuery] long messageId, ICollection<IFormFile> files)
         {
-            var result = AppealFileManager.Create(files, messageId);
+            var filesDto = Map(files);
 
+            var result = AppealFileManager.Create(filesDto, messageId);
+            
             return new DataResponse(true, result);
         }
     }

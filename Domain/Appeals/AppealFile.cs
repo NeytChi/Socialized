@@ -8,6 +8,6 @@ namespace Domain.Admins
         [ForeignKey("Message")]
         public long MessageId { get; set; }
         public required string RelativePath { get; set; }
-        public virtual required AppealMessage Message { get; set; }
+        public virtual AppealMessage Message { get; set; }
     }
 }

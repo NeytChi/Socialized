@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\Domain\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\users\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:users\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\appealmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\appealmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\appealfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\appealfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\appeals\\appeal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:appeals\\appeal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|d:\\vs projects\\socialized\\domain\\instagramaccounts\\sessionstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26781B3E-9C19-4C8E-8E00-B5E8C2E83F65}|Domain.csproj|solutionrelative:instagramaccounts\\sessionstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,15 +42,67 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserProfile.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Users\\UserProfile.cs",
+              "RelativeDocumentMoniker": "Users\\UserProfile.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Users\\UserProfile.cs*",
+              "RelativeToolTip": "Users\\UserProfile.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-24T15:47:13.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppealMessage.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\AppealMessage.cs",
+              "RelativeDocumentMoniker": "Appeals\\AppealMessage.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\AppealMessage.cs",
+              "RelativeToolTip": "Appeals\\AppealMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-24T10:27:21.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppealFile.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\AppealFile.cs",
+              "RelativeDocumentMoniker": "Appeals\\AppealFile.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\AppealFile.cs",
+              "RelativeToolTip": "Appeals\\AppealFile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-24T10:27:14.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Appeal.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\Appeal.cs",
+              "RelativeDocumentMoniker": "Appeals\\Appeal.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Domain\\Appeals\\Appeal.cs",
+              "RelativeToolTip": "Appeals\\Appeal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-24T10:27:09.868Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "TimeAction.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\TimeAction.cs",
               "RelativeDocumentMoniker": "InstagramAccounts\\TimeAction.cs",
@@ -42,12 +110,11 @@
               "RelativeToolTip": "InstagramAccounts\\TimeAction.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T13:27:00.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T13:27:00.486Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "SessionState.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\InstagramAccounts\\SessionState.cs",
               "RelativeDocumentMoniker": "InstagramAccounts\\SessionState.cs",
@@ -60,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ServiceAccess.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Packages\\ServiceAccess.cs",
               "RelativeDocumentMoniker": "Packages\\ServiceAccess.cs",
@@ -72,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "PackageAccess.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Domain\\Packages\\PackageAccess.cs",
               "RelativeDocumentMoniker": "Packages\\PackageAccess.cs",

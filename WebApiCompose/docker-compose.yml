@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  webapicompose:
+    image: ${DOCKER_REGISTRY-}webapicompose
+    build:
+      context: .
+      dockerfile: WebApiCompose/Dockerfile
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: Pass1234!
+      MYSQL_DATABASE: socialized
+      MYSQL_USER: mykyta
+      MYSQL_PASSWORD: Pass1234!
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+  mysql_data:

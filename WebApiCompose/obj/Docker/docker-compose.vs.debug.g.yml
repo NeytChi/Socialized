@@ -1,0 +1,36 @@
+services:
+  webapicompose:
+    image: webapicompose:dev
+    container_name: "WebApiCompose_1"
+    build:
+      args:
+        LAUNCHING_FROM_VS: true
+        BUILD_CONFIGURATION: Debug
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "WebApiCompose"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages
+    volumes:
+      - D:\VS Projects\Socialized\WebApiCompose\WebApiCompose:/app:rw
+      - D:\VS Projects\Socialized\WebApiCompose:/src:rw
+      - C:\Users\neyto\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\neyto\.nuget\packages:/.nuget/packages:ro
+      - D:\Visual Studio SDK\NuGetPackages:/.nuget/fallbackpackages:ro
+      - C:\Users\neyto\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+      - C:\Users\neyto\AppData\Roaming\ASP.NET\Https:/home/app/.aspnet/https:ro
+      - C:\Users\neyto\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+      - C:\Users\neyto\AppData\Roaming\Microsoft\UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - D:\Microsoft Visual Studio\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0:/VSTools:ro
+      - D:\Microsoft Visual Studio\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
+
+    entrypoint: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --wait"
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages  \"/app/bin/Debug/net8.0/WebApiCompose.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet"
+    tty: true

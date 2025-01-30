@@ -8,15 +8,26 @@
     ".NETCoreApp,Version=v8.0": {
       "UseCases/1.0.0": {
         "dependencies": {
-          "Braintree": "5.28.0",
+          "AutoMapper": "13.0.1",
+          "Braintree": "5.29.0",
           "Core": "1.0.0",
           "Domain": "1.0.0",
           "FfmpegConverter": "1.0.0",
-          "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Serilog": "4.2.0"
         },
         "runtime": {
           "UseCases.dll": {}
+        }
+      },
+      "AutoMapper/13.0.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Options": "9.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.0"
+          }
         }
       },
       "AWSSDK.Core/3.7.400.56": {
@@ -38,7 +49,7 @@
           }
         }
       },
-      "Braintree/5.28.0": {
+      "Braintree/5.29.0": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
           "Newtonsoft.Json": "13.0.1",
@@ -46,20 +57,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Braintree.dll": {
-            "assemblyVersion": "5.28.0.0",
-            "fileVersion": "5.28.0.0"
-          }
-        }
-      },
-      "Microsoft.AspNetCore.Http.Features/5.0.17": {
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.0",
-          "System.IO.Pipelines": "5.0.2"
-        },
-        "runtime": {
-          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.1722.21507"
+            "assemblyVersion": "5.29.0.0",
+            "fileVersion": "5.29.0.0"
           }
         }
       },
@@ -155,14 +154,6 @@
       "System.IO.FileSystem.Primitives/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
-        }
-      },
-      "System.IO.Pipelines/5.0.2": {
-        "runtime": {
-          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {
-            "assemblyVersion": "5.0.0.1",
-            "fileVersion": "5.0.1522.11506"
-          }
         }
       },
       "System.Reflection/4.3.0": {
@@ -366,6 +357,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoMapper/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "path": "automapper/13.0.1",
+      "hashPath": "automapper.13.0.1.nupkg.sha512"
+    },
     "AWSSDK.Core/3.7.400.56": {
       "type": "package",
       "serviceable": true,
@@ -380,19 +378,12 @@
       "path": "awssdk.s3/3.7.407",
       "hashPath": "awssdk.s3.3.7.407.nupkg.sha512"
     },
-    "Braintree/5.28.0": {
+    "Braintree/5.29.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mS2AlPUlqucjo7/Zedu01tiTGOgsO5Tv8zsDFipKga2cixsdtWrW32MHZnC/PvC90YWqXPSwdNF3zlYBS6NtwQ==",
-      "path": "braintree/5.28.0",
-      "hashPath": "braintree.5.28.0.nupkg.sha512"
-    },
-    "Microsoft.AspNetCore.Http.Features/5.0.17": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3jG2xS+dx8DDCGV/F+STdPTg89lX3ao3dF/VEPvJaz3wzBIjuadipTtYNEXDIVuOPZwb6jdmhrX9jkzOIBm5cw==",
-      "path": "microsoft.aspnetcore.http.features/5.0.17",
-      "hashPath": "microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512"
+      "sha512": "sha512-kfwmPJbrqIrpAq0nIbbc0oxGQl1Dtn9OL0eRa20DPctcv7ljI1nJe34qNZEwfYMMFwPOJxgf1iYbL3BML0FRgA==",
+      "path": "braintree/5.29.0",
+      "hashPath": "braintree.5.29.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
@@ -491,13 +482,6 @@
       "sha512": "sha512-6QOb2XFLch7bEc4lIcJH49nJN2HV+OC3fHDgsLVsBVBk3Y4hFAnOBGzJ2lUu7CyDDFo9IBWkSsnbkT6IBwwiMw==",
       "path": "system.io.filesystem.primitives/4.3.0",
       "hashPath": "system.io.filesystem.primitives.4.3.0.nupkg.sha512"
-    },
-    "System.IO.Pipelines/5.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Iew+dfa6FFiyvWBdRmXApixRY1db+beyutpIck4SOSe0NLM8FD/7AD54MscqVLhvfSMLHO7KadjTRT7fqxOGTA==",
-      "path": "system.io.pipelines/5.0.2",
-      "hashPath": "system.io.pipelines.5.0.2.nupkg.sha512"
     },
     "System.Reflection/4.3.0": {
       "type": "package",

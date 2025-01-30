@@ -275,13 +275,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Braintree": {
               "target": "Package",
-              "version": "[5.28.0, )"
-            },
-            "Microsoft.AspNetCore.Http.Features": {
-              "target": "Package",
-              "version": "[5.0.17, )"
+              "version": "[5.29.0, )"
             },
             "Serilog": {
               "target": "Package",

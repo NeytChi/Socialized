@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|solutionrelative:context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|d:\\vs projects\\socialized\\infrastructure\\serviceaccessrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|solutionrelative:serviceaccessrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|d:\\vs projects\\socialized\\infrastructure\\appealrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|solutionrelative:appealrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|d:\\vs projects\\socialized\\infrastructure\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|solutionrelative:userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|d:\\vs projects\\socialized\\infrastructure\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|solutionrelative:adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|d:\\vs projects\\socialized\\infrastructure\\serviceaccessrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|solutionrelative:serviceaccessrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88093E44-0CD3-405A-8630-95AD0BE4F272}|Infrastructure.csproj|d:\\vs projects\\socialized\\infrastructure\\appealfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,6 +47,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AppealRepository.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\AppealRepository.cs",
+              "RelativeDocumentMoniker": "AppealRepository.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Infrastructure\\AppealRepository.cs",
+              "RelativeToolTip": "AppealRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAACEAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-24T10:23:12.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminRepository.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\AdminRepository.cs",
+              "RelativeDocumentMoniker": "AdminRepository.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\Infrastructure\\AdminRepository.cs",
+              "RelativeToolTip": "AdminRepository.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-23T13:06:06.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ServiceAccessRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\ServiceAccessRepository.cs",
               "RelativeDocumentMoniker": "ServiceAccessRepository.cs",
@@ -54,32 +84,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\UserRepository.cs",
-              "RelativeDocumentMoniker": "UserRepository.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\Infrastructure\\UserRepository.cs",
-              "RelativeToolTip": "UserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-21T11:41:55.748Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Context.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\Context.cs",
               "RelativeDocumentMoniker": "Context.cs",
               "ToolTip": "D:\\VS Projects\\Socialized\\Infrastructure\\Context.cs",
               "RelativeToolTip": "Context.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAcwCYAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAiwCYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-20T09:38:52.378Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AppealFileRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\AppealFileRepository.cs",
               "RelativeDocumentMoniker": "AppealFileRepository.cs",
@@ -91,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "DiscountRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\DiscountRepository.cs",
               "RelativeDocumentMoniker": "DiscountRepository.cs",
@@ -103,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "PackageAccessRepository.cs",
               "DocumentMoniker": "D:\\VS Projects\\Socialized\\Infrastructure\\PackageAccessRepository.cs",
               "RelativeDocumentMoniker": "PackageAccessRepository.cs",

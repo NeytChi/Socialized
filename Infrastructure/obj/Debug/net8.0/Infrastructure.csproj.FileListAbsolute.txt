@@ -28,3 +28,5 @@ D:\VS Projects\Socialized\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 D:\VS Projects\Socialized\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
 D:\VS Projects\Socialized\Infrastructure\bin\Debug\net8.0\Infrastructure.runtimeconfig.json
 D:\VS Projects\Socialized\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
+D:\VS Projects\Socialized\Infrastructure\bin\Debug\net8.0\Core.dll
+D:\VS Projects\Socialized\Infrastructure\bin\Debug\net8.0\Core.pdb

@@ -19,20 +19,26 @@ namespace Core.FileControl
             Region = RegionEndpoint.GetBySystemName(Settings.AwsBucketRegion);
             S3Client = new AmazonS3Client(Settings.AwsAccessKeyId, Settings.AwsSecretKeyId, Region);
             FileTransferUtility = new TransferUtility(S3Client);
+            Logger.Information("AWS S3 Bucket був успішно ініціалізований.");
         }
-        public override string SaveFile(Stream stream, string RelativePath)
+        public async override Task<string> SaveFileAsync(Stream file, string relativePath)
         {
+            Logger.Information("Запит на збереження файлу на сервісі AWS S3 Bucket.");
             string fileName = Guid.NewGuid().ToString();
             ChangeDailyPath();
-            string relativePath = RelativePath + dailyFolder + fileName;
-            if (SaveTo(stream, relativePath))
+            string fullPath = "/" + relativePath + dailyFolder;
+            var result = await SaveToAsync(file, fullPath, fileName);
+            if (result)
             {
+                Logger.Information("Файл був збережений на сервісі AWS S3 Bucket.");
                 return relativePath;
             }
+            Logger.Error("Файл не був збережений на сервісі AWS S3 Bucket.");
             return string.Empty;
         }
-        public bool SaveTo(Stream stream, string relativeFilePath)
+        public async override Task<bool> SaveToAsync(Stream stream, string relativeFilePath, string fileName)
         {
+            Logger.Information($"Запит на збереження файлу на сервісі AWS S3 Bucket за таким шляхом={relativeFilePath}.");
             try
             {
                 var fileTransferUtilityRequest = new TransferUtilityUploadRequest
@@ -46,7 +52,7 @@ namespace Core.FileControl
                 };
                 fileTransferUtilityRequest.Metadata.Add("param1", "Value1");
                 fileTransferUtilityRequest.Metadata.Add("param2", "Value2");
-                FileTransferUtility.Upload(fileTransferUtilityRequest);
+                await FileTransferUtility.UploadAsync(fileTransferUtilityRequest);
                 Logger.Information($"Був збережен новий файл на сервісі AWS S3 Bucket за таким шляхом={relativeFilePath}.");
                 return true;
             }
@@ -57,20 +63,6 @@ namespace Core.FileControl
             catch (Exception e)
             {
                 Logger.Error($"Не вдалося зберігти файл на сервисі AWS S3 Bucket, виключення={e.Message}");
-            }
-            return false;
-        }
-
-        public bool SaveTo(string fullPathFile, string relativeFilePath)
-        {
-            try
-            {
-                var stream = File.OpenRead(fullPathFile);
-                SaveTo(stream, relativeFilePath);
-            }
-            catch (Exception e)
-            {
-                Logger.Error($"Не вдалося прочитати файл для збереження його по AWS S3 Bucket, виключення={e.Message}");
             }
             return false;
         }

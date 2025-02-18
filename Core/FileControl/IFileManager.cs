@@ -2,7 +2,7 @@
 {
     public interface IFileManager
     {
-        string SaveFile(Stream stream, string RelativePath);
-        bool SaveTo(Stream file, string relativePath, string fileName);
+        Task<string> SaveFileAsync(Stream file, string relativePath);
+        Task<bool> SaveToAsync(Stream file, string fullPath, string fileName);
     }
 }

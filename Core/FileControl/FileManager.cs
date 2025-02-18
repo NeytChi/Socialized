@@ -9,31 +9,21 @@ namespace Core.FileControl
         public DateTime currentTime = DateTime.Now;
         public string dailyFolder = "/" + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day + "/";
 
-        public virtual string SaveFile(Stream file, string RelativePath)
+        public async virtual Task<string> SaveFileAsync(Stream file, string relativePath)
         {
+            Logger.Information("Запит на збереження файлу в файловій системі.");
             string fileName = Guid.NewGuid().ToString();
             ChangeDailyPath();
-            string fileRelativePath = "/" + RelativePath + dailyFolder;
-            CheckDirectory(fileRelativePath);
-            if (SaveTo(file, fileRelativePath, fileName))
+            string fileRelativePath = "/" + relativePath + dailyFolder;
+            var fullPath = CheckDirectory(fileRelativePath);
+            var result = await SaveToAsync(file, fullPath, fileName);
+            if (result)
             {
+                Logger.Information("Файл був збережений в файловій системі.");
                 return fileRelativePath + fileName;
             }
+            Logger.Error("Файл не був збережений в файловій системі.");
             return string.Empty;
-        }
-        public virtual bool SaveTo(Stream file, string relativePath, string fileName)
-        {
-            if (File.Exists(currentDirectory + relativePath + fileName))
-            {
-                Logger.Error("Сервер не може зберегти в файловій системі файл з такою самою назвою.");
-                return false;
-            }
-            using (var stream = new FileStream(currentDirectory + fileName, FileMode.Create))
-            {
-                file.CopyTo(stream);
-            }
-            Logger.Information($"Був створений новий файл={fileName}.");
-            return true;
         }
         public void ChangeDailyPath()
         {
@@ -41,22 +31,50 @@ namespace Core.FileControl
             {
                 currentTime = DateTime.Now;
                 dailyFolder = "/" + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day + "/";
+                Logger.Information("Шлях до файлів був змінений на новий шлях={dailyFolder}");
             }
         }
-        public void CheckDirectory(string fileRelativePath)
+        public string CheckDirectory(string fileRelativePath)
         {
-            if (!Directory.Exists(currentDirectory + fileRelativePath))
+            var fullPath = currentDirectory + fileRelativePath;
+            if (!Directory.Exists(fullPath))
             {
-                Directory.CreateDirectory(currentDirectory + fileRelativePath);
+                Directory.CreateDirectory(fullPath);
+                Logger.Information("Була створена нова папка. Шлях до папки ->/" + fileRelativePath);
             }
+            return fullPath;
         }
         public void DeleteFile(string relativePath)
         {
             if (File.Exists(currentDirectory + relativePath))
             {
                 File.Delete(currentDirectory + relativePath);
-                Logger.Information("File was deleted. Relative path ->/" + relativePath);
+                Logger.Information("Файл був видалений з файлової системи.");
             }
         }
+        public async virtual Task<bool> SaveToAsync(Stream file, string fullPath, string fileName)
+        {
+            var fileFullPathToSave = fullPath + fileName;
+            if (File.Exists(fileFullPathToSave))
+            {
+                Logger.Error("Сервер не може зберегти в файловій системі файл з такою самою назвою.");
+                return false;
+            }
+            try
+            {
+                using (var stream = new FileStream(fileFullPathToSave, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+                Logger.Information($"Був створений новий файл={fileName}.");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"Помилка при збереженні файлу: {ex.Message}");
+                return false;
+            }
+        }
+
     }
 }

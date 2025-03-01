@@ -1,16 +1,26 @@
 ﻿using Domain.Appeals;
-using Microsoft.AspNetCore.Http;
 using NSubstitute;
 using NSubstitute.ReturnsExtensions;
 using Serilog;
 using UseCases.Appeals.Messages;
 using UseCases.Appeals.Messages.Commands;
+using UseCases.Base;
 using UseCases.Exceptions;
 
 namespace UseCasesTests.Appeals
 {
     public class AppealMessageManagerTests
     {
+        private FileDto File = new FileDto
+        {
+            FileName = "test",
+            Name = "test",
+            ContentType = "image",
+            ContentDisposition = "form-data",
+            Length = 3,
+            Headers = new Dictionary<string, string> { { "test", "test" } },
+            Stream = new MemoryStream()
+        };
         private ILogger logger = Substitute.For<ILogger>();
         IAppealRepository appealRepository = Substitute.For<IAppealRepository>();
         IAppealMessageRepository appealMessageRepository = Substitute.For<IAppealMessageRepository>();
@@ -25,7 +35,7 @@ namespace UseCasesTests.Appeals
                 AppealId = 1,
                 Message = "",
                 UserToken = "",
-                Files = new List<IFormFile> { new FormFileTest() }
+                Files = new List<FileDto> { File }
             };
 
             Assert.Throws<NotFoundException>(() => manager.Create(command));
@@ -36,7 +46,7 @@ namespace UseCasesTests.Appeals
             var command = new CreateAppealMessageCommand
             {
                 AppealId = 1, Message = "test", UserToken = "",
-                Files = new List<IFormFile> { new FormFileTest() }
+                Files = new List<FileDto> { File }
             };
             appealRepository.GetBy(command.AppealId, command.UserToken)
                 .Returns(new Domain.Admins.Appeal { Id = command.AppealId });

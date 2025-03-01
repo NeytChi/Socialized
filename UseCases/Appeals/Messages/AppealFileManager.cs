@@ -34,10 +34,11 @@ namespace UseCases.Appeals.Messages
             {
                 foreach (var file in upload)
                 {
+                    var savedFile = FileManager.SaveFileAsync(file.OpenReadStream(), "AppealFiles");
                     var saved = new AppealFile
                     {
                         MessageId = message.Id,
-                        RelativePath = FileManager.SaveFile(file.OpenReadStream(), "AppealFiles"),
+                        RelativePath = savedFile.Result,
                         Message = message
                     };
                     files.Add(saved);

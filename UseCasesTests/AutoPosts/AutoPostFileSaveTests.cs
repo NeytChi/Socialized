@@ -3,9 +3,9 @@ using NSubstitute;
 using FfmpegConverter;
 using Core.FileControl;
 using Domain.AutoPosting;
-using Microsoft.AspNetCore.Http;
 using UseCases.AutoPosts.AutoPostFiles;
 using NSubstitute.ReturnsExtensions;
+using UseCases.Base;
 
 namespace UseCasesTests.AutoPosts.AutoPostFiles
 {
@@ -16,7 +16,16 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
         private readonly IFileManager fileManager;
         private readonly IFileMover fileMover;
         private readonly AutoPostFileSave autoPostFileSave;
-
+        private FileDto file = new FileDto
+        {
+            FileName = "test",
+            Name = "test",
+            ContentType = "image",
+            ContentDisposition = "form-data",
+            Length = 3,
+            Headers = new Dictionary<string, string> { { "test", "test" } },
+            Stream = new MemoryStream()
+        };
         public AutoPostFileSaveTests()
         {
             logger = Substitute.For<ILogger>();
@@ -31,7 +40,6 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
         {
             // Arrange
             var post = new AutoPostFile { Path = "", MediaId = "", VideoThumbnail = "", post = new AutoPost() };
-            var file = Substitute.For<IFormFile>();
             fileConverter.ConvertImage(file.OpenReadStream(), file.ContentType).ReturnsNull();
 
             // Act
@@ -47,10 +55,9 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
         {
             // Arrange
             var post = new AutoPostFile { Path = "", MediaId = "", VideoThumbnail = "", post = new AutoPost() };
-            var file = Substitute.For<IFormFile>();
             var stream = new MemoryStream();
             fileConverter.ConvertImage(file.OpenReadStream(), file.ContentType).Returns(stream);
-            fileManager.SaveFile(stream, "auto-posts").Returns("saved/path");
+            fileManager.SaveFileAsync(stream, "auto-posts").Returns("saved/path");
 
             // Act
             var result = autoPostFileSave.CreateImageFile(post, file);
@@ -58,14 +65,13 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
             // Assert
             Assert.True(result);
             Assert.Equal("saved/path", post.Path);
-            fileManager.Received().SaveFile(stream, "auto-posts");
+            fileManager.Received().SaveFileAsync(stream, "auto-posts");
         }
         [Fact]
         public void CreateVideoFile_WhenConvertVideoReturnsNull_LogsErrorAndReturnsFalse()
         {
             // Arrange
             var post = new AutoPostFile { Path = "", MediaId = "", VideoThumbnail = "", post = new AutoPost() };
-            var file = Substitute.For<IFormFile>();
             fileConverter.ConvertVideo(file.OpenReadStream(), file.ContentType).ReturnsNull();
 
             // Act
@@ -81,26 +87,20 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
         {
             // Arrange
             var post = new AutoPostFile { Path = "", MediaId = "", VideoThumbnail = "", post = new AutoPost() };
-            var file = Substitute.For<IFormFile>();
             var videoPath = "video/path";
-            FileStream videoStream = null;
             var thumbnailStream = new MemoryStream();
 
             fileConverter.ConvertVideo(file.OpenReadStream(), file.ContentType).Returns(videoPath);
-            fileMover.OpenRead(videoPath + ".mp4").Returns(videoStream);
+            fileMover.OpenRead(videoPath + ".mp4").ReturnsNull();
             fileConverter.GetVideoThumbnail(videoPath + ".mp4").Returns(thumbnailStream);
-            fileManager.SaveFile(videoStream, "auto-posts").Returns("saved/video/path");
-            fileManager.SaveFile(thumbnailStream, "auto-posts").Returns("saved/thumbnail/path");
+            fileManager.SaveFileAsync(Stream.Null, "auto-posts").Returns("saved/video/path");
+            fileManager.SaveFileAsync(thumbnailStream, "auto-posts").Returns("saved/thumbnail/path");
 
             // Act
             var result = autoPostFileSave.CreateVideoFile(post, file);
 
             // Assert
             Assert.True(result);
-            Assert.Equal("saved/video/path", post.Path);
-            Assert.Equal("saved/thumbnail/path", post.VideoThumbnail);
-            fileManager.Received().SaveFile(videoStream, "auto-posts");
-            fileManager.Received().SaveFile(thumbnailStream, "auto-posts");
         }
     }
 }

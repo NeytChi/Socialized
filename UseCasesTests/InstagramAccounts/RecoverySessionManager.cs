@@ -5,6 +5,7 @@ using Domain.InstagramAccounts;
 using UseCases.InstagramApi;
 using UseCases.InstagramAccounts;
 using UseCases.InstagramAccounts.Commands;
+using NSubstitute.ReturnsExtensions;
 
 namespace UseCases.Tests
 {
@@ -111,7 +112,7 @@ namespace UseCases.Tests
             };
             var requirements = new IgAccountRequirements { InstagramUserName = "username", InstagramPassword = "password" };
 
-            _loginSessionManager.Do(account, requirements).Returns((IGAccount)null);
+            _loginSessionManager.Do(account, requirements).ReturnsNull();
 
             // Act & Assert
             var exception = Assert.Throws<InvalidOperationException>(() => _recoverySessionManager.Do(account, requirements));

@@ -3,6 +3,7 @@ using Serilog;
 using Domain.InstagramAccounts;
 using Domain.GettingSubscribes;
 using UseCases.Exceptions;
+using NSubstitute.ReturnsExtensions;
 
 namespace UseCases.InstagramAccounts.Tests
 {
@@ -27,7 +28,7 @@ namespace UseCases.InstagramAccounts.Tests
         {
             // Arrange
             long accountId = 12345;
-            _accountRepository.GetByWithState(accountId).Returns((IGAccount)null);
+            _accountRepository.GetByWithState(accountId).ReturnsNull();
 
             // Act & Assert
             var exception = Assert.Throws<NotFoundException>(() => _manager.Delete(accountId));

@@ -36,6 +36,7 @@ namespace WebAPI.Controllers
                     Length = formFile.Length,
                     Name = formFile.Name,
                     FileName = formFile.FileName,
+                    Headers = formFile.Headers.ToDictionary(h => h.Key, h => h.Value.ToString()),
                     Stream = formFile.OpenReadStream()
                 });
             }

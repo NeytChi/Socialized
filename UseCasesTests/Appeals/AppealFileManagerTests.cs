@@ -1,17 +1,28 @@
 ﻿using Core.FileControl;
 using Domain.Admins;
 using Domain.Appeals.Messages;
-using Microsoft.AspNetCore.Http;
 using NSubstitute;
 using NSubstitute.ReturnsExtensions;
 using Serilog;
 using UseCases.Appeals.Messages;
+using UseCases.Base;
 using UseCases.Exceptions;
 
 namespace UseCasesTests.Appeals
 {
     public class AppealFileManagerTests
     {
+        private FileDto File = new FileDto
+        {
+            FileName = "test",
+            Name = "test",
+            ContentType = "image",
+            ContentDisposition = "form-data",
+            Length = 3,
+            Headers = new Dictionary<string, string> { { "test", "test" } },
+            Stream = new MemoryStream()
+        };
+
         [Fact]
         public void Create_WhenFilesIsEmpty_ReturnEmptyCollection()
         {
@@ -22,7 +33,7 @@ namespace UseCasesTests.Appeals
             appealFileRepository.GetById(messageId).Returns(new AppealMessage());
             var manager = new AppealFileManager(logger, fileManager, appealFileRepository);
 
-            var appealFiles = manager.Create(new List<IFormFile> { }, messageId);
+            var appealFiles = manager.Create(new List<FileDto> { }, messageId);
 
             Assert.Empty(appealFiles);
         }
@@ -36,7 +47,7 @@ namespace UseCasesTests.Appeals
             appealFileRepository.GetById(messageId).Returns(new AppealMessage());
             var manager = new AppealFileManager(logger, fileManager, appealFileRepository);
 
-            var appealFiles = manager.Create(new List<IFormFile> { new FormFileTest() }, messageId);
+            var appealFiles = manager.Create(new List<FileDto> { File }, messageId);
 
             Assert.Single(appealFiles);
         }
@@ -50,7 +61,7 @@ namespace UseCasesTests.Appeals
             appealFileRepository.GetById(messageId).ReturnsNull();
             var manager = new AppealFileManager(logger, fileManager, appealFileRepository);
 
-            Assert.Throws<NotFoundException>(() => manager.Create(new List<IFormFile> { new FormFileTest() }, messageId));
+            Assert.Throws<NotFoundException>(() => manager.Create(new List<FileDto> { File }, messageId));
         }
     }
 }

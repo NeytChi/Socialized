@@ -14,9 +14,7 @@ namespace UseCases.Users
         private IUserRepository UserRepository;
         private ProfileCondition ProfileCondition = new ProfileCondition();
 
-        public UserLoginManager(ILogger logger,
-            IUserRepository userRepository,
-            IMapper mapper) : base(logger) 
+        public UserLoginManager(ILogger logger, IUserRepository userRepository, IMapper mapper) : base(logger) 
         {
             UserRepository = userRepository;
             Mapper = mapper;

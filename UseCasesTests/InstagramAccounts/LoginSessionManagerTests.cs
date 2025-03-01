@@ -37,14 +37,14 @@ namespace UseCases.Tests
             // Assert
             Assert.NotNull(result);
         }
-
-        [InlineData(InstagramLoginState.TwoFactorRequired, "Сесія Instagram аккаунту потребує проходження двох-факторної верифікації.")]
-        [InlineData(InstagramLoginState.InactiveUser, "Сесія Instagram аккаунту є не активною.")]
-        [InlineData(InstagramLoginState.InvalidUser, "Неправильний логін аккаунту.")]
-        [InlineData(InstagramLoginState.BadPassword, "Неправильний пароль.")]
-        [InlineData(InstagramLoginState.LimitError, "Невідома помилка при спробі увійти в Instagram аккаунт.")]
-        [InlineData(InstagramLoginState.Exception, "Невідома помилка при спробі увійти в Instagram аккаунт.")]
-        public void Do_ThrowsIgAccountException(InstagramLoginState state, string expectedMessage)
+        [Theory]
+        [InlineData(InstagramLoginState.TwoFactorRequired)]
+        [InlineData(InstagramLoginState.InactiveUser)]
+        [InlineData(InstagramLoginState.InvalidUser)]
+        [InlineData(InstagramLoginState.BadPassword)]
+        [InlineData(InstagramLoginState.LimitError)]
+        [InlineData(InstagramLoginState.Exception)]
+        public void Do_ThrowsIgAccountException(InstagramLoginState state)
         {
             // Arrange
             var accountRequirements = new IgAccountRequirements { InstagramUserName = "username", InstagramPassword = "password" };

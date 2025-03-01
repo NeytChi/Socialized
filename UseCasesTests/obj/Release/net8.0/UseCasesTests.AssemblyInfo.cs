@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UseCasesTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d12ee5dcf4fbc01863f54e8affd048ae178ed969")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+659d4cc75c2b5320dbb2112375bff78fcdc7c13b")]
 [assembly: System.Reflection.AssemblyProductAttribute("UseCasesTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UseCasesTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

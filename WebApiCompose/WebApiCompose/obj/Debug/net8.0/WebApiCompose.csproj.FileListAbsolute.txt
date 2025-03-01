@@ -34,7 +34,6 @@ D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\obj\Debug\net8.0\ref\WebAp
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\AutoMapper.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\AWSSDK.Core.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\AWSSDK.S3.dll
-D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Braintree.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
@@ -59,7 +58,6 @@ D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Microsoft
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\MySqlConnector.dll
-D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Serilog.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Serilog.AspNetCore.dll
@@ -75,7 +73,6 @@ D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\System.Id
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\System.IO.Pipelines.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\System.Text.Json.dll
-D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\System.Xml.XPath.XmlDocument.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Core.dll
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Domain.dll
@@ -87,3 +84,12 @@ D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Infrastru
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Domain.pdb
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\Core.pdb
 D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\FfmpegConverter.pdb
+D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\WebApiCompose.staticwebassets.endpoints.json
+D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\MailKit.dll
+D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\MimeKit.dll
+D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\obj\Debug\net8.0\staticwebassets\msbuild.WebApiCompose.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\VS Projects\Socialized\WebApiCompose\WebApiCompose\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

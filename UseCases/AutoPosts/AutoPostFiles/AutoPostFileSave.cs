@@ -30,7 +30,8 @@ namespace UseCases.AutoPosts.AutoPostFiles
                 Logger.Error("Сервер не визначив формат картинки для збереження.");
                 return false;
             }
-            post.Path = FileManager.SaveFile(stream, "auto-posts");
+            var savedFile = FileManager.SaveFileAsync(stream, "auto-posts");
+            post.Path = savedFile.Result;
             return true;
         }
         public bool CreateVideoFile(AutoPostFile post, FileDto file)
@@ -47,9 +48,11 @@ namespace UseCases.AutoPosts.AutoPostFiles
             {
                 FileMover.Delete(pathFile);
             }
-            post.Path = FileManager.SaveFile(stream, "auto-posts");
+            var savedFile = FileManager.SaveFileAsync(stream, "auto-posts");
+            post.Path = savedFile.Result;
             var thumbnail = FileConverter.GetVideoThumbnail(pathFile + ".mp4");
-            post.VideoThumbnail = FileManager.SaveFile(thumbnail, "auto-posts");
+            savedFile = FileManager.SaveFileAsync(thumbnail, "auto-posts");
+            post.VideoThumbnail = savedFile.Result;
             FileMover.Delete(pathFile + ".mp4");
             return true;
         }

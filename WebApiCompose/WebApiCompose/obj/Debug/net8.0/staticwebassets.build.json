@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "sSMYy5kdgJg43/JoQicEZPDsJkwjc1ueSMi9njtjvt4=",
+  "Hash": "AK8xcPQ6qC+i9nIO/dsSWqGTTMCz1wHRU8n7mEKpEVk=",
   "Source": "WebApiCompose",
   "BasePath": "_content/WebApiCompose",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

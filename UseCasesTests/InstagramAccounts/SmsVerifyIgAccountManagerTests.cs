@@ -5,6 +5,7 @@ using Domain.InstagramAccounts;
 using UseCases.Exceptions;
 using UseCases.InstagramApi;
 using UseCases.InstagramAccounts.Commands;
+using NSubstitute.ReturnsExtensions;
 
 namespace UseCases.InstagramAccounts.Tests
 {
@@ -35,7 +36,7 @@ namespace UseCases.InstagramAccounts.Tests
             // Arrange
             var command = new SmsVefiryIgAccountCommand { UserToken = "user123", AccountId = 123 };
 
-            _accountRepository.Get(command.UserToken, command.AccountId).Returns((IGAccount)null);
+            _accountRepository.Get(command.UserToken, command.AccountId).ReturnsNull();
 
             // Act & Assert
             var exception = Assert.Throws<NotFoundException>(() => _manager.SmsVerifySession(command));

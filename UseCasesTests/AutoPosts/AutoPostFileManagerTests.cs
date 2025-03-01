@@ -4,9 +4,8 @@ using UseCases.Exceptions;
 using UseCases.AutoPosts.AutoPostFiles.Commands;
 using Domain.AutoPosting;
 using UseCases.AutoPosts.AutoPostFiles;
-using Microsoft.AspNetCore.Http;
-using UseCasesTests.Appeals;
 using Core.FileControl;
+using UseCases.Base;
 
 namespace UseCasesTests.AutoPosts.AutoPostFiles
 {
@@ -19,6 +18,16 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
         private readonly IFileManager fileManager;
         private readonly AutoPostFileManager autoPostFileManager;
         private readonly AutoPost autoPost = new AutoPost();
+        private FileDto File = new FileDto
+        {
+            FileName = "test",
+            Name = "test",
+            ContentType = "image",
+            ContentDisposition = "form-data",
+            Length = 3,
+            Headers = new Dictionary<string, string> { { "test", "test" } },
+            Stream = new MemoryStream()
+        };
         public AutoPostFileManagerTests()
         {
             logger = Substitute.For<ILogger>();
@@ -36,12 +45,12 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
             
             var files = new List<CreateAutoPostFileCommand>
             {
-                new CreateAutoPostFileCommand { FormFile = new FormFileTest() { } },
-                new CreateAutoPostFileCommand { FormFile = new FormFileTest() { } }
+                new CreateAutoPostFileCommand { FormFile = File },
+                new CreateAutoPostFileCommand { FormFile = File }
             };
 
-            autoPostFileSave.CreateImageFile(Arg.Any<AutoPostFile>(), Arg.Any<IFormFile>()).Returns(true);
-            autoPostFileSave.CreateVideoFile(Arg.Any<AutoPostFile>(), Arg.Any<IFormFile>()).Returns(true);
+            autoPostFileSave.CreateImageFile(Arg.Any<AutoPostFile>(), Arg.Any<FileDto>()).Returns(true);
+            autoPostFileSave.CreateVideoFile(Arg.Any<AutoPostFile>(), Arg.Any<FileDto>()).Returns(true);
 
             // Act
             var result = autoPostFileManager.Create(files, autoPost, 1);
@@ -56,10 +65,10 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
             // Arrange
             var files = new List<CreateAutoPostFileCommand>
             {
-                new CreateAutoPostFileCommand { FormFile = new FormFileTest() { } }
+                new CreateAutoPostFileCommand { FormFile = File }
             };
 
-            autoPostFileSave.CreateImageFile(Arg.Any<AutoPostFile>(), Arg.Any<IFormFile>()).Returns(false);
+            autoPostFileSave.CreateImageFile(Arg.Any<AutoPostFile>(), Arg.Any<FileDto>()).Returns(false);
 
             // Act & Assert
             Assert.Throws<IgAccountException>(() => autoPostFileManager.Create(files, autoPost, 1));
@@ -71,10 +80,10 @@ namespace UseCasesTests.AutoPosts.AutoPostFiles
             // Arrange
             var files = new List<CreateAutoPostFileCommand>
             {
-                new CreateAutoPostFileCommand { FormFile = new FormFileTest() { } }
+                new CreateAutoPostFileCommand { FormFile = File }
             };
 
-            autoPostFileSave.CreateVideoFile(Arg.Any<AutoPostFile>(), Arg.Any<IFormFile>()).Returns(false);
+            autoPostFileSave.CreateVideoFile(Arg.Any<AutoPostFile>(), Arg.Any<FileDto>()).Returns(false);
 
             // Act & Assert
             Assert.Throws<IgAccountException>(() => autoPostFileManager.Create(files, autoPost, 1));

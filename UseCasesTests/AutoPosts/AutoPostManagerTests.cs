@@ -35,7 +35,7 @@ namespace UseCasesTests.AutoPosts
         {
             // Arrange
             var command = new CreateAutoPostCommand { UserToken = "token", AccountId = 1, Files = new List<CreateAutoPostFileCommand> { } };
-            iGAccountRepository.Get(command.UserToken, command.AccountId).Returns((IGAccount)null);
+            iGAccountRepository.Get(command.UserToken, command.AccountId).ReturnsNull();
 
             // Act & Assert
             Assert.Throws<NotFoundException>(() => autoPostManager.Create(command));
@@ -117,7 +117,7 @@ namespace UseCasesTests.AutoPosts
         {
             // Arrange
             var command = new DeleteAutoPostCommand { UserToken = "token", AutoPostId = 1 };
-            autoPostRepository.GetBy(command.UserToken, command.AutoPostId).Returns((AutoPost)null);
+            autoPostRepository.GetBy(command.UserToken, command.AutoPostId).ReturnsNull();
 
             // Act & Assert
             Assert.Throws<NotFoundException>(() => autoPostManager.Delete(command));

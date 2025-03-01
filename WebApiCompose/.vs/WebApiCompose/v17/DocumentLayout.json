@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "D:\\VS Projects\\Socialized\\WebApiCompose\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|d:\\vs projects\\socialized\\webapicompose\\webapicompose\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|solutionrelative:webapicompose\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|d:\\vs projects\\socialized\\webapicompose\\webapicompose\\middleware\\authoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|solutionrelative:webapicompose\\middleware\\authoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|d:\\vs projects\\socialized\\webapicompose\\webapicompose\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|solutionrelative:webapicompose\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7A5EC3A-0480-408E-859C-9EB410E14A9B}|docker-compose.dcproj|d:\\vs projects\\socialized\\webapicompose\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{D7A5EC3A-0480-408E-859C-9EB410E14A9B}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|d:\\vs projects\\socialized\\webapicompose\\webapicompose\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|solutionrelative:webapicompose\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|d:\\vs projects\\socialized\\webapicompose\\webapicompose\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|solutionrelative:webapicompose\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|d:\\vs projects\\socialized\\webapicompose\\webapicompose\\middleware\\jwttokenmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|solutionrelative:webapicompose\\middleware\\jwttokenmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|d:\\vs projects\\socialized\\webapicompose\\webapicompose\\controllers\\accesscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|solutionrelative:webapicompose\\controllers\\accesscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7A5EC3A-0480-408E-859C-9EB410E14A9B}|docker-compose.dcproj|d:\\vs projects\\socialized\\webapicompose\\docker-compose.dcproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{D7A5EC3A-0480-408E-859C-9EB410E14A9B}|docker-compose.dcproj|solutionrelative:docker-compose.dcproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|d:\\vs projects\\socialized\\webapicompose\\webapicompose\\mapping\\usermappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A6019E8-2AF4-46EB-B852-8379A2729B9B}|WebApiCompose\\WebApiCompose.csproj|solutionrelative:webapicompose\\mapping\\usermappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,100 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\Dockerfile",
-              "RelativeDocumentMoniker": "WebApiCompose\\Dockerfile",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\Dockerfile",
-              "RelativeToolTip": "WebApiCompose\\Dockerfile",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-30T15:21:20.011Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "WebApiCompose\\appsettings.Development.json",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\appsettings.Development.json",
-              "RelativeToolTip": "WebApiCompose\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-30T15:20:33.422Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\appsettings.json",
-              "RelativeDocumentMoniker": "WebApiCompose\\appsettings.json",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\appsettings.json",
-              "RelativeToolTip": "WebApiCompose\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-30T15:20:31.51Z",
+              "Title": "AuthOptions.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\Middleware\\AuthOptions.cs",
+              "RelativeDocumentMoniker": "WebApiCompose\\Middleware\\AuthOptions.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\Middleware\\AuthOptions.cs",
+              "RelativeToolTip": "WebApiCompose\\Middleware\\AuthOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T19:03:44.017Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "JwtTokenManager.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\Middleware\\JwtTokenManager.cs",
-              "RelativeDocumentMoniker": "WebApiCompose\\Middleware\\JwtTokenManager.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\Middleware\\JwtTokenManager.cs",
-              "RelativeToolTip": "WebApiCompose\\Middleware\\JwtTokenManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "UserMappingProfile.cs",
+              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\Mapping\\UserMappingProfile.cs",
+              "RelativeDocumentMoniker": "WebApiCompose\\Mapping\\UserMappingProfile.cs",
+              "ToolTip": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\Mapping\\UserMappingProfile.cs",
+              "RelativeToolTip": "WebApiCompose\\Mapping\\UserMappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-30T15:17:01.289Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AccessController.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\Controllers\\AccessController.cs",
-              "RelativeDocumentMoniker": "WebApiCompose\\Controllers\\AccessController.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\Controllers\\AccessController.cs",
-              "RelativeToolTip": "WebApiCompose\\Controllers\\AccessController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-30T15:13:15.946Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebApiCompose\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebApiCompose\\docker-compose.yml",
-              "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2025-01-30T15:05:08.006Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "docker-compose.dcproj",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebApiCompose\\docker-compose.dcproj",
-              "RelativeDocumentMoniker": "docker-compose.dcproj",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebApiCompose\\docker-compose.dcproj",
-              "RelativeToolTip": "docker-compose.dcproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-30T15:04:27.196Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\Program.cs",
-              "RelativeDocumentMoniker": "WebApiCompose\\Program.cs",
-              "ToolTip": "D:\\VS Projects\\Socialized\\WebApiCompose\\WebApiCompose\\Program.cs",
-              "RelativeToolTip": "WebApiCompose\\Program.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAD4v3cAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-30T15:03:31.443Z"
+              "WhenOpened": "2025-02-19T19:03:32.372Z"
             }
           ]
         }

@@ -53,7 +53,7 @@ builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailS
 builder.Services.AddScoped<IJwtTokenManager, JwtTokenManager>();
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 builder.Services.AddScoped<IAdminEmailManager, AdminEmailManager>();
-builder.Services.AddScoped<ISmtpSender, SmtpSender>(); 
+builder.Services.AddScoped<ISmtpSender, SmtpOauthSender>(); 
 
 builder.Services.AddScoped<IPackageManager, PackageManager>();
 builder.Services.AddScoped<IServiceAccessRepository, ServiceAccessRepository>();

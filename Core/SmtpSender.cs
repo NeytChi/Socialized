@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Options;
-using Serilog;
+﻿using Serilog;
 using System.Net;
 using System.Net.Mail;
 
@@ -12,16 +11,17 @@ namespace Core
         private readonly MailAddress From;
         private readonly SmtpClient Smtp;
 
-        public SmtpSender(ILogger logger, IOptions<MailSettings> mailSettings)
+        public SmtpSender(ILogger logger, MailSettings mailSettings)
         {
             Logger = logger;
-            Settings = mailSettings.Value;
+            Settings = mailSettings;
             Smtp = new SmtpClient(Settings.SmtpAddress, Settings.SmtpPort)
             {
                 Credentials = new NetworkCredential(Settings.MailAddress, Settings.MailPassword)
             };
             From = new MailAddress(Settings.MailAddress, Settings.Domen);
-            Smtp.EnableSsl = true; ;
+            Smtp.EnableSsl = true;
+            Smtp.UseDefaultCredentials = true;
         }
         public void SendEmail(string email, string subject, string text)
         {
@@ -36,7 +36,7 @@ namespace Core
             {
                 if (Settings.Enable)
                 {
-                    Smtp.SendMailAsync(message);
+                    Smtp.Send(message);
                 }
                 Logger.Information($"Був відправиленний лист на адресу={email}.");
             }

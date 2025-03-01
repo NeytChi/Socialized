@@ -39,3 +39,9 @@ Core/obj/
 Domain/.vs/
 /.vs
 /UseCases/bin
+WebApiCompose/bin/Debug/appsettings.Development.json
+WebApiCompose/bin/Debug/appsettings.json
+WebApiCompose/WebApiCompose/appsettings.Development.json
+WebApiCompose/WebApiCompose/appsettings.json
+WebApiCompose/WebApiCompose/bin/Debug/net8.0/appsettings.Development.json
+WebApiCompose/WebApiCompose/bin/Debug/net8.0/appsettings.json
